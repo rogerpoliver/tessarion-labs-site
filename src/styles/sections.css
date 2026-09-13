@@ -41,17 +41,19 @@
 
 .person {
   display: grid;
-  gap: var(--tl-space-5);
-  grid-template-columns: auto 1fr;
+  gap: var(--tl-space-5) var(--tl-space-6);
+  grid-template-columns: minmax(9rem, 11rem) 1fr;
   align-items: start;
 }
 
-.person__photo {
-  width: var(--tl-space-11);
-  height: var(--tl-space-11);
-  border: 1px solid var(--tl-border);
-  border-radius: var(--tl-radius-lg);
-  object-fit: cover;
+@media (max-width: 30rem) {
+  .person {
+    grid-template-columns: 1fr;
+  }
+}
+
+.person__body > * + * {
+  margin-block-start: var(--tl-space-3);
 }
 
 .person__name {
@@ -66,7 +68,6 @@
 }
 
 .person__bio {
-  grid-column: 1 / -1;
   font-size: var(--tl-size-sm);
   line-height: 1.6;
 }

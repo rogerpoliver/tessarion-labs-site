@@ -37,11 +37,39 @@ Vite is chosen over a hand-written HTML file because it gives asset hashing, CSS
 
 *Alternatives considered.* React + Vite — rejected, the runtime cost buys nothing. Astro — rejected, a second mental model for zero islands. Plain `index.html` with no build — rejected, loses asset hashing and typechecking, and the studio's other repos all have a toolchain.
 
-### Content lives in the HTML, not in a data file
+### ~~Content lives in the HTML~~ → three documents rendered from three dictionaries
 
-Every string is written directly in `index.html`. A `content.ts` that a script renders into the DOM would mean the page is blank without JavaScript and would make copy review a diff of string literals rather than a diff of the page.
+**The original decision.** Every string was written directly in `index.html`. A data file that a script rendered into the DOM would have meant a blank page without JavaScript and a copy review that diffed string literals rather than the page.
 
-*Trade-off.* Repeated structure (two person cards, three crew cards, two product cards) is hand-repeated rather than mapped. For seven cards that is cheaper than the abstraction.
+**What changed it.** The site now ships in English, Brazilian Portuguese and Latin American Spanish. Three hand-maintained HTML files would drift the first time a section moved, and the reason for writing copy inline — that a diff shows you the page — stops being true once the same paragraph exists three times.
+
+**What replaced it.** `content/en.json`, `content/pt-BR.json` and `content/es-419.json` hold every user-visible string. `scripts/template.mjs` is the structure, once. `scripts/build-pages.mjs` renders `index.html`, `pt/index.html` and `es/index.html` before Vite runs, and those three files are gitignored build output.
+
+Crucially this keeps the property the original decision was protecting: each locale is still a **complete static document**, so every language works with JavaScript off, is indexable, and carries the right `lang` for a screen reader. What was rejected was runtime string swapping, and it is still rejected.
+
+**The parity gate.** A key present in one dictionary and missing from another would ship an English sentence on a Portuguese page, and nothing downstream would notice. `build-pages.mjs` compares the full key shape of every dictionary against English and exits non-zero on any difference, naming the key.
+
+*Alternatives considered.* `data-i18n` attributes swapped in the browser — rejected, non-default languages would need JavaScript and would have the wrong `lang` on first paint. A subdomain or query parameter per language — rejected, directories are the simplest thing that gives each locale a real URL to be indexed and linked.
+
+*The cost.* `index.html` is no longer in the repository, which is surprising in a site repo, and copy changes now happen in JSON rather than in markup. The parity gate and a one-line `bun run pages` are the mitigation.
+
+### Language switching is three links, not a control
+
+The switcher is three `<a>` elements, one per document, with `hreflang` and `lang` on each and `aria-current` on the active one. No JavaScript, no menu, no stored preference.
+
+*Why not detect and redirect.* `Accept-Language` redirects need a server this site does not have, and they take the choice away from a reader who deliberately opened the English page. The links are always visible and always work.
+
+*Why not remember the choice.* A stored language preference that silently overrides an explicitly requested URL is a bug the reader cannot see. The URL is the state.
+
+### Photo galleries are scroll-snap, not a slider
+
+Each person has more than one photo, and the galleries are `overflow-x: auto` with `scroll-snap-type: x mandatory`. That is already a working, swipeable, arrow-key scrollable gallery with no JavaScript. `main.ts` adds two step buttons and a position counter and unhides them; without it they stay hidden rather than rendering inert.
+
+The index is read back from `scrollLeft` on every scroll rather than tracked as the source of truth, so a swipe — which never goes through a button — keeps the counter and the disabled states honest.
+
+Nothing auto-advances. A carousel that moves on its own is one nobody finishes reading, and it would violate the motion rules besides. Under `prefers-reduced-motion` the step buttons jump instead of smooth-scrolling.
+
+*Alternatives considered.* A lightbox or a modal gallery — rejected, it is a bio card, not a portfolio. Dots instead of a counter — rejected, `2 / 3` is a number and the brand prefers numbers to shapes.
 
 ### Styling: plain CSS, one file per concern, tokens enforced by stylelint
 
@@ -124,7 +152,9 @@ Two workflows: `ci.yml` runs lint, format check, typecheck and build on pull req
 
 - **Bios describe real people and can become wrong.** → Bios state role, stack and shipped outcomes rather than current employer status wherever possible, so they age slowly. Anything time-sensitive is phrased with the year attached.
 
-- **GitHub Pages serves from a project subpath by default, and relative bases break on any page that is not the root.** → There is exactly one HTML document, so relative resolution has one context. If a second page is ever added, `base` becomes a real decision and this note is the warning.
+- **Relative bases across two directory depths.** `base: './'` now has to resolve from the root *and* from `/pt/` and `/es/`. Vite rewrites asset references per document, so the nested pages point one level up at the same hashed files — verified in the built output, not assumed. The language links are not assets, so their hrefs are computed from the current locale's depth in the template. A third depth would need that helper revisited.
+
+- **The endorsement string stays English on a Portuguese page.** `brand-guidelines.md` says the string is exactly `A Tessarion Labs product`. Read strictly, that makes it a brand element like the wordmark; read loosely, it is a sentence and sentences get translated. This repo takes the strict reading because it does not own the brand document. The brand repository should decide, and it is listed in Open Questions.
 
 - **The cat section can read as unserious next to the rest of the page.** → It is placed after products, uses a smaller card, carries no accent, and states the joke once, deadpan, with no exclamation mark. Each role is also a true description of that specific cat rather than a generic gag, which is what keeps it from reading as filler. It is there because this is two people and a house with three cats in it, and pretending otherwise would be the less honest page. The cost is accepted and named here rather than discovered in review.
 
@@ -152,5 +182,7 @@ One thing was measured and accepted rather than fixed: the studio callout's 3px 
 - **Custom domain.** The site ships on `github.io` first. A custom domain needs a `CNAME` file and DNS, and is a follow-up change.
 - **~~Share image.~~** Resolved during implementation. `public/brand/share.png` is rendered at 1200×630 from `scripts/share-card.html` by `scripts/make-share-image.sh`, so the wordmark is set in the real Inter Tight instead of a rasteriser's substitute.
 - **~~Alice's LinkedIn.~~** Resolved. `linkedin.com/in/aliceribeeiro`, tracking parameters stripped. Both cards now carry GitHub and LinkedIn.
+
+- **Is `A Tessarion Labs product` translatable?** It currently ships in English on all three locales, on the strict reading of `brand-guidelines.md` section 8. If it is a sentence rather than a mark, the brand repository should say so and supply the Portuguese and Spanish forms.
 
 - **`brand-guidelines.md` section 1 is wrong and this repo cannot fix it.** The positioning paragraph describes a product studio selling to technical buyers. The truth is a two-person side project. The correction belongs in the brand repository, not here — but until it lands, the brand document and this site disagree about what Tessarion Labs is, and anyone reading both will notice. Whoever edits the brand repo next should rewrite section 1 and re-run the sync.

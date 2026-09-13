@@ -5,7 +5,7 @@ The site SHALL carry a contact section stating how to start a conversation, with
 
 #### Scenario: Contact is one action
 - **WHEN** a reader reaches the contact section
-- **THEN** there is one email address, presented as a link, and one sentence saying who should write
+- **THEN** there is one email address — `hello.tessarion@gmail.com` — presented as a `mailto:` link, and one sentence saying who should write
 
 #### Scenario: No response-time promise
 - **WHEN** the contact copy is read

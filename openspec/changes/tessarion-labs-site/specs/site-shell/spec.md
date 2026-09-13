@@ -1,18 +1,18 @@
 ## ADDED Requirements
 
-### Requirement: Single-page document
-The site SHALL be one HTML document served at the root path, with every section reachable from that document. There SHALL be no client-side router and no second page.
+### Requirement: One page per locale
+Each locale SHALL be one HTML document, with every section reachable from that document. There SHALL be no client-side router and no page beyond the three locale documents.
 
 #### Scenario: Every section is present on first load
-- **WHEN** a visitor loads the root URL
+- **WHEN** a visitor loads any locale's URL
 - **THEN** the hero, about, people, crew, products and contact sections are all present in the delivered HTML, with no section rendered by a later fetch
 
 #### Scenario: JavaScript is unavailable
 - **WHEN** a visitor loads the page with JavaScript disabled
-- **THEN** all content and all links are readable and operable, and only the theme control is absent
+- **THEN** all content and all links are readable and operable, the photo galleries remain scrollable, and only the theme toggle and the gallery step buttons are absent
 
 ### Requirement: Header
-The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the about, people, products and contact sections, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
+The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the about, people, products and contact sections, the language switcher, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
 
 #### Scenario: Lockup renders in the current theme
 - **WHEN** the resolved theme is dark
@@ -21,6 +21,10 @@ The header SHALL carry the Tessarion Labs horizontal lockup linking to the top o
 #### Scenario: Navigation moves focus, not just scroll
 - **WHEN** a keyboard user activates a navigation link
 - **THEN** the browser scrolls to the target section and focus lands inside that section, so the next Tab continues from there
+
+#### Scenario: The language and theme controls are reachable on a phone
+- **WHEN** the header is rendered below 48rem
+- **THEN** the language switcher and the theme toggle sit on the first row beside the mark, and the section navigation takes the second row, so neither control is pushed below where a reader looks
 
 #### Scenario: Skip link
 - **WHEN** a keyboard user presses Tab on a freshly loaded page

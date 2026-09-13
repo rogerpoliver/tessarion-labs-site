@@ -200,6 +200,46 @@
   display: block;
 }
 
+/* ---- language switcher ----
+   Three plain links, one per document. No menu, no JavaScript, and the current
+   one is marked with aria-current rather than colour alone. Like the theme
+   toggle, it is neutral: the header is sticky, so an accent here would be in
+   every viewport. */
+
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--tl-border-strong);
+  border-radius: var(--tl-radius-md);
+  overflow: hidden;
+}
+
+.lang__option {
+  padding: var(--tl-space-3) var(--tl-space-4);
+  border-inline-start: 1px solid var(--tl-border-strong);
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  line-height: 1.33;
+  text-decoration: none;
+  transition-property: background-color, color;
+  transition-duration: var(--tl-motion-instant);
+  transition-timing-function: var(--tl-ease);
+}
+
+.lang__option:first-child {
+  border-inline-start: 0;
+}
+
+.lang__option:hover {
+  background-color: var(--tl-bg-surface);
+  color: var(--tl-fg);
+}
+
+.lang__option[aria-current="true"] {
+  background-color: var(--tl-fg);
+  color: var(--tl-bg);
+}
+
 /* ---- buttons ----
    A Kiln fill carries an ink label at rest, on hover and pressed. The label is
    never the thing that moves; the fill is. 500 -> 300 -> 550.
@@ -348,4 +388,133 @@
 
 .footer__meta a {
   color: var(--tl-fg-muted);
+}
+
+/* ---- gallery ----
+   A scroll-snap track. Without JavaScript it is already a swipeable, arrow-key
+   scrollable list of photos; the buttons and the counter are an enhancement and
+   stay hidden until main.ts wires them. Nothing auto-advances — a carousel that
+   moves on its own is a carousel nobody can read. */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tl-space-3);
+}
+
+.gallery__track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-lg);
+}
+
+.gallery__track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.gallery__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.gallery__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tl-space-3);
+}
+
+.gallery__controls[hidden] {
+  display: none;
+}
+
+.gallery__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tl-space-7);
+  height: var(--tl-space-7);
+  padding: 0;
+  border: 1px solid var(--tl-border-strong);
+  border-radius: var(--tl-radius-md);
+  background-color: transparent;
+  color: var(--tl-fg);
+  cursor: pointer;
+  transition-property: background-color, border-color;
+  transition-duration: var(--tl-motion-instant);
+  transition-timing-function: var(--tl-ease);
+}
+
+.gallery__step:hover:not(:disabled) {
+  border-color: var(--tl-fg);
+  background-color: var(--tl-bg-surface);
+}
+
+.gallery__step:disabled {
+  border-color: var(--tl-border);
+  color: var(--tl-fg-subtle);
+  cursor: default;
+}
+
+.gallery__step svg {
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.gallery__counter {
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- header on narrow viewports ----
+   Stacked in source order, the language switcher lands on a third row below the
+   section nav, where a reader on a phone does not see it. Reordered so row one
+   is the mark plus the two controls — language and theme, the two things that
+   change what the whole page is — and the section nav takes row two. */
+
+@media (max-width: 47.99rem) {
+  .header__inner {
+    gap: var(--tl-space-4);
+  }
+
+  .header__brand {
+    order: 1;
+  }
+
+  .lang {
+    order: 2;
+    margin-inline-start: auto;
+  }
+
+  .theme-toggle {
+    order: 3;
+  }
+
+  .header__nav {
+    order: 4;
+    flex-basis: 100%;
+    margin-inline-start: 0;
+  }
+
+  .header .mark {
+    height: var(--tl-space-6);
+  }
+
+  .lang__option {
+    padding: var(--tl-space-2) var(--tl-space-3);
+  }
 }

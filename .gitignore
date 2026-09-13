@@ -13,3 +13,10 @@ npm-debug.log*
 
 # Local overrides
 *.local
+
+# Generated from content/*.json. Run `bun run pages` to recreate the locale
+# documents, and `scripts/build-share-cards.mjs` for the share-card sources.
+/index.html
+/pt/
+/es/
+/scripts/share/

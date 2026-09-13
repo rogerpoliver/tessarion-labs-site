@@ -4,15 +4,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "node scripts/build-pages.mjs && vite",
+    "build": "node scripts/build-pages.mjs && tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "oxlint --config .oxlintrc.json src && stylelint \"src/**/*.css\"",
     "lint:css": "stylelint \"src/**/*.css\"",
     "format": "oxfmt src",
     "format:check": "oxfmt --check src",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pages": "node scripts/build-pages.mjs"
   },
   "lint-staged": {
     "*.ts": [

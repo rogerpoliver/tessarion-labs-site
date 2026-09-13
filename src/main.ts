@@ -59,10 +59,12 @@ function applyTheme(theme: Theme): void {
 }
 
 // The icon is chosen by CSS from the resolved theme; this keeps the button's
-// accessible name pointing at the same theme the icon does.
+// accessible name pointing at the same theme the icon does. Both strings are
+// rendered into the markup per locale, so this file carries no English.
 function labelToggle(button: HTMLButtonElement): void {
   const next = resolvedTheme() === "dark" ? "light" : "dark";
-  const label = `Switch to ${next} theme`;
+  const label = next === "light" ? button.dataset.toLight : button.dataset.toDark;
+  if (!label) return;
   button.setAttribute("aria-label", label);
   button.title = label;
 }
@@ -110,11 +112,74 @@ function playSlipOnce(): void {
   }
 }
 
+// A scroll-snap track that already works without JavaScript. This adds the two
+// step buttons and the counter, and keeps them in step with wherever the reader
+// scrolled — including a swipe, which never goes through a button.
+function setUpGallery(gallery: HTMLElement): void {
+  const track = gallery.querySelector<HTMLElement>(".gallery__track");
+  const controls = gallery.querySelector<HTMLElement>(".gallery__controls");
+  const previous = gallery.querySelector<HTMLButtonElement>("[data-gallery-prev]");
+  const next = gallery.querySelector<HTMLButtonElement>("[data-gallery-next]");
+  const counter = gallery.querySelector<HTMLElement>("[data-gallery-counter]");
+  if (!track || !controls || !previous || !next || !counter) return;
+
+  const slides = [...track.children] as HTMLElement[];
+  if (slides.length < 2) return;
+
+  const template = counter.dataset.template ?? "{index} / {total}";
+  const total = slides.length;
+  let index = 0;
+
+  const sync = (): void => {
+    counter.textContent = template
+      .replaceAll("{index}", String(index + 1))
+      .replaceAll("{total}", String(total));
+    previous.disabled = index === 0;
+    next.disabled = index === total - 1;
+  };
+
+  const go = (to: number): void => {
+    index = Math.max(0, Math.min(total - 1, to));
+    const slide = slides[index];
+    if (slide)
+      track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: scrollBehavior() });
+    sync();
+  };
+
+  previous.addEventListener("click", () => go(index - 1));
+  next.addEventListener("click", () => go(index + 1));
+
+  // A swipe or an arrow-key scroll moves the track without touching a button,
+  // so the index is read back from the scroll position rather than assumed.
+  let frame = 0;
+  track.addEventListener("scroll", () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      index = Math.round(track.scrollLeft / track.clientWidth);
+      sync();
+    });
+  });
+
+  controls.hidden = false;
+  sync();
+}
+
+function scrollBehavior(): ScrollBehavior {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+}
+
+function setUpGalleries(): void {
+  for (const gallery of document.querySelectorAll<HTMLElement>("[data-gallery]")) {
+    setUpGallery(gallery);
+  }
+}
+
 function stampYear(): void {
   const slot = document.querySelector<HTMLElement>("#year");
   if (slot) slot.textContent = String(new Date().getFullYear());
 }
 
 setUpThemeToggle();
+setUpGalleries();
 playSlipOnce();
 stampYear();

@@ -145,3 +145,30 @@
 - [x] 16.6 Point the `forced-colors` rule in `base.css` at `.theme-toggle` instead of `.segmented`.
 - [x] 16.7 Update the `site-shell` theme-control requirement and record the decision, the alternatives and the cost in `design.md`.
 - [x] 16.8 Re-verify: fresh visit on a light OS and on a dark OS, one press, a second press restoring system-follow, no-JS `display: none`, contrast in both themes, focus ring on every stop, one Kiln element.
+
+## 17. Photos and galleries
+
+- [x] 17.1 Replace the single GitHub avatar per person with real photos, cropped to 4:5 at 640x800: `roger-01` (suit), `roger-02` (beach), `roger-03` (lift), `alice-01` (portrait), `alice-02` (close portrait).
+- [x] 17.2 Add the gallery markup to `scripts/template.mjs`: a `scroll-snap` track that is already swipeable and arrow-key scrollable, plus step buttons and a counter that stay `hidden` until JavaScript unhides them.
+- [x] 17.3 Add `.gallery*` styles in `components.css` — 4:5 box, square-cut chevrons, disabled state at each end, no auto-advance.
+- [x] 17.4 Rewrite `.person` in `sections.css` for a gallery column beside the text, collapsing to one column below 30rem.
+- [x] 17.5 Wire the gallery in `main.ts`: read the index back from `scrollLeft` on every scroll so a swipe keeps the counter honest, disable the step buttons at the ends, and jump instead of smooth-scrolling under `prefers-reduced-motion`.
+
+## 18. Localization
+
+- [x] 18.1 Add `content/en.json`, `content/pt-BR.json` and `content/es-419.json` holding every user-visible string, including photo and crew alt text.
+- [x] 18.2 Write `scripts/template.mjs` — the page structure as one function of a dictionary, with per-locale escaping and depth-aware language links.
+- [x] 18.3 Write `scripts/build-pages.mjs` to render `index.html`, `pt/index.html` and `es/index.html`, and gitignore all three as build output.
+- [x] 18.4 Add the key-parity gate: compare the full key shape of every dictionary against English and exit non-zero naming the missing or unexpected key. Prove it by deleting `about.callout` from `pt-BR.json`.
+- [x] 18.5 Add the language switcher — three plain links with `hreflang`, `lang` and `aria-current`, neutral fills, no JavaScript.
+- [x] 18.6 Emit `hreflang` alternates for all three locales plus `x-default`, and a self-referencing canonical per document.
+- [x] 18.7 Give Vite three entry points and confirm in the built output that `/pt/` and `/es/` resolve assets one level up to the same hashed files.
+- [x] 18.8 Move the theme toggle's two labels into `data-to-light` / `data-to-dark` so `main.ts` carries no English.
+- [x] 18.9 Render one share image per locale from `scripts/build-share-cards.mjs` plus `scripts/make-share-images.sh`.
+- [x] 18.10 Extend the voice gate with Portuguese and Spanish banned-word lists and run it against all three built pages.
+
+## 19. Corrections from review
+
+- [x] 19.1 Rewrite the crew roles as real engineering titles: Char — `Engineering manager. Runs the standup. Has an opinion on every ticket.` Joey — `Security engineer. Trusts one origin. Blocks every request from an unknown host.` Reginaldo — `Principal engineer. Longest tenure, owns the legacy system, does not pair.` Translate each into pt-BR and es-419.
+- [x] 19.2 Change the contact address to `hello.tessarion@gmail.com` in all three dictionaries.
+- [x] 19.3 Reorder the header below 48rem so row one is the mark, the language switcher and the theme toggle, and the section nav takes row two. The switcher was landing on a third row where a reader on a phone did not see it. Header height on a 390px viewport drops from 158px to 106px.

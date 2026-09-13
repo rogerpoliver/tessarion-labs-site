@@ -30,6 +30,7 @@ The reader is a founder, a CTO or a platform lead, on a first visit, skimming, l
 - `contact`: how to reach the studio, and the footer's endorsement and identity block.
 - `brand-compliance`: the enforcement layer — token-only styling, contrast rules, focus, motion, reduced-motion and forced-colors behaviour, and the banned-word list applied to copy.
 - `deployment`: build, lint and format gates, and the GitHub Pages deploy workflow.
+- `localization`: three complete documents — English, Brazilian Portuguese and Latin American Spanish — generated from one template and three content dictionaries, with a language switcher, `hreflang` alternates and the brand voice enforced in each language.
 
 ### Modified Capabilities
 None. This is the first change in a new repository.

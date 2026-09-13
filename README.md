@@ -1,16 +1,21 @@
 # Tessarion Labs — site
 
-The studio's public landing page. One static HTML document, built with Vite and
+Tessarion Labs' public landing page. Three static HTML documents — English,
+Brazilian Portuguese and Latin American Spanish — built with Vite and
 TypeScript, deployed to GitHub Pages.
 
-Live: https://rogerpoliver.github.io/tessarion-labs-site/
+- English: https://rogerpoliver.github.io/tessarion-labs-site/
+- Português: https://rogerpoliver.github.io/tessarion-labs-site/pt/
+- Español: https://rogerpoliver.github.io/tessarion-labs-site/es/
 
 ## What is here
 
 | Path | What it is |
 |------|------------|
-| `index.html` | The page. Every user-visible string lives here, not in a data file. |
-| `src/main.ts` | The only behaviour on the page: the theme control, the mark's one-per-session animation, and the footer year. |
+| `content/*.json` | **Every user-visible string**, one file per locale. This is where copy is edited. |
+| `scripts/template.mjs` | The page structure, once, as a function of a locale dictionary. |
+| `scripts/build-pages.mjs` | Renders `index.html`, `pt/index.html` and `es/index.html`. Fails if the dictionaries disagree about their keys. |
+| `src/main.ts` | The behaviour on the page: the theme toggle, the photo galleries, the mark's one-per-session animation, and the footer year. Carries no English — every string comes from the markup. |
 | `src/styles/tokens.css` | **Vendored.** A copy of the brand repo's hand-authored tokens. Never edited here. |
 | `src/styles/fonts.css` | `@font-face` blocks for the self-hosted latin subsets. |
 | `src/styles/base.css` | Reset, type scale, focus ring, forced-colors. |
@@ -27,7 +32,8 @@ Toolchain via [mise](https://mise.jdx.dev) (`node 24`, `bun`).
 
 ```bash
 bun install
-bun run dev            # Vite dev server
+bun run pages          # render the three locale documents from content/
+bun run dev            # renders pages, then the Vite dev server
 bun run lint           # oxlint + stylelint
 bun run format:check   # oxfmt
 bun run typecheck      # tsc --noEmit
@@ -98,5 +104,6 @@ Actions**.
 
 `vite.config.ts` sets `base: './'`, so the same build serves correctly from a
 Pages project subpath, from a custom domain root, and from a local static
-server. There is one HTML document, so relative resolution has one context — if
-a second page is ever added, that base becomes a real decision.
+server. Vite resolves that base per document, so `/pt/` and `/es/` point one
+level up at the same hashed assets the root page uses. A third directory depth
+would need the language-link helper in `scripts/template.mjs` revisited.

@@ -1,7 +1,11 @@
 ## ADDED Requirements
 
 ### Requirement: Build
-`bun run build` SHALL typecheck and produce a static bundle in `dist/` that can be served from any static host with no server-side logic.
+`bun run build` SHALL render the locale documents from `content/`, typecheck, and produce a static bundle in `dist/` that can be served from any static host with no server-side logic.
+
+#### Scenario: Pages are rendered before the bundle
+- **WHEN** `bun run build` runs on a clean checkout with no generated HTML present
+- **THEN** it renders `index.html`, `pt/index.html` and `es/index.html` first, and the bundle includes all three
 
 #### Scenario: Typecheck gates the build
 - **WHEN** a TypeScript error exists
@@ -9,7 +13,7 @@
 
 #### Scenario: Output is portable
 - **WHEN** `dist/` is served from a static file server
-- **THEN** the site works with no rewrite rules, because there is only one HTML document
+- **THEN** all three documents work with no rewrite rules, because each locale is a real directory with a real `index.html`
 
 ### Requirement: Quality gates
 The repository SHALL run oxlint, oxfmt and stylelint, and SHALL enforce Conventional Commits through commitlint and husky.
@@ -46,3 +50,7 @@ The Vite base path SHALL be configured so the site resolves its assets correctly
 #### Scenario: Assets resolve on Pages
 - **WHEN** the site is served from a project subpath rather than the domain root
 - **THEN** every stylesheet, script, image and SVG resolves, and no request 404s
+
+#### Scenario: Assets resolve one directory down
+- **WHEN** `/pt/` or `/es/` is loaded
+- **THEN** its asset references point one level up to the same hashed files the root page uses, and nothing is duplicated per locale

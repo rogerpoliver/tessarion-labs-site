@@ -1,0 +1,184 @@
+{
+  "locale": "es-419",
+  "htmlLang": "es-419",
+  "dir": "es",
+  "name": "Español",
+  "short": "ES",
+  "meta": {
+    "title": "Tessarion Labs — software hecho por dos personas",
+    "description": "Tessarion Labs no es una empresa. Es el nombre que Roger Oliveira y Alice Ribeiro le ponen al software que construyen juntos, en Porto Alegre, Brasil.",
+    "social": "No es una empresa. Es el nombre que dos personas en Porto Alegre le ponen al software que construyen. Unidades pequeñas y precisas, puestas a propósito.",
+    "imageAlt": "Tessarion Labs — unidades pequeñas y precisas, puestas a propósito.",
+    "shareLine": "Unidades pequeñas y precisas, puestas a propósito.",
+    "shareSub": "Hecho por dos personas · Porto Alegre, BR"
+  },
+  "nav": {
+    "skip": "Saltar al contenido",
+    "sections": "Secciones",
+    "backToTop": "Tessarion Labs, volver al inicio",
+    "about": "Acerca",
+    "people": "Personas",
+    "products": "Productos",
+    "contact": "Contacto"
+  },
+  "theme": {
+    "toLight": "Cambiar al tema claro",
+    "toDark": "Cambiar al tema oscuro"
+  },
+  "language": {
+    "label": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Hecho por dos personas · Porto Alegre, BR",
+    "title": "Construimos software como se construye un mosaico — unidades pequeñas y precisas, puestas a propósito.",
+    "lead": "Tessarion Labs no es una empresa. Es el nombre que le damos al software que construimos juntos — Roger y Alice, un departamento en Porto Alegre, un backlog compartido.",
+    "primary": "Escríbenos",
+    "secondary": "Mira lo que construimos"
+  },
+  "about": {
+    "title": "Qué es esto",
+    "paragraphs": [
+      "Un nombre, no una empresa. Tessarion Labs es como dos personas llaman a su propio trabajo: el software que construimos primero para nosotros, y el estándar que le exigimos.",
+      "No hay oficina, no hay nómina y no hay nada aquí para venderte. Hay dos ingenieros, un backlog compartido y las horas que sobran después de la jornada.",
+      "La marca, las specs escritas y el design system existen porque preferimos construir un producto bien a cinco con prisa. Ese es todo el plan."
+    ],
+    "callout": "Dos personas y las horas que sobran son toda la capacidad. Un producto avanza a la vez y el otro espera. Ese es el intercambio, y por eso Taimu y Mascada siguen los dos en desarrollo.",
+    "facts": [
+      "2 personas",
+      "Porto Alegre, BR — UTC−3",
+      "2 productos en desarrollo",
+      "Sin oficina, sin nómina"
+    ]
+  },
+  "people": {
+    "title": "Quiénes lo construyen",
+    "galleryLabel": "Fotos de {name}",
+    "previous": "Foto anterior de {name}",
+    "next": "Foto siguiente de {name}",
+    "counter": "{index} de {total}",
+    "members": [
+      {
+        "id": "roger",
+        "name": "Roger Oliveira",
+        "role": "Ingeniería · Sistemas de IA",
+        "bio": "Once años en producción. Cuatro en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025, y luego pasó a ingeniería de IA — pipelines de extracción con LLM, flujos agénticos y herramientas MCP para desarrolladores, en producción. Entrega en TypeScript, Rust, Python y C#. Trabaja desde Brasil para una empresa de software de Estados Unidos.",
+        "photos": [
+          {
+            "src": "roger-01.jpg",
+            "alt": "Roger Oliveira de traje azul y corbata roja, en un jardín."
+          },
+          {
+            "src": "roger-02.jpg",
+            "alt": "Roger Oliveira en la playa, con gorra y lentes de sol, bajo palmeras."
+          },
+          {
+            "src": "roger-03.jpg",
+            "alt": "Roger Oliveira con una camiseta negra de banda, brazos tatuados, en un ascensor."
+          }
+        ],
+        "links": [
+          {
+            "href": "https://github.com/rogerpoliver",
+            "label": "GitHub",
+            "aria": "Roger Oliveira en GitHub"
+          },
+          {
+            "href": "https://www.linkedin.com/in/rogerpoliver/",
+            "label": "LinkedIn",
+            "aria": "Roger Oliveira en LinkedIn"
+          }
+        ]
+      },
+      {
+        "id": "alice",
+        "name": "Alice Ribeiro",
+        "role": "Ingeniería · Web",
+        "bio": "Desarrolladora en todo el stack web — PHP, Go, JavaScript, Node.js y React. Trabaja en Lydia Sistemas y estudia Análisis y Desarrollo de Sistemas. En Taimu se encarga de la interfaz y del estado que la alimenta. Sus repositorios públicos van de una configuración de zsh a una app React que convierte notas de audio en texto.",
+        "photos": [
+          {
+            "src": "alice-01.jpg",
+            "alt": "Alice Ribeiro, cabello oscuro y cuello tatuado, mirando a la cámara."
+          },
+          {
+            "src": "alice-02.jpg",
+            "alt": "Alice Ribeiro en un retrato cercano, cabello oscuro por debajo de los hombros."
+          }
+        ],
+        "links": [
+          {
+            "href": "https://github.com/aliicezzz",
+            "label": "GitHub",
+            "aria": "Alice Ribeiro en GitHub"
+          },
+          {
+            "href": "https://www.linkedin.com/in/aliceribeeiro",
+            "label": "LinkedIn",
+            "aria": "Alice Ribeiro en LinkedIn"
+          }
+        ]
+      }
+    ]
+  },
+  "products": {
+    "title": "Lo que entregamos",
+    "endorsement": "A Tessarion Labs product",
+    "items": [
+      {
+        "id": "taimu",
+        "name": "Taimu",
+        "lede": "Registro de horas para contratistas independientes.",
+        "paragraphs": [
+          "Una app de barra de menús de macOS. Empezar el día, pausar, retomar, cerrar el día — desde la barra de menús. Un calendario mensual muestra los intervalos de cada día, el saldo semanal por fila y el total del mes contra tu meta.",
+          "Sin servidor y sin cuenta de terceros. Todo se guarda como JSON en tu propio disco."
+        ],
+        "stack": "Tauri 2 · Rust · React · TypeScript",
+        "state": "En desarrollo · macOS"
+      },
+      {
+        "id": "mascada",
+        "name": "Mascada",
+        "lede": "Finanzas personales.",
+        "paragraphs": [
+          "Cuentas, tarjetas y estados de cuenta, transacciones, planes en cuotas, suscripciones, gastos fijos y deudas, en un solo libro que muestra qué pasó con el dinero.",
+          "Una API en Rust, un cliente web en TypeScript y una skill que deja a un agente leer y escribir en el mismo libro que tú."
+        ],
+        "stack": "Rust · TypeScript · skill de Claude Code",
+        "state": "En desarrollo · Privado"
+      }
+    ]
+  },
+  "crew": {
+    "title": "El equipo",
+    "lead": "Tres asistentes. Los tres son gatos.",
+    "members": [
+      {
+        "id": "char",
+        "name": "Char",
+        "role": "Gerente de ingeniería. Dirige la daily. Opina sobre cada ticket.",
+        "alt": "Char, un gato blanco y negro, echado en un sofá gris y mirando a la cámara."
+      },
+      {
+        "id": "joey",
+        "name": "Joey",
+        "role": "Ingeniero de seguridad. Confía en un solo origen. Bloquea todo host desconocido.",
+        "alt": "Joey, un gato blanco y negro grande, sentado erguido en la puerta de la cocina."
+      },
+      {
+        "id": "reginaldo",
+        "name": "Reginaldo",
+        "role": "Ingeniero principal. Más antigüedad, dueño del legado, no hace pair.",
+        "alt": "Reginaldo, un gato blanco y negro de pelo largo, acomodado en una manta azul."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Escríbenos",
+    "lead": "Si estás construyendo algo y quieres hablarlo, escribe. Leemos todo y respondemos cuando la jornada lo permite.",
+    "email": "hello.tessarion@gmail.com"
+  },
+  "footer": {
+    "location": "Porto Alegre, Brasil — UTC−3",
+    "github": "Tessarion Labs en GitHub",
+    "copyright": "Tessarion Labs"
+  }
+}
