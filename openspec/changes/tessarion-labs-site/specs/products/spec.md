@@ -1,15 +1,30 @@
 ## ADDED Requirements
 
 ### Requirement: Product cards
-The site SHALL carry one card for Taimu and one for Mascada. Each card SHALL show the product mark, the product name, a one-line description, the stack it is built on, its current state, and the endorsement line.
+The site SHALL carry one card for Taimu and one for Mascada. Each card SHALL show the product mark, the product name, a one-line description, prose explaining why the product exists, the stack it is built on, its current state, and the endorsement line.
+
+### Requirement: The prose sells the idea, the badges carry the facts
+A product's paragraphs SHALL explain the problem the product exists for and what it is like to use, and SHALL NOT be a feature list. The exact facts — the stack and the current state — SHALL live in the badges, where a reader who wants them can find them without the prose becoming a specification.
+
+#### Scenario: The first line is the idea, not the category
+- **WHEN** a product's lead line is read
+- **THEN** it states what the product gives the reader — `The hours you actually worked`, `Where the money actually went` — rather than naming a software category
+
+#### Scenario: The problem comes before the mechanism
+- **WHEN** a product's first paragraph is read
+- **THEN** it opens on the reader's situation and only then says what the product does about it
+
+#### Scenario: Facts are not duplicated in prose
+- **WHEN** the prose and the badges are compared
+- **THEN** the stack and the release state appear in the badges and are not restated as a sentence
 
 #### Scenario: Taimu card
 - **WHEN** the Taimu card is rendered
-- **THEN** it describes Taimu as time tracking for independent contractors, running as a macOS menu-bar app, storing data as local JSON with no server and no third-party account, built on Tauri, React and Rust
+- **THEN** it says that billing by the hour means the hours have to be right and that remembering them is the part that fails, that Taimu keeps the record from the menu bar, and that nothing leaves the machine — the file is JSON on the reader's own disk and will still open in ten years
 
 #### Scenario: Mascada card
 - **WHEN** the Mascada card is rendered
-- **THEN** it describes Mascada as personal finance, built as a Rust API with a TypeScript web client and an agent-facing Claude Code skill
+- **THEN** it says that someone opens a finance app already worried and that the answer to that is precision rather than encouragement, that Mascada shows a negative balance as a negative balance, and that an agent can read and write the same ledger through a Claude Code skill
 
 #### Scenario: State is honest
 - **WHEN** a product is not publicly available

@@ -53,6 +53,16 @@ Crucially this keeps the property the original decision was protecting: each loc
 
 *The cost.* `index.html` is no longer in the repository, which is surprising in a site repo, and copy changes now happen in JSON rather than in markup. The parity gate and a one-line `bun run pages` are the mitigation.
 
+### The product cards sell the idea; the badges carry the facts
+
+The first version of both product cards was a specification: a category name, then a list of what the software does, then the stack. It read like a README, and a README is not a reason to care.
+
+The prose now opens on the reader's situation — billing by the hour and forgetting to write it down; opening a finance app while already worried — and only then says what the product does about it. The exact facts did not disappear: the stack and the release state moved into the badges, where someone who wants them finds them in one glance and the prose never has to carry them.
+
+Mascada's second paragraph is the clearest case of what this buys. "A Rust API, a TypeScript web client, and a Claude Code skill" is three nouns. "An assistant reads and writes the same ledger you do, so recording a purchase can be a sentence instead of a form" is the same fact and it is the reason the skill exists.
+
+*The constraint this runs into.* Selling an idea is exactly where the banned-word list earns its keep — the natural way to write this paragraph uses `seamless`, `effortless` and `simply`, and all three are forbidden. The copy has to be specific instead, which is the point.
+
 ### Translations are written, not converted
 
 The first pass rendered English sentences into Portuguese and Spanish word by word. Every word was correct and the result read like a machine: `colocadas de propósito` for "placed on purpose", three stacked `não há` where a Brazilian says `não tem`, `essa é a troca` for "that is the trade", `entrega em TypeScript` for "ships in TypeScript", `razão` for a ledger nobody outside accounting calls that, and `nómina` on a page whose locale is `es-419`.
@@ -166,7 +176,9 @@ Two workflows: `ci.yml` runs lint, format check, typecheck and build on pull req
 
 - **The endorsement string stays English on a Portuguese page.** `brand-guidelines.md` says the string is exactly `A Tessarion Labs product`. Read strictly, that makes it a brand element like the wordmark; read loosely, it is a sentence and sentences get translated. This repo takes the strict reading because it does not own the brand document. The brand repository should decide, and it is listed in Open Questions.
 
-- **The cat section can read as unserious next to the rest of the page.** → It is placed after products, uses a smaller card, carries no accent, and states the joke once, deadpan, with no exclamation mark. Each role is also a true description of that specific cat rather than a generic gag, which is what keeps it from reading as filler. It is there because this is two people and a house with three cats in it, and pretending otherwise would be the less honest page. The cost is accepted and named here rather than discovered in review.
+- **The cats moved up the page, ahead of the products.** → They now sit inside the family section with Roger and Alice, because the household is one thing and splitting it across two sections said otherwise. The cost is real: a reader who skims and stops early meets the family before they meet Taimu and Mascada. Accepted, because this is a couple's own site rather than a sales funnel, and mitigated by keeping the cat cards small, unaccented, gallery-free and always after the two person cards. The hierarchy is carried by size, not by distance.
+
+- **A joke explained at length stops being a joke.** → Each cat briefly had a 40-word bio under its role line. It read as filler: the whole joke is a job title landing on an animal, and the second sentence was always weaker than the first. The entries are one line again, and the rule is written into the spec so the next person does not re-derive it.
 
 ## Migration Plan
 

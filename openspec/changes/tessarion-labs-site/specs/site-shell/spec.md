@@ -5,14 +5,14 @@ Each locale SHALL be one HTML document, with every section reachable from that d
 
 #### Scenario: Every section is present on first load
 - **WHEN** a visitor loads any locale's URL
-- **THEN** the hero, about, people, crew, products and contact sections are all present in the delivered HTML, with no section rendered by a later fetch
+- **THEN** the hero, about, family, products and contact sections are all present in the delivered HTML, with no section rendered by a later fetch
 
 #### Scenario: JavaScript is unavailable
 - **WHEN** a visitor loads the page with JavaScript disabled
 - **THEN** all content and all links are readable and operable, the photo galleries remain scrollable, and only the theme toggle and the gallery step buttons are absent
 
 ### Requirement: Header
-The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the about, people, products and contact sections, the language switcher, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
+The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the about, family, products and contact sections, the language switcher, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
 
 #### Scenario: Lockup renders in the current theme
 - **WHEN** the resolved theme is dark

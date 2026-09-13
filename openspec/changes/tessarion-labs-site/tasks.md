@@ -193,3 +193,15 @@
 - [x] 21.4 Remove `nothing here to sell you` from the about section in all three locales. It is a promise about the future that a site may have to walk back.
 - [x] 21.5 Set the bio budget in the English source at 80 words and allow translations up to 96, because counting words across languages measures the language rather than the length of the thought. Record the measured counts.
 - [x] 21.6 Re-run every gate across three locales and both themes.
+
+## 22. One household, and products that say why they exist
+
+- [x] 22.1 Move the three cat cards inside the people section and delete the standalone `#crew` section. The document's sections are now hero, about, family, products, contact.
+- [x] 22.2 Retitle the section to `The family` / `A família` / `La familia`, and rename the nav link to match. The section is the household, not a staff page.
+- [x] 22.3 Fold the crew lead into the family lead, so one sentence carries both the division of labour and the joke: `Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats.` Drop `crew.title` and `crew.lead` from all three dictionaries.
+- [x] 22.4 Remove the 40-word cat bios added in group 21 and cut the role lines back: Char — `Engineering manager. Runs the standup, opinion on every ticket.` Joey — `Security engineer. One trusted origin, everything else blocked.` Reginaldo — `Principal engineer. Owns the legacy system. Does not pair.` A job title landing on an animal stops being funny once it is explained at length.
+- [x] 22.5 Delete `.crew__bio` and set the role line back to muted, since it is now the only line on the card.
+- [x] 22.6 Rewrite Taimu's copy to sell the idea rather than list features. Lead: `The hours you actually worked.` The prose opens on billing by the hour and the fact that remembering is the part that fails, then on the record never leaving the machine.
+- [x] 22.7 Rewrite Mascada's copy the same way. Lead: `Where the money actually went.` The prose opens on opening a finance app while already worried, answers it with precision rather than encouragement, and closes on an agent reading and writing the same ledger.
+- [x] 22.8 Keep the stack and the release state in the badges only, so the prose never turns back into a specification.
+- [x] 22.9 Re-run every gate across three locales and both themes, and confirm no section id for the cats remains.

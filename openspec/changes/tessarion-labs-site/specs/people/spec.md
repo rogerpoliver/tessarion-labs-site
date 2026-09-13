@@ -69,7 +69,7 @@ Each bio SHALL be written from what that person has actually shipped or holds, a
 - **THEN** it names no employer either person has left
 
 ### Requirement: The division of labour is stated
-The people section SHALL open with a lead naming how the two of them split the work: Roger generates the ideas, Alice decides which one ships and in what order. It SHALL state this as a fact about how the work happens, not as a compliment to either person.
+The family section SHALL open with a lead naming how the two of them split the work: Roger generates the ideas, Alice decides which one ships and in what order. It SHALL state this as a fact about how the work happens, not as a compliment to either person. The same lead SHALL close by stating that the other three are cats.
 
 #### Scenario: The split is legible before the bios
 - **WHEN** a reader reaches the people section

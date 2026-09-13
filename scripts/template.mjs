@@ -168,7 +168,6 @@ function crewCard(member) {
             />
             <p class="crew__name">${e(member.name)}</p>
             <p class="crew__role">${e(member.role)}</p>
-            <p class="crew__bio">${e(member.bio)}</p>
           </li>`;
 }
 
@@ -331,6 +330,9 @@ export function render(t, all) {
           <ul class="grid-2">
             ${t.people.members.map((p) => person(p, t)).join("\n            ")}
           </ul>
+          <ul class="grid-3 crew">
+            ${t.crew.members.map(crewCard).join("\n            ")}
+          </ul>
         </div>
       </section>
 
@@ -341,18 +343,6 @@ export function render(t, all) {
           </div>
           <ul class="grid-2">
             ${t.products.items.map((item) => product(item, t.products.endorsement)).join("\n            ")}
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="crew" tabindex="-1" aria-labelledby="crew-title">
-        <div class="shell">
-          <div class="section__head">
-            <h2 id="crew-title">${e(t.crew.title)}</h2>
-            <p class="lead">${e(t.crew.lead)}</p>
-          </div>
-          <ul class="grid-3">
-            ${t.crew.members.map(crewCard).join("\n            ")}
           </ul>
         </div>
       </section>

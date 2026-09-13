@@ -17,7 +17,7 @@
     "sections": "Secciones",
     "backToTop": "Tessarion Labs, volver al inicio",
     "about": "Acerca",
-    "people": "Personas",
+    "people": "Familia",
     "products": "Productos",
     "contact": "Contacto"
   },
@@ -51,7 +51,7 @@
     ]
   },
   "people": {
-    "title": "Quiénes lo construyen",
+    "title": "La familia",
     "galleryLabel": "Fotos de {name}",
     "previous": "Foto anterior de {name}",
     "next": "Foto siguiente de {name}",
@@ -118,7 +118,7 @@
         ]
       }
     ],
-    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. La división del trabajo es esa."
+    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. Los otros tres son gatos."
   },
   "products": {
     "title": "Lo que entregamos",
@@ -127,10 +127,10 @@
       {
         "id": "taimu",
         "name": "Taimu",
-        "lede": "Registro de horas para contratistas independientes.",
+        "lede": "Las horas que realmente trabajaste.",
         "paragraphs": [
-          "Una app de barra de menús de macOS. Empezar el día, pausar, retomar, cerrar el día — todo desde la barra de menús. Un calendario mensual muestra los intervalos de cada día, el saldo semanal por fila y el total del mes en relación con tu meta.",
-          "Sin servidor y sin cuenta de terceros. Todo se guarda como JSON en tu propio disco."
+          "Si cobras por hora, las horas tienen que estar bien, y lo que falla es acordarse de ellas. Taimu vive en la barra de menús y lleva el registro mientras trabajas: empieza el día, pausa, retoma, cierra. El mes se suma solo en relación con la meta que pusiste.",
+          "Nada sale de la máquina. Sin servidor, sin cuenta, sin sincronización. El registro es un archivo JSON en tu propio disco: es tuyo, y dentro de diez años todavía abre."
         ],
         "stack": "Tauri 2 · Rust · React · TypeScript",
         "state": "En desarrollo · macOS"
@@ -138,10 +138,10 @@
       {
         "id": "mascada",
         "name": "Mascada",
-        "lede": "Finanzas personales.",
+        "lede": "A dónde se fue el dinero.",
         "paragraphs": [
-          "Cuentas, tarjetas y estados de cuenta, transacciones, planes en cuotas, suscripciones, gastos fijos y deudas, todo en un solo lugar, mostrando a dónde se fue el dinero.",
-          "Una API en Rust, un cliente web en TypeScript y una skill que deja a un agente leer y escribir en los mismos datos que tú."
+          "Abres una app de finanzas cuando ya estás preocupado. La respuesta a eso es precisión, no ánimo. Mascada junta cuentas, tarjetas, cuotas, suscripciones y deudas en un solo lugar, y muestra un saldo negativo como un saldo negativo.",
+          "También le responde a un agente. Con una skill de Claude Code, un asistente lee y escribe los mismos datos que tú, así registrar una compra puede ser una frase en vez de un formulario."
         ],
         "stack": "Rust · TypeScript · skill de Claude Code",
         "state": "En desarrollo · Privado"
@@ -149,28 +149,23 @@
     ]
   },
   "crew": {
-    "title": "El equipo",
-    "lead": "Tres asistentes. Los tres son gatos.",
     "members": [
       {
         "id": "char",
         "name": "Char",
-        "role": "Gerente de ingeniería. Dirige la daily. Opina sobre cada ticket.",
-        "bio": "Decidió que manda y nadie abrió un ticket en contra. Recibe a las visitas en la puerta, supervisa desde el escritorio y narra la jornada entera en voz alta.",
+        "role": "Gerente de ingeniería. Dirige la daily, opina en cada ticket.",
         "alt": "Char, un gato blanco y negro, echado en un sofá gris y mirando a la cámara."
       },
       {
         "id": "joey",
         "name": "Joey",
-        "role": "Ingeniero de seguridad. Confía en un solo origen. Bloquea todo host desconocido.",
-        "bio": "El más grande de los tres y el primero en meterse bajo la cama. Tiene exactamente una persona en la allowlist, la sigue de cuarto en cuarto y trata el timbre como un incidente.",
+        "role": "Ingeniero de seguridad. Un origen confiable, el resto bloqueado.",
         "alt": "Joey, un gato blanco y negro grande, sentado erguido en la puerta de la cocina."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
-        "role": "Ingeniero principal. Más antigüedad, dueño del legado, no hace pair.",
-        "bio": "Llegó primero y no se ha impresionado desde entonces. Rechaza todo juguete, cumple su propio horario y revisa a los otros dos de lejos, sin dejar comentario.",
+        "role": "Ingeniero principal. Dueño del legado. No hace pair.",
         "alt": "Reginaldo, un gato blanco y negro de pelo largo, acomodado en una manta azul."
       }
     ]

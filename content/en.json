@@ -17,7 +17,7 @@
     "sections": "Sections",
     "backToTop": "Tessarion Labs, back to top",
     "about": "About",
-    "people": "People",
+    "people": "Family",
     "products": "Products",
     "contact": "Contact"
   },
@@ -51,7 +51,7 @@
     ]
   },
   "people": {
-    "title": "Who builds it",
+    "title": "The family",
     "galleryLabel": "Photos of {name}",
     "previous": "Previous photo of {name}",
     "next": "Next photo of {name}",
@@ -118,7 +118,7 @@
         ]
       }
     ],
-    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. That is the whole division of labour."
+    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats."
   },
   "products": {
     "title": "What we ship",
@@ -127,10 +127,10 @@
       {
         "id": "taimu",
         "name": "Taimu",
-        "lede": "Time tracking for independent contractors.",
+        "lede": "The hours you actually worked.",
         "paragraphs": [
-          "A macOS menu-bar app. Start the day, pause, resume, end the day — from the menu bar. A monthly calendar shows each day's intervals, a weekly balance per row, and a monthly total against your goal.",
-          "No server and no third-party account. Everything is written as JSON on your own disk."
+          "If you bill by the hour, the hours have to be right, and the part that fails is remembering them. Taimu lives in the menu bar and keeps the record while you work — start the day, pause, resume, end it — and the month adds itself up against the goal you set.",
+          "Nothing leaves the machine. No server, no account, no sync. The record is a JSON file on your own disk, which means it is yours and it will still open in ten years."
         ],
         "stack": "Tauri 2 · Rust · React · TypeScript",
         "state": "In development · macOS"
@@ -138,10 +138,10 @@
       {
         "id": "mascada",
         "name": "Mascada",
-        "lede": "Personal finance.",
+        "lede": "Where the money actually went.",
         "paragraphs": [
-          "Accounts, cards and statements, transactions, installment plans, subscriptions, fixed expenses and debts, in one ledger that shows what happened to the money.",
-          "A Rust API, a TypeScript web client, and a skill that lets an agent read and write the same ledger you do."
+          "You open a finance app when you are already worried. The answer to that is precision, not encouragement. Mascada puts accounts, cards, instalments, subscriptions and debts in one place, and shows a negative balance as a negative balance.",
+          "It also answers to an agent. Through a Claude Code skill, an assistant reads and writes the same ledger you do, so recording a purchase can be a sentence instead of a form."
         ],
         "stack": "Rust · TypeScript · Claude Code skill",
         "state": "In development · Private"
@@ -149,28 +149,23 @@
     ]
   },
   "crew": {
-    "title": "The crew",
-    "lead": "Three assistants. All three are cats.",
     "members": [
       {
         "id": "char",
         "name": "Char",
-        "role": "Engineering manager. Runs the standup. Has an opinion on every ticket.",
-        "bio": "Decided he was in charge and nobody filed an objection. Greets every visitor at the door, supervises from the desk, and narrates the whole working day out loud.",
+        "role": "Engineering manager. Runs the standup, opinion on every ticket.",
         "alt": "Char, a black and white cat, lying on a grey couch and looking at the camera."
       },
       {
         "id": "joey",
         "name": "Joey",
-        "role": "Security engineer. Trusts one origin. Blocks every request from an unknown host.",
-        "bio": "The largest of the three and the first one under the bed. Allowlists exactly one person, follows him room to room, and treats the doorbell as an incident.",
+        "role": "Security engineer. One trusted origin, everything else blocked.",
         "alt": "Joey, a large black and white cat, sitting upright in a kitchen doorway."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
-        "role": "Principal engineer. Longest tenure, owns the legacy system, does not pair.",
-        "bio": "Was here first and has not been impressed since. Declines every toy, keeps his own hours, and reviews the other two from a distance without leaving a comment.",
+        "role": "Principal engineer. Owns the legacy system. Does not pair.",
         "alt": "Reginaldo, a long-haired black and white cat, settled into a blue blanket."
       }
     ]
