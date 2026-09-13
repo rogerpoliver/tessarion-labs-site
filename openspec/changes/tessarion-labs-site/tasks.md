@@ -223,3 +223,21 @@
 - [x] 24.3 Apply the chosen direction for Alice — the judgement arc. The management, design and social-media background explains why she can look at ten half-ideas and say which one is real; she decides what ships and when; the degree passes in one clause. Closes on `Takes nothing seriously, this bio included.`
 - [x] 24.4 Trim Roger's English bio from 82 to 80 words at the closing clause rather than cutting a detail.
 - [x] 24.5 Write the rule into the `people` spec: personal detail supplied by a person is source material, not copy, and a credential may be subordinate. Add the scenario that bios are shown to the person and chosen before they ship.
+
+## 25. The cats get a second line, and the motorcycle gets corrected
+
+- [x] 25.1 Restore a second line on each crew card, this time written entirely in engineering vocabulary: Char books one-on-ones nobody asked for and ends them when he is done; Joey treats the doorbell as a sev-1 and the vacuum cleaner as an active breach; Reginaldo has rejected every proposal since the first release and will not leave a comment.
+- [x] 25.2 Record why the previous attempt was removed and this one is not: the earlier version failed by leaving the register, not by being long. `Greets every visitor at the door` is a cat described as a cat under a job title. The joke only holds while both halves speak the same language.
+- [x] 25.3 Cap the second line at sixteen words in every locale and keep it muted below the role line.
+- [x] 25.4 Extend the family lead so the cats arrive as characters: `The other three are cats. Strong personalities, none of them negotiable.`
+- [x] 25.5 Correct the couple paragraph. They cross the country for a show — not on the motorcycle. The motorcycle is a weekend: up the serra, coffee in another town. The previous wording merged the two, which was a factual error rather than a stylistic one.
+- [x] 25.6 Re-run every gate across three locales and both themes.
+
+## 26. Roger's employers, and turning the hand checks into a gate
+
+- [x] 26.1 Name the employers in Roger's credential clause: `which is how eleven years of engineering — ADP, HP, Dell — turned into this.` It replaces `eleven years in production and four at ADP` and is one word shorter.
+- [x] 26.2 Write `scripts/check-copy.mjs` and wire it into `bun run lint`, so it runs in CI. It reads `content/*.json` and fails on a banned word in any locale, a known calque, an exclamation mark, an emoji, a length over budget, or an endorsement string that is not exact — naming the locale, the rule and the dictionary path.
+- [x] 26.3 Count words rather than whitespace tokens. A standalone em dash was being counted as a word, which reported Roger's English bio as 81 against a cap of 80 when it is 77.
+- [x] 26.4 Skip identifiers, URLs, filenames and locale codes when walking the dictionaries — those are not prose.
+- [x] 26.5 Prove the gate by planting `simplesmente`, `incrível`, an exclamation mark and a twenty-word line in the Portuguese dictionary, confirming four named failures and a non-zero exit, then reverting.
+- [x] 26.6 Record in the `brand-compliance` and `deployment` specs that the copy rules are a build gate rather than a review habit.

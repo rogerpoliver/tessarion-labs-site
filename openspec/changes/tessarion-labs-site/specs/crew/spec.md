@@ -5,7 +5,7 @@ Char, Joey and Reginaldo SHALL appear inside the same section as Roger and Alice
 
 #### Scenario: Three entries render
 - **WHEN** the family section is rendered
-- **THEN** three cards appear after the two person cards — Char, Joey and Reginaldo — each with a square photo, a name, and a role line of at most twelve words
+- **THEN** three cards appear after the two person cards — Char, Joey and Reginaldo — each with a square photo, a name, a role line of at most twelve words, and a second line of at most sixteen
 
 #### Scenario: There is no separate crew section
 - **WHEN** the document's sections are listed
@@ -38,16 +38,26 @@ A crew role line SHALL open with a job title that exists on an actual software t
 - **WHEN** Reginaldo's role is rendered
 - **THEN** it is a principal or staff title, and the description turns "oldest, does not play, keeps apart" into longest tenure, owning the legacy system, and not pairing
 
-### Requirement: A cat gets one line, not a paragraph
-A cat's entry SHALL be the role line and nothing more. A prose bio below it SHALL NOT be added: the joke is a job title landing on an animal, and it stops being funny the moment it is explained at length.
+### Requirement: The second line is more of the job, not a description of an animal
+A cat's entry SHALL be a role line and one further line. Both SHALL stay inside the engineering register: the second line SHALL describe the cat's behaviour as something that happens on a software team, using the vocabulary of one. It SHALL NOT drop into pet description.
 
-#### Scenario: No bio paragraph
-- **WHEN** a crew card is rendered
-- **THEN** it carries a photo, a name and a role line, and no further prose
+This requirement replaces an earlier one that forbade a second line entirely. The earlier attempt failed not because it was long but because it left the register — `greets every visitor at the door, supervises from the desk, and narrates the working day out loud` is a cat, described as a cat, under a job title. The joke only works while both halves are written in the same language.
 
-#### Scenario: The line is under twelve words
-- **WHEN** a role line is counted
-- **THEN** it is at most twelve words in every locale
+#### Scenario: The second line is still the joke
+- **WHEN** a crew card's two lines are read together
+- **THEN** the second line extends the job — one-on-ones, severity levels, release history, code review — rather than describing what the animal physically does
+
+#### Scenario: Register check
+- **WHEN** a crew line is inspected
+- **THEN** every noun in it would be at home in an engineering team's vocabulary, and none of it reads as a caption for a photo of a cat
+
+#### Scenario: Length
+- **WHEN** the lines are counted
+- **THEN** the role line is at most twelve words and the second at most sixteen, in every locale
+
+#### Scenario: The second line is subordinate
+- **WHEN** the card is rendered
+- **THEN** the role line carries the page's body colour and the second line is muted, so the title lands first
 
 ### Requirement: Crew photos
 Each crew photo SHALL be served locally from `public/crew/`, square, with explicit dimensions and a descriptive `alt` attribute naming the cat. Each file SHALL show the cat it is named after.

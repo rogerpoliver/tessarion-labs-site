@@ -16,7 +16,11 @@
 - **THEN** all three documents work with no rewrite rules, because each locale is a real directory with a real `index.html`
 
 ### Requirement: Quality gates
-The repository SHALL run oxlint, oxfmt and stylelint, and SHALL enforce Conventional Commits through commitlint and husky.
+The repository SHALL run oxlint, oxfmt, stylelint and the copy gate, and SHALL enforce Conventional Commits through commitlint and husky.
+
+#### Scenario: The copy gate runs with the linters
+- **WHEN** `bun run lint` runs
+- **THEN** it runs `scripts/check-copy.mjs` after oxlint and stylelint, so a voice or length violation fails the same command a code lint violation does
 
 #### Scenario: Format check
 - **WHEN** `bun run format:check` runs against unformatted source

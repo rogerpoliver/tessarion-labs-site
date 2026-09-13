@@ -61,6 +61,25 @@ Every user-visible string SHALL obey the brand voice rules: verdict first, numbe
 - **WHEN** the rendered text of the page is searched for `revolutionary`, `seamless`, `passionate`, `world-class`, `leverage`, `synergy`, `unlock`, `supercharge`, `magic`, `effortless`, `just` as a minimiser, or `simply`
 - **THEN** none is found
 
+### Requirement: The copy rules are a build gate, not a review habit
+`scripts/check-copy.mjs` SHALL read `content/*.json` and fail the build on a banned word in any locale, a known calque, an exclamation mark, an emoji, a copy length over its budget, or an endorsement string that is not exact. It SHALL run as part of `bun run lint`, and therefore in CI.
+
+#### Scenario: A violation fails the build
+- **WHEN** a Portuguese string containing `simplesmente`, an exclamation mark, and twenty words in a sixteen-word slot is committed
+- **THEN** `bun run lint` exits non-zero and names the locale, the rule and the dictionary path for each violation
+
+#### Scenario: It reads the source, not the output
+- **WHEN** the gate runs on a checkout with no build present
+- **THEN** it still runs, because every user-visible string lives in the dictionaries
+
+#### Scenario: Words are counted, not tokens
+- **WHEN** a string contains a standalone em dash between clauses
+- **THEN** the dash is not counted as a word, because the budget measures prose length rather than whitespace-separated tokens
+
+#### Scenario: Identifiers are not prose
+- **WHEN** the gate walks the dictionaries
+- **THEN** it skips URLs, locale codes, image filenames and ids, and checks only the strings a reader sees
+
 #### Scenario: Sentence case
 - **WHEN** every heading and button label on the page is inspected
 - **THEN** each is sentence case, with no title case and no all-caps except the mono eyebrow and the word `LABS` in the lockup

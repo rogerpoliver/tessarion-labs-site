@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engineering · AI systems",
-        "bio": "He built a setup where his hands never left the keyboard — Neovim, terminal, no mouse — then found something better and threw it out. He now works by talking: dictation in, audio back, one real argument with the model most days. That is the pattern: he gets to the next thing early and rebuilds around it, which is how eleven years in production and four at ADP turned into this. Grumpy, outnumbered by cats, and the reason this exists.",
+        "bio": "He built a setup where his hands never left the keyboard — Neovim, terminal, no mouse — then found something better and threw it out. He now works by talking: dictation in, audio back, one real argument with the model most days. That is the pattern: he gets to the next thing early and rebuilds around it, which is how eleven years of engineering — ADP, HP, Dell — turned into this. Grumpy, outnumbered by cats, and the reason this exists.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -118,8 +118,8 @@
         ]
       }
     ],
-    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats.",
-    "together": "When nothing is shipping: Brazil by motorcycle, a rock or metal show at the end of the road, and strong opinions about sushi counters and coffee roasters."
+    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats. Strong personalities, none of them negotiable.",
+    "together": "They cross the country for a show. Weekends are shorter — the motorcycle up the serra, coffee in another town, and a verdict on both before they are home. Sushi is held to the same standard."
   },
   "products": {
     "title": "What we ship",
@@ -155,18 +155,21 @@
         "id": "char",
         "name": "Char",
         "role": "Engineering manager. Runs the standup, opinion on every ticket.",
+        "bio": "Books one-on-ones nobody asked for, and ends them the moment he is done.",
         "alt": "Char, a black and white cat, lying on a grey couch and looking at the camera."
       },
       {
         "id": "joey",
         "name": "Joey",
         "role": "Security engineer. One trusted origin, everything else blocked.",
+        "bio": "Treats the doorbell as a sev-1 and the vacuum cleaner as an active breach.",
         "alt": "Joey, a large black and white cat, sitting upright in a kitchen doorway."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
         "role": "Principal engineer. Owns the legacy system. Does not pair.",
+        "bio": "Has rejected every proposal since the first release and will not leave a comment.",
         "alt": "Reginaldo, a long-haired black and white cat, settled into a blue blanket."
       }
     ]

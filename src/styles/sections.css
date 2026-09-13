@@ -256,9 +256,18 @@
 
 .crew__role {
   margin-block-start: var(--tl-space-2);
-  color: var(--tl-fg-muted);
+  color: var(--tl-fg);
   font-size: var(--tl-size-sm);
   line-height: 1.43;
+}
+
+/* The second line stays inside the same joke as the first — it is more of the
+   job, not a description of an animal. Muted, so the title still lands first. */
+.crew__bio {
+  margin-block-start: var(--tl-space-3);
+  color: var(--tl-fg-muted);
+  font-size: var(--tl-size-sm);
+  line-height: 1.55;
 }
 
 /* ---- contact ---- */

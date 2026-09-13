@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Ingeniería · Sistemas de IA",
-        "bio": "Armó un setup donde las manos nunca salían del teclado — Neovim, terminal, sin mouse — y después encontró algo mejor y lo tiró. Hoy trabaja hablando: dictado entrando, audio volviendo, una discusión de verdad con el modelo casi todos los días. El patrón es ese: llega temprano a la próxima cosa y reconstruye todo alrededor, y así once años en producción y cuatro en ADP terminaron en esto. Gruñón, en minoría en una casa de gatos, y el motivo de que todo esto exista.",
+        "bio": "Armó un setup donde las manos nunca salían del teclado — Neovim, terminal, sin mouse — y después encontró algo mejor y lo tiró. Hoy trabaja hablando: dictado entrando, audio volviendo, una discusión de verdad con el modelo casi todos los días. El patrón es ese: llega temprano a la próxima cosa y reconstruye todo alrededor, y así once años de ingeniería — ADP, HP, Dell — terminaron en esto. Gruñón, en minoría en una casa de gatos, y el motivo de que todo esto exista.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -118,8 +118,8 @@
         ]
       }
     ],
-    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. Los otros tres son gatos.",
-    "together": "Cuando no hay nada saliendo: Brasil en moto, un show de rock o metal al final del camino, y opiniones firmes sobre barras de sushi y cafeterías."
+    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. Los otros tres son gatos. Personalidad fuerte, ninguna negociable.",
+    "together": "Cruzan el país por un show. Los fines de semana son más cortos — la moto subiendo la sierra, café en otro pueblo, y un veredicto sobre los dos antes de volver. El sushi pasa por el mismo criterio."
   },
   "products": {
     "title": "Lo que entregamos",
@@ -155,18 +155,21 @@
         "id": "char",
         "name": "Char",
         "role": "Gerente de ingeniería. Dirige la daily, opina en cada ticket.",
+        "bio": "Agenda one-on-ones que nadie pidió, y los corta cuando él decide.",
         "alt": "Char, un gato blanco y negro, echado en un sofá gris y mirando a la cámara."
       },
       {
         "id": "joey",
         "name": "Joey",
         "role": "Ingeniero de seguridad. Un origen confiable, el resto bloqueado.",
+        "bio": "Trata el timbre como un sev-1 y la aspiradora como una brecha activa.",
         "alt": "Joey, un gato blanco y negro grande, sentado erguido en la puerta de la cocina."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
         "role": "Ingeniero principal. Dueño del legado. No hace pair.",
+        "bio": "Rechazó toda propuesta desde el primer release y no deja comentario.",
         "alt": "Reginaldo, un gato blanco y negro de pelo largo, acomodado en una manta azul."
       }
     ]

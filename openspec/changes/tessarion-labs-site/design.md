@@ -89,6 +89,16 @@ This is why the share-card source is generated from the same dictionaries: a loc
 
 *The cost.* The three files can drift in meaning, not just in wording, and no automated check catches that. The parity gate proves every key exists; it cannot prove the Portuguese says what the English says. That is a review job, and it is why the strings live in three readable JSON files rather than inside markup.
 
+### The copy rules became a build gate
+
+Banned words, exclamation marks, calques and length budgets were checked by hand after every copy change, which means they were checked when someone remembered. Across a dozen rounds of edits that is not a process, it is luck.
+
+`scripts/check-copy.mjs` now reads the dictionaries and fails `bun run lint` — and therefore CI — naming the locale, the rule and the dictionary path for each violation. It reads `content/*.json` rather than `dist/`, so it runs on a checkout with no build.
+
+Writing it surfaced a measurement bug immediately. The hand checks counted whitespace-separated tokens, so a standalone em dash between clauses counted as a word: Roger's English bio was reported at 81 against a cap of 80 when the real count is 77. The fix was in the counter, not the copy — the budget measures prose, and punctuation is not prose.
+
+*What it cannot check.* Whether a sentence is any good, whether the Portuguese means what the English means, and whether a claim is true. Those stay with a reader. The gate covers the rules that are mechanical, which is exactly the set that was being forgotten.
+
 ### Language switching is three links, not a control
 
 The switcher is three `<a>` elements, one per document, with `hreflang` and `lang` on each and `aria-current` on the active one. No JavaScript, no menu, no stored preference.

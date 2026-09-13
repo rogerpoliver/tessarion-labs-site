@@ -7,13 +7,14 @@
     "dev": "node scripts/build-pages.mjs && vite",
     "build": "node scripts/build-pages.mjs && tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "oxlint --config .oxlintrc.json src && stylelint \"src/**/*.css\"",
+    "lint": "oxlint --config .oxlintrc.json src && stylelint \"src/**/*.css\" && node scripts/check-copy.mjs",
     "lint:css": "stylelint \"src/**/*.css\"",
     "format": "oxfmt src",
     "format:check": "oxfmt --check src",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
-    "pages": "node scripts/build-pages.mjs"
+    "pages": "node scripts/build-pages.mjs",
+    "check:copy": "node scripts/check-copy.mjs"
   },
   "lint-staged": {
     "*.ts": [

@@ -103,7 +103,11 @@ Personal detail supplied by the people themselves is **source material, not copy
 - **THEN** it names no employer either person has left
 
 ### Requirement: The division of labour is stated
-The family section SHALL open with a lead naming how the two of them split the work: Roger generates the ideas, Alice decides which one ships and in what order. It SHALL state this as a fact about how the work happens, not as a compliment to either person. The same lead SHALL close by stating that the other three are cats.
+The family section SHALL open with a lead naming how the two of them split the work: Roger generates the ideas, Alice decides which one ships and in what order. It SHALL state this as a fact about how the work happens, not as a compliment to either person. The same lead SHALL close by stating that the other three are cats, and that their personalities are strong and not up for negotiation.
+
+#### Scenario: The cats are introduced as characters
+- **WHEN** the lead's closing sentence is read
+- **THEN** it does more than identify the other three as cats — it says they have strong personalities, which is what sets up three cards each holding a different one
 
 #### Scenario: The split is legible before the bios
 - **WHEN** a reader reaches the people section
@@ -118,7 +122,11 @@ The family section SHALL carry one short paragraph about what the two of them do
 
 #### Scenario: The paragraph is concrete
 - **WHEN** the paragraph is read
-- **THEN** it names actual things they do — Brazil by motorcycle, rock and metal shows, sushi and coffee — rather than describing them as adventurous or curious
+- **THEN** it names actual things they do — crossing the country for a show, the motorcycle up the serra, coffee in another town, sushi — rather than describing them as adventurous or curious
+
+#### Scenario: The motorcycle is a weekend, not the tour
+- **WHEN** the paragraph mentions the motorcycle
+- **THEN** it places it on a weekend ride — up the serra, coffee in another town — and does not claim they cross the country on it. Travelling for shows and riding for a coffee are two different things and conflating them is a factual error, not a stylistic one
 
 #### Scenario: Position carries the meaning
 - **WHEN** the family section is read top to bottom
