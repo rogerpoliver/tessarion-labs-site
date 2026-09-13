@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Two people
-The site SHALL present Roger Oliveira and Alice Ribeiro as the two engineers who run the studio. Each SHALL have a photo, a name, a role line, a bio, and outbound links.
+The site SHALL present Roger Oliveira and Alice Ribeiro as the two people whose work Tessarion Labs is the name for. Each SHALL have a photo, a name, a role line, a bio, and outbound links.
 
 #### Scenario: Both cards render
 - **WHEN** the people section is rendered
@@ -39,3 +39,7 @@ Each person's links SHALL point at their real GitHub profile, and LinkedIn where
 #### Scenario: Link is announced by destination
 - **WHEN** a screen reader reaches a person's GitHub link
 - **THEN** it announces the person's name and the destination, not the bare word "GitHub" repeated across cards
+
+#### Scenario: Both people link to GitHub and LinkedIn
+- **WHEN** the two cards are rendered
+- **THEN** each carries a GitHub link and a LinkedIn link, and the LinkedIn URLs are stripped of tracking parameters

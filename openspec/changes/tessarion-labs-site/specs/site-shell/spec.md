@@ -5,14 +5,14 @@ The site SHALL be one HTML document served at the root path, with every section 
 
 #### Scenario: Every section is present on first load
 - **WHEN** a visitor loads the root URL
-- **THEN** the hero, studio, people, crew, products and contact sections are all present in the delivered HTML, with no section rendered by a later fetch
+- **THEN** the hero, about, people, crew, products and contact sections are all present in the delivered HTML, with no section rendered by a later fetch
 
 #### Scenario: JavaScript is unavailable
 - **WHEN** a visitor loads the page with JavaScript disabled
 - **THEN** all content and all links are readable and operable, and only the theme control is absent
 
 ### Requirement: Header
-The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the studio, people, products and contact sections, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
+The header SHALL carry the Tessarion Labs horizontal lockup linking to the top of the page, in-page navigation to the about, people, products and contact sections, and the theme control. The lockup SHALL appear once in the header and once in the footer, and never twice in one viewport.
 
 #### Scenario: Lockup renders in the current theme
 - **WHEN** the resolved theme is dark
@@ -61,7 +61,7 @@ The document SHALL declare a title, a description, canonical URL, Open Graph and
 
 #### Scenario: Shared link renders a card
 - **WHEN** the URL is pasted into a chat client that reads Open Graph tags
-- **THEN** the preview shows the studio name, the one-line positioning and a share image
+- **THEN** the preview shows the name, the one-line description and a 1200x630 share image, and the description does not describe a company
 
 ### Requirement: Landmarks
 The page SHALL use one `<header>`, one `<main>`, one `<footer>` and a `<nav>`, and each content section SHALL be a `<section>` with an accessible name from its own heading.

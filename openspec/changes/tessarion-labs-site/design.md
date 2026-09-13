@@ -1,6 +1,6 @@
 ## Context
 
-Tessarion Labs is a two-person software studio in Porto Alegre, Brazil. It has a finished brand system (direction R5 "Slipped Band", palette Kiln, hand-authored tokens, eight logo masters, a design system document and a brand architecture document) and two products in flight, Taimu and Mascada. It has no public site.
+Tessarion Labs is not a company. It is the name Roger Oliveira and Alice Ribeiro — a couple in Porto Alegre, Brazil — put on the software they build together, after the day job. It has a finished brand system (direction R5 "Slipped Band", palette Kiln, hand-authored tokens, eight logo masters, a design system document and a brand architecture document) and two products in flight, Taimu and Mascada. It has no public site.
 
 The brand documents are unusually prescriptive: they specify not just colours but measured contrast ratios, which step of the accent ramp may carry a label, what a pressed button may fade to, the type scale with tracking, three motion durations with one curve, and a banned-word list. This is an advantage — almost every question this site would otherwise argue about is already answered upstream. The job here is to consume that system faithfully, not to reinterpret it.
 
@@ -118,11 +118,13 @@ Two workflows: `ci.yml` runs lint, format check, typecheck and build on pull req
 
 - **Two product accents plus Kiln on one page risks reading as three brands.** → The accents are scoped to their cards and applied only to the mark and a thin rule; the page's only fill accent is the hero button. If the products section still reads as loud in review, the fallback is to drop the product accents to the mono marks and keep the hue only in a 3px rule.
 
+- **The site contradicts the brand's own positioning document.** → `brand-guidelines.md` section 1 positions Tessarion Labs as "a software product studio" that "designs and engineers systems" for "founders, CTOs, product and platform teams" — a company selling engagements. That is not what this is. This site describes what is actually true: a name two people put on their own work, with no office, no payroll and nothing to sell. The site wins, because the site is the thing a reader will believe. The brand document is now wrong and owes a correction upstream; see Open Questions.
+
 - **Bios describe real people and can become wrong.** → Bios state role, stack and shipped outcomes rather than current employer status wherever possible, so they age slowly. Anything time-sensitive is phrased with the year attached.
 
 - **GitHub Pages serves from a project subpath by default, and relative bases break on any page that is not the root.** → There is exactly one HTML document, so relative resolution has one context. If a second page is ever added, `base` becomes a real decision and this note is the warning.
 
-- **The cat section can read as unserious to the exact buyer the rest of the page is written for.** → It is placed after products, uses a smaller card, carries no accent, and states the joke once, deadpan, with no exclamation mark. It is there because the studio is two people and a house full of cats, and pretending otherwise would be the less honest page. The cost is accepted and named here rather than discovered in review.
+- **The cat section can read as unserious next to the rest of the page.** → It is placed after products, uses a smaller card, carries no accent, and states the joke once, deadpan, with no exclamation mark. Each role is also a true description of that specific cat rather than a generic gag, which is what keeps it from reading as filler. It is there because this is two people and a house with three cats in it, and pretending otherwise would be the less honest page. The cost is accepted and named here rather than discovered in review.
 
 ## Migration Plan
 
@@ -143,4 +145,6 @@ One thing was measured and accepted rather than fixed: the studio callout's 3px 
 
 - **Custom domain.** The site ships on `github.io` first. A custom domain needs a `CNAME` file and DNS, and is a follow-up change.
 - **~~Share image.~~** Resolved during implementation. `public/brand/share.png` is rendered at 1200×630 from `scripts/share-card.html` by `scripts/make-share-image.sh`, so the wordmark is set in the real Inter Tight instead of a rasteriser's substitute.
-- **Alice's LinkedIn.** Her GitHub profile links X but not LinkedIn. Her card ships with GitHub only until a LinkedIn URL is confirmed.
+- **~~Alice's LinkedIn.~~** Resolved. `linkedin.com/in/aliceribeeiro`, tracking parameters stripped. Both cards now carry GitHub and LinkedIn.
+
+- **`brand-guidelines.md` section 1 is wrong and this repo cannot fix it.** The positioning paragraph describes a product studio selling to technical buyers. The truth is a two-person side project. The correction belongs in the brand repository, not here — but until it lands, the brand document and this site disagree about what Tessarion Labs is, and anyone reading both will notice. Whoever edits the brand repo next should rewrite section 1 and re-run the sync.

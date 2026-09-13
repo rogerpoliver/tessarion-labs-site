@@ -36,7 +36,7 @@
 - [x] 5.1 Create `index.html` with `lang="en"`, charset, viewport, title `Tessarion Labs — software product studio`, meta description, canonical, Open Graph and Twitter card tags, `theme-color` for light and dark, and `<link rel="icon" href="/brand/logo/favicon.svg">`.
 - [x] 5.2 Add the inline blocking theme script in `<head>`: read `localStorage.getItem('tl-theme')`, and if it is `light` or `dark`, set `document.documentElement.dataset.theme` before first paint.
 - [x] 5.3 Add the skip link as the first focusable element, targeting `#main`.
-- [x] 5.4 Build the header: `<header>` with the horizontal lockup linking to `#top` (both builds as `<img>`, one hidden per theme via CSS, the hidden one `aria-hidden`), a `<nav aria-label="Sections">` with links to `#studio`, `#people`, `#products`, `#contact`, and the theme control.
+- [x] 5.4 Build the header: `<header>` with the horizontal lockup linking to `#top` (both builds as `<img>`, one hidden per theme via CSS, the hidden one `aria-hidden`), a `<nav aria-label="Sections">` with links to `#about`, `#people`, `#products`, `#contact`, and the theme control.
 - [x] 5.5 Build the theme control as a `<fieldset>` with a visually hidden `<legend>Theme</legend>` and three radio inputs — system, light, dark — styled as a segmented control with square corners and a 4px radius.
 - [x] 5.6 Write `src/main.ts`: read and write `tl-theme` in `localStorage`, reflect it on `document.documentElement`, wire the radio group, and watch `matchMedia('(prefers-color-scheme: dark)')` so the system setting tracks OS changes live.
 - [x] 5.7 Add the header mark's one-per-session slip animation: a `transform`-only keyframe at `--tl-motion-slow` gated by a `sessionStorage` flag, disabled under `prefers-reduced-motion`.
@@ -46,7 +46,7 @@
 
 - [x] 6.1 Write the hero. Eyebrow: `Software product studio · Porto Alegre, BR`. H1: `We build software the way a mosaic is built — small precise units, placed on purpose.` Lead: `Tessarion Labs is a two-person studio. We design and engineer systems for teams who will live inside them for years.`
 - [x] 6.2 Add the hero actions: primary `Start a conversation` linking to `#contact`, secondary `See what we ship` linking to `#products`. The primary is the page's only Kiln fill.
-- [x] 6.3 Write the studio section, H2 `What we are`, with these paragraphs: `A software product studio. Two engineers, one backlog, and nobody between you and the people writing the code.` / `We work with founders, CTOs, product and platform teams — technical buyers who have been sold to badly before. The answer to that is specificity, not enthusiasm.` / `What we are not: an agency renting out hours, a consultancy that leaves slides behind, or an AI startup.`
+- [x] 6.3 Write the about section, H2 `What this is`, with these paragraphs: `A software product studio. Two engineers, one backlog, and nobody between you and the people writing the code.` / `We work with founders, CTOs, product and platform teams — technical buyers who have been sold to badly before. The answer to that is specificity, not enthusiasm.` / `What we are not: an agency renting out hours, a consultancy that leaves slides behind, or an AI startup.`
 - [x] 6.4 Add the named trade-off as a callout: `Two people is the constraint and the point. We take one engagement at a time and say no to the second while the first is running. You get the engineers who wrote the code. You do not get a team of ten next month.`
 - [x] 6.5 Add the facts strip in mono: `2 engineers` · `Porto Alegre, BR — UTC−3` · `2 products in development` · `Full overlap with US Eastern hours`.
 
@@ -117,3 +117,20 @@
 - [x] 14.1 Write `README.md`: what the repo is, the stack, the dev commands, the deploy flow, and the exact command to re-copy the vendored brand assets from the brand repo.
 - [x] 14.2 State in the README that `src/styles/tokens.css` and `public/brand/**` are vendored copies and are never edited here.
 - [x] 14.3 Commit in Conventional Commits, create the public GitHub repository `rogerpoliver/tessarion-labs-site`, push `main`, and enable GitHub Pages with the source set to GitHub Actions.
+
+## 15. Corrections from review
+
+- [x] 15.1 Swap `public/crew/joey.jpg` and `public/crew/reginaldo.jpg` — the files were on the wrong cats. Joey is the largest of the three; Reginaldo is the long-haired one.
+- [x] 15.2 Rewrite the crew roles so each is true of that specific cat rather than a generic IT gag. Char — `Management. Runs the floor, likes everyone, and says so at length.` Joey — `Security. Largest of the three. Hides from anyone he has not met.` Reginaldo — `Principal. Longest tenure, works alone, does not attend the offsite.`
+- [x] 15.3 Update the three crew `alt` attributes so each describes the photo now in that file.
+- [x] 15.4 Reposition the studio copy: Tessarion Labs is a name, not a company. Hero lead: `Tessarion Labs is not a company. It is the name we put on the software we build together — Roger and Alice, one apartment in Porto Alegre, one shared backlog.`
+- [x] 15.5 Rewrite the studio section, H2 `What this is`, with: `A name, not a company. Tessarion Labs is what two people call their own work: the software we build for ourselves first, and the standard we hold it to.` / `There is no office, no payroll and nothing here to sell you. There are two engineers, a shared backlog, and the hours left over after the day job.` / `The brand, the written specs and the design system exist because we would rather build one product properly than five in a hurry. That is the whole plan.`
+- [x] 15.6 Rewrite the trade-off callout: `Two people and the hours left over is the entire capacity. One product moves at a time and the other waits. That is the trade, and it is why Taimu and Mascada are both still in development.`
+- [x] 15.7 Update the facts strip: `2 people` · `Porto Alegre, BR — UTC−3` · `2 products in development` · `No office, no payroll`.
+- [x] 15.8 Retitle the hero actions and the contact section: `Say hello`, `See what we build`. Drop the two-business-day reply promise — there is no payroll behind it.
+- [x] 15.9 Update `<title>`, the meta description and the Open Graph and Twitter tags so none of them describes a company.
+- [x] 15.10 Add Alice's LinkedIn — `https://www.linkedin.com/in/aliceribeeiro`, tracking parameters stripped.
+- [x] 15.11 Update `scripts/share-card.html` and re-render `public/brand/share.png`.
+- [x] 15.12 Update the `studio-story`, `crew`, `people`, `contact` and `site-shell` specs, and record in `design.md` that `brand-guidelines.md` section 1 is now wrong and owes a correction upstream.
+- [x] 15.13 Re-run every gate: lint, format check, typecheck, build, contrast in both themes, focus ring on every stop, banned words, one Kiln element.
+- [x] 15.14 Rename the `#studio` section to `#about` and its nav label to `About` — the word "studio" implies the company this is not.

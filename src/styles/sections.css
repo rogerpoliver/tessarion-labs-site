@@ -30,9 +30,9 @@
   margin-block-start: var(--tl-space-8);
 }
 
-/* ---- studio ---- */
+/* ---- about ---- */
 
-.studio__callout {
+.about__callout {
   margin-block-start: var(--tl-space-7);
   max-width: 66ch;
 }

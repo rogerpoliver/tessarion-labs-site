@@ -5,7 +5,11 @@ The site SHALL carry a contact section stating how to start a conversation, with
 
 #### Scenario: Contact is one action
 - **WHEN** a reader reaches the contact section
-- **THEN** there is one email address, presented as a link, and one sentence saying what to include in the first message
+- **THEN** there is one email address, presented as a link, and one sentence saying who should write
+
+#### Scenario: No response-time promise
+- **WHEN** the contact copy is read
+- **THEN** it does not promise a reply within a fixed number of business days, because there is no payroll behind that promise
 
 #### Scenario: No third-party request
 - **WHEN** the page is loaded with a network log open
