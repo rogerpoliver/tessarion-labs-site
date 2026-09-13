@@ -215,3 +215,11 @@
 - [x] 23.5 Style `.together` as a hairline-topped paragraph between the person cards and the cats — a bridge between two groups, not a third card.
 - [x] 23.6 Rewrite the bio requirement in the `people` spec: one professional result at most, the rest of the words on the person, no technology inventory, and a closing line a job description could not write.
 - [x] 23.7 Re-run every gate across three locales and both themes, and confirm every bio is inside its budget.
+
+## 24. Bios, worked rather than transcribed
+
+- [x] 24.1 Draft three directions for each bio and show them before writing anything. The previous pass took the personal notes as copy and transcribed them; they were reference material for a portrait.
+- [x] 24.2 Apply the chosen direction for Roger — the method arc. Opens on the keyboard-only Neovim setup he perfected and then threw out, then the speech-driven way he works now and the daily argument with the model. The eleven years and ADP appear once, as a subordinate clause. Closes on `Grumpy, outnumbered by cats, and the reason this exists.`
+- [x] 24.3 Apply the chosen direction for Alice — the judgement arc. The management, design and social-media background explains why she can look at ten half-ideas and say which one is real; she decides what ships and when; the degree passes in one clause. Closes on `Takes nothing seriously, this bio included.`
+- [x] 24.4 Trim Roger's English bio from 82 to 80 words at the closing clause rather than cutting a detail.
+- [x] 24.5 Write the rule into the `people` spec: personal detail supplied by a person is source material, not copy, and a credential may be subordinate. Add the scenario that bios are shown to the person and chosen before they ship.

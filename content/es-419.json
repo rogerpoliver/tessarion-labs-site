@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Ingeniería · Sistemas de IA",
-        "bio": "Once años en producción, cuatro en ADP, donde el módulo de RR. HH. que lideró aumentó la adopción un 634%. Pasó la mayor parte de ese tiempo en Neovim, solo teclado, todo en la terminal. Hoy conversa más de lo que teclea: Claude al oído, voz entrando y saliendo, una discusión por día. Llegó temprano a la IA, sigue estudiando, y es mejor en videojuegos que saliendo de casa. Gruñón, y el corazón más blando del departamento.",
+        "bio": "Armó un setup donde las manos nunca salían del teclado — Neovim, terminal, sin mouse — y después encontró algo mejor y lo tiró. Hoy trabaja hablando: dictado entrando, audio volviendo, una discusión de verdad con el modelo casi todos los días. El patrón es ese: llega temprano a la próxima cosa y reconstruye todo alrededor, y así once años en producción y cuatro en ADP terminaron en esto. Gruñón, en minoría en una casa de gatos, y el motivo de que todo esto exista.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -93,7 +93,7 @@
         "id": "alice",
         "name": "Alice Ribeiro",
         "role": "Diseño · ejecución",
-        "bio": "Llegó a la ingeniería desde la gestión, el diseño y las redes sociales, y no soltó ninguna de las tres. Estudia Análisis y Desarrollo de Sistemas y trabaja en el stack web. Gracias a ella un montón de ideas se convierte en alcance, orden y fecha. Teje crochet durante doramas enteros, no se pierde un show de metal, y es la única razón por la que alguien sale del departamento. Se toma todo en broma, esta bio incluida.",
+        "bio": "Viene de la gestión, el diseño y las redes sociales y no soltó ninguna de las tres — por eso puede mirar diez ideas a medias y decir cuál es real. Ella decide qué sale y cuándo, y entonces sale. Estudia análisis de sistemas en paralelo. Fuera del horario: crochet durante un dorama entero, primera fila en un show de metal, y los planes que sacan a alguien de este departamento. No se toma nada en serio, esta bio incluida.",
         "photos": [
           {
             "src": "alice-01.jpg",

@@ -65,6 +65,10 @@ Both close on a line a job description could not write — `Grumpy, and the soft
 
 *Why this is not a loosening of the voice rules.* Warmth is not enthusiasm. The rules ban adjectives standing in for facts, and every one of these details is a fact: a named editor, a named input method, a named craft, a named genre of show. `Adventurous and curious` would have been a violation. `Brazil by motorcycle` is not.
 
+*The mistake worth recording.* The first attempt at this took the notes the two of them wrote about themselves and put them on the page nearly in order — Neovim, then AI, then video games, then the cats, then grumpy. Every fact was theirs and the result was a list. Personal detail handed over by a person is **source material, not copy**: it has to be selected, given a shape, and cut. Roger's bio is now one arc — he perfected a keyboard-only setup, then threw it out the moment something better arrived, and that is the trait that produced this site — and the facts that did not serve that arc are gone. The credential moved into a subordinate clause, because who someone is predicts working with them better than where they worked.
+
+*And the bios are approved before they ship.* Drafts go to the person they describe, who picks one. That is now a scenario in the spec, not a courtesy.
+
 ### The product cards sell the idea; the badges carry the facts
 
 The first version of both product cards was a specification: a category name, then a list of what the software does, then the stack. It read like a README, and a README is not a reason to care.

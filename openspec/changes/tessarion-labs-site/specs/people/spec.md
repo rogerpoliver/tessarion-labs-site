@@ -56,6 +56,20 @@ A bio SHALL be at most 80 words in the English source. A translation MAY exceed 
 ### Requirement: A bio is a person, not a résumé
 Each bio SHALL name at most one professional result and SHALL spend the rest of its words on who that person is. Every professional claim SHALL be verifiable from the public record; every personal detail SHALL come from the person it describes. A bio SHALL NOT list technologies for their own sake.
 
+Personal detail supplied by the people themselves is **source material, not copy**. It SHALL be selected, shaped and cut to make a portrait; it SHALL NOT be transcribed as a list of everything they said about themselves.
+
+#### Scenario: Raw material is worked, not quoted
+- **WHEN** a bio is compared against what the person said about themselves
+- **THEN** it keeps the details that carry the portrait, drops the ones that do not, and reads as prose rather than as an inventory of hobbies
+
+#### Scenario: A credential may be subordinate
+- **WHEN** a bio names a professional result
+- **THEN** that result may appear as a subordinate clause after the person, rather than opening the bio, because who someone is predicts working with them better than where they worked
+
+#### Scenario: The bios are approved before they ship
+- **WHEN** a bio is rewritten
+- **THEN** the drafts are shown to the person they describe and chosen before they are committed, because nobody else gets to decide how they are introduced
+
 #### Scenario: One credential, then a person
 - **WHEN** a bio is read
 - **THEN** at most one measured professional outcome appears, and the sentences after it describe how that person works and what they are like
@@ -70,7 +84,11 @@ Each bio SHALL name at most one professional result and SHALL spend the rest of 
 
 #### Scenario: Roger's bio
 - **WHEN** Roger's bio is rendered
-- **THEN** it names his years in production and the HR module result, then how he actually works — years in Neovim on the keyboard alone, early to AI, now developing by speaking to a model and arguing with it about once a day — and it closes on him being grumpy and the softest heart in the apartment
+- **THEN** it opens on the method rather than the CV: the keyboard-only Neovim setup he perfected and then threw out when something better arrived, and the speech-driven way he works now, including the daily argument with the model. The years in production and at ADP appear once, as a subordinate clause. It closes on him being grumpy, outnumbered by cats, and the reason the whole thing exists
+
+#### Scenario: The point of Roger's bio is that he replaces his own method
+- **WHEN** the bio is read as a whole
+- **THEN** the throughline is that he reaches the next thing early and rebuilds around it — which is the trait that produced this site, both products and the brand behind them
 
 #### Scenario: Roger's bio carries no pipeline inventory
 - **WHEN** Roger's bio is checked
@@ -78,7 +96,7 @@ Each bio SHALL name at most one professional result and SHALL spend the rest of 
 
 #### Scenario: Alice's bio
 - **WHEN** Alice's bio is rendered
-- **THEN** it names the management, design and social-media work she came from, the degree she is studying, and that she is the reason a pile of ideas becomes a scope, an order and a date — then crochet through whole K-dramas, metal shows, and being the only reason either of them leaves the apartment. It closes on her playing everything for a joke, this bio included, and it does not inflate her seniority
+- **THEN** it uses the management, design and social-media background as the explanation for the judgement she has — she can look at ten half-ideas and say which one is real — then states plainly that she decides what ships and when, names the degree in passing, and turns to crochet through a whole K-drama, the front row at a metal show, and the plans that get anyone out of the apartment. It closes on her taking nothing seriously, this bio included, and it does not inflate her seniority
 
 #### Scenario: No stale employer
 - **WHEN** either bio is rendered
