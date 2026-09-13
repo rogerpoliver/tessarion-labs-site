@@ -53,16 +53,32 @@ A bio SHALL be at most 80 words in the English source. A translation MAY exceed 
 - **WHEN** the three built documents are measured
 - **THEN** each English bio is at most 80 words and each translated bio is at most 96
 
-### Requirement: Bios are drawn from the public record
-Each bio SHALL be written from what that person has actually shipped or holds, and SHALL NOT claim a title, an employer or an outcome the person does not have. Each SHALL close by naming what that person is in this pair, so the two cards read as halves of one job rather than two résumés.
+### Requirement: A bio is a person, not a résumé
+Each bio SHALL name at most one professional result and SHALL spend the rest of its words on who that person is. Every professional claim SHALL be verifiable from the public record; every personal detail SHALL come from the person it describes. A bio SHALL NOT list technologies for their own sake.
+
+#### Scenario: One credential, then a person
+- **WHEN** a bio is read
+- **THEN** at most one measured professional outcome appears, and the sentences after it describe how that person works and what they are like
+
+#### Scenario: No technology inventory
+- **WHEN** a bio is checked
+- **THEN** it does not contain a list of tools, frameworks or techniques included only to signal competence — the stack belongs on the product cards
+
+#### Scenario: The closing line is a person, not a title
+- **WHEN** a bio's last sentence is read
+- **THEN** it says something true about the person that a job description could not — and the two cards read as two people rather than two CVs
 
 #### Scenario: Roger's bio
 - **WHEN** Roger's bio is rendered
-- **THEN** it names his years of production experience, the HR module modernization result, his current AI engineering work contracted from Brazil for a US company, and the languages he writes — and it closes by saying that everything on this site started as something he wanted to exist
+- **THEN** it names his years in production and the HR module result, then how he actually works — years in Neovim on the keyboard alone, early to AI, now developing by speaking to a model and arguing with it about once a day — and it closes on him being grumpy and the softest heart in the apartment
+
+#### Scenario: Roger's bio carries no pipeline inventory
+- **WHEN** Roger's bio is checked
+- **THEN** it does not list LLM extraction pipelines, agentic workflows or MCP tooling. That sentence was a résumé line and it is removed
 
 #### Scenario: Alice's bio
 - **WHEN** Alice's bio is rendered
-- **THEN** it names the management, design and social-media work she came from, the stack she works in, the degree she is studying, and what she owns on Taimu, and it does not inflate her seniority
+- **THEN** it names the management, design and social-media work she came from, the degree she is studying, and that she is the reason a pile of ideas becomes a scope, an order and a date — then crochet through whole K-dramas, metal shows, and being the only reason either of them leaves the apartment. It closes on her playing everything for a joke, this bio included, and it does not inflate her seniority
 
 #### Scenario: No stale employer
 - **WHEN** either bio is rendered
@@ -78,6 +94,17 @@ The family section SHALL open with a lead naming how the two of them split the w
 #### Scenario: Neither half is the senior one
 - **WHEN** the lead is read
 - **THEN** it describes two halves of one job, and does not rank them
+
+### Requirement: The couple, outside the work
+The family section SHALL carry one short paragraph about what the two of them do when nothing is shipping, placed between the person cards and the cats. It SHALL be specific — named activities, not adjectives — and it SHALL NOT be a card, because it bridges two groups rather than being a third one.
+
+#### Scenario: The paragraph is concrete
+- **WHEN** the paragraph is read
+- **THEN** it names actual things they do — Brazil by motorcycle, rock and metal shows, sushi and coffee — rather than describing them as adventurous or curious
+
+#### Scenario: Position carries the meaning
+- **WHEN** the family section is read top to bottom
+- **THEN** the order is the two of them, then the two of them together, then the cats, which is the order the household happens in
 
 ### Requirement: Outbound links
 Each person's links SHALL point at their real GitHub profile, and LinkedIn where one exists. Outbound links SHALL carry `rel="noopener noreferrer"` and SHALL be announced with the destination in their accessible name.

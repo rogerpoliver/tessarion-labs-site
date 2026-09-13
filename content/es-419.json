@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Ingeniería · Sistemas de IA",
-        "bio": "Once años en producción, cuatro de ellos en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025. Hoy es ingeniero de IA y trabaja desde Brasil para una empresa de Estados Unidos: pipelines de extracción con LLM, flujos agénticos y herramientas MCP, todo en producción. Escribe TypeScript, Rust, Python y C#. Todo lo que hay acá empezó como algo que él quiso que existiera.",
+        "bio": "Once años en producción, cuatro en ADP, donde el módulo de RR. HH. que lideró aumentó la adopción un 634%. Pasó la mayor parte de ese tiempo en Neovim, solo teclado, todo en la terminal. Hoy conversa más de lo que teclea: Claude al oído, voz entrando y saliendo, una discusión por día. Llegó temprano a la IA, sigue estudiando, y es mejor en videojuegos que saliendo de casa. Gruñón, y el corazón más blando del departamento.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -93,7 +93,7 @@
         "id": "alice",
         "name": "Alice Ribeiro",
         "role": "Diseño · ejecución",
-        "bio": "Llegó a la ingeniería desde la gestión, el diseño y las redes sociales, y no soltó ninguna de las tres. Estudia Análisis y Desarrollo de Sistemas y trabaja en el stack web — JavaScript, Node.js, React, PHP y Go. En Taimu se encarga de la interfaz y del estado que la sostiene. Gracias a ella un montón de ideas se convierte en alcance, orden y fecha.",
+        "bio": "Llegó a la ingeniería desde la gestión, el diseño y las redes sociales, y no soltó ninguna de las tres. Estudia Análisis y Desarrollo de Sistemas y trabaja en el stack web. Gracias a ella un montón de ideas se convierte en alcance, orden y fecha. Teje crochet durante doramas enteros, no se pierde un show de metal, y es la única razón por la que alguien sale del departamento. Se toma todo en broma, esta bio incluida.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -118,7 +118,8 @@
         ]
       }
     ],
-    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. Los otros tres son gatos."
+    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. Los otros tres son gatos.",
+    "together": "Cuando no hay nada saliendo: Brasil en moto, un show de rock o metal al final del camino, y opiniones firmes sobre barras de sushi y cafeterías."
   },
   "products": {
     "title": "Lo que entregamos",

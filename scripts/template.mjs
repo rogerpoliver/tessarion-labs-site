@@ -330,6 +330,7 @@ export function render(t, all) {
           <ul class="grid-2">
             ${t.people.members.map((p) => person(p, t)).join("\n            ")}
           </ul>
+          <p class="together">${e(t.people.together)}</p>
           <ul class="grid-3 crew">
             ${t.crew.members.map(crewCard).join("\n            ")}
           </ul>

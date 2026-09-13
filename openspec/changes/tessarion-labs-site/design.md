@@ -53,6 +53,18 @@ Crucially this keeps the property the original decision was protecting: each loc
 
 *The cost.* `index.html` is no longer in the repository, which is surprising in a site repo, and copy changes now happen in JSON rather than in markup. The parity gate and a one-line `bun run pages` are the mitigation.
 
+### A bio is a person, and the credential is the short part
+
+Both bios started as résumés, and Roger's stayed one longest: eleven years, an employer, a percentage, an award, then a list of pipelines and workflows and tooling. Every word was true and none of it told you anything you would want to know about working with him.
+
+The rule now is one professional result at most, and the rest of the words on the person. What replaced the inventory is the part that actually explains him: years in Neovim on the keyboard alone with everything in a terminal, early to AI, and now developing by speaking to a model and arguing with it about once a day. That last detail is also the honest origin of this repository — the site was built the way it describes.
+
+Alice's bio gained the same treatment from the other direction. Hers was already shorter on credentials, so it gained crochet through whole K-dramas, metal shows, and being the only reason either of them leaves the apartment.
+
+Both close on a line a job description could not write — `Grumpy, and the softest heart in the apartment`, `Plays everything for a joke, this bio included`. That is the test the spec now states: if the closing sentence could appear in a CV, it is the wrong sentence.
+
+*Why this is not a loosening of the voice rules.* Warmth is not enthusiasm. The rules ban adjectives standing in for facts, and every one of these details is a fact: a named editor, a named input method, a named craft, a named genre of show. `Adventurous and curious` would have been a violation. `Brazil by motorcycle` is not.
+
 ### The product cards sell the idea; the badges carry the facts
 
 The first version of both product cards was a specification: a category name, then a list of what the software does, then the stack. It read like a README, and a README is not a reason to care.

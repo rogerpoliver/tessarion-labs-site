@@ -211,13 +211,27 @@
   letter-spacing: 0.01em;
 }
 
+/* The two of them, outside the work. Sits between the person cards and the cats
+   because that is the order the household happens in. A hairline, not a card —
+   it is a bridge between two groups, not a third one. */
+
+.together {
+  max-width: 66ch;
+  margin-block-start: var(--tl-space-7);
+  padding-block-start: var(--tl-space-5);
+  border-block-start: 1px solid var(--tl-border);
+  color: var(--tl-fg-muted);
+  font-size: var(--tl-size-body-lg);
+  line-height: 1.56;
+}
+
 /* ---- crew ----
    The cats sit inside the people section, because the household is one thing.
    They stay subordinate by size, not by distance: a smaller card, no gallery,
    no accent, and always after the two person cards. */
 
 .crew {
-  margin-block-start: var(--tl-space-6);
+  margin-block-start: var(--tl-space-7);
 }
 
 .crew__card {

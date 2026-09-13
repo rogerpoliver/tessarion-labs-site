@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engineering · AI systems",
-        "bio": "Eleven years in production, four of them at ADP, where he led the HR module modernization that grew adoption 634% in a product that went on to rank #1 of 125,912 in the 2025 G2 Best Software Awards. Now an AI engineer contracting from Brazil for a US company: LLM extraction pipelines, agentic workflows and MCP tooling, all in production. Writes TypeScript, Rust, Python and C#. Everything here started as something he wanted to exist.",
+        "bio": "Eleven years in production, four at ADP, where the HR module he led grew adoption 634%. Spent most of that time in Neovim, keyboard only, everything in a terminal. Now he mostly talks: Claude in one ear, speech in and out, an argument about once a day. Early to AI, still studying, better at video games than at leaving the house. Grumpy, and the softest heart in the apartment.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -93,7 +93,7 @@
         "id": "alice",
         "name": "Alice Ribeiro",
         "role": "Design · delivery",
-        "bio": "Came to engineering from management, design and social media, and kept all three. Studying Systems Analysis and Development, and working across the web stack — JavaScript, Node.js, React, PHP and Go. On Taimu she takes the interface and the state behind it. She is the reason a pile of ideas turns into a scope, an order and a date.",
+        "bio": "Came to engineering from management, design and social media, and kept all three. Studies Systems Analysis and Development and works across the web stack. She is the reason a pile of ideas turns into a scope, an order and a date. Crochets through whole K-dramas, never misses a metal show, and is the only reason either of them leaves the apartment. Plays everything for a joke, this bio included.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -118,7 +118,8 @@
         ]
       }
     ],
-    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats."
+    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. The other three are cats.",
+    "together": "When nothing is shipping: Brazil by motorcycle, a rock or metal show at the end of the road, and strong opinions about sushi counters and coffee roasters."
   },
   "products": {
     "title": "What we ship",

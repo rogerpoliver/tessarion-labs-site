@@ -205,3 +205,13 @@
 - [x] 22.7 Rewrite Mascada's copy the same way. Lead: `Where the money actually went.` The prose opens on opening a finance app while already worried, answers it with precision rather than encouragement, and closes on an agent reading and writing the same ledger.
 - [x] 22.8 Keep the stack and the release state in the badges only, so the prose never turns back into a specification.
 - [x] 22.9 Re-run every gate across three locales and both themes, and confirm no section id for the cats remains.
+
+## 23. Bios that are people
+
+- [x] 23.1 Cut the résumé sentence from Roger's bio in all three locales — `LLM extraction pipelines, agentic workflows and MCP tooling, all in production` is an inventory, not a person.
+- [x] 23.2 Rewrite Roger's bio around how he actually works: years in Neovim on the keyboard alone with everything in a terminal, early to AI, and now developing by speaking to a model through speech-to-text and text-to-speech, arguing with it about once a day. Close on `Grumpy, and the softest heart in the apartment.`
+- [x] 23.3 Extend Alice's bio past the work: crochet through whole K-dramas, never misses a metal show, the only reason either of them leaves the apartment. Close on `Plays everything for a joke, this bio included.` — which is the deadpan she actually has.
+- [x] 23.4 Add `people.together` to the template and all three dictionaries: `When nothing is shipping: Brazil by motorcycle, a rock or metal show at the end of the road, and strong opinions about sushi counters and coffee roasters.`
+- [x] 23.5 Style `.together` as a hairline-topped paragraph between the person cards and the cats — a bridge between two groups, not a third card.
+- [x] 23.6 Rewrite the bio requirement in the `people` spec: one professional result at most, the rest of the words on the person, no technology inventory, and a closing line a job description could not write.
+- [x] 23.7 Re-run every gate across three locales and both themes, and confirm every bio is inside its budget.

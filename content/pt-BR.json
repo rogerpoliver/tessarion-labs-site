@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engenharia · Sistemas de IA",
-        "bio": "Onze anos em produção, quatro deles na ADP, onde liderou a modernização do módulo de RH que aumentou a adoção em 634% num produto que depois ficou em 1º entre 125.912 no G2 Best Software Awards de 2025. Hoje é engenheiro de IA e presta serviço do Brasil para uma empresa dos Estados Unidos: pipelines de extração com LLM, fluxos agênticos e ferramentas MCP, tudo em produção. Escreve TypeScript, Rust, Python e C#. Tudo aqui começou como uma coisa que ele quis que existisse.",
+        "bio": "Onze anos em produção, quatro na ADP, onde o módulo de RH que ele liderou aumentou a adoção em 634%. Passou a maior parte desse tempo no Neovim, só teclado, tudo no terminal. Hoje ele mais conversa do que digita: Claude no ouvido, voz entrando e saindo, uma discussão por dia. Chegou cedo na IA, continua estudando, e é melhor em videogame do que em sair de casa. Rabugento, e o coração mais mole do apartamento.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -93,7 +93,7 @@
         "id": "alice",
         "name": "Alice Ribeiro",
         "role": "Design · execução",
-        "bio": "Chegou na engenharia vindo de gestão, design e mídias sociais, e não largou nenhum dos três. Cursa Análise e Desenvolvimento de Sistemas e trabalha na stack web — JavaScript, Node.js, React, PHP e Go. No Taimu, cuida da interface e do estado que a sustenta. É por causa dela que um monte de ideia vira escopo, ordem e data.",
+        "bio": "Chegou na engenharia vindo de gestão, design e mídias sociais, e não largou nenhum dos três. Cursa Análise e Desenvolvimento de Sistemas e mexe na stack web. É por causa dela que um monte de ideia vira escopo, ordem e data. Faz crochê durante dorama inteiro, não perde show de metal, e é o único motivo de alguém sair do apartamento. Leva tudo na brincadeira, esta bio inclusive.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -118,7 +118,8 @@
         ]
       }
     ],
-    "lead": "Roger tem mais ideia do que cabe numa semana. A Alice decide qual delas sai, e em que ordem. Os outros três são gatos."
+    "lead": "Roger tem mais ideia do que cabe numa semana. A Alice decide qual delas sai, e em que ordem. Os outros três são gatos.",
+    "together": "Quando não tem nada saindo: o Brasil de moto, um show de rock ou metal no fim da estrada, e opinião forte demais sobre balcão de sushi e cafeteria."
   },
   "products": {
     "title": "O que entregamos",
