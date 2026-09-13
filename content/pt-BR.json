@@ -7,9 +7,9 @@
   "meta": {
     "title": "Tessarion Labs — software feito por duas pessoas",
     "description": "Tessarion Labs não é uma empresa. É o nome que Roger Oliveira e Alice Ribeiro dão ao software que constroem juntos, em Porto Alegre, Brasil.",
-    "social": "Não é uma empresa. É o nome que duas pessoas em Porto Alegre dão ao software que constroem. Unidades pequenas e precisas, colocadas de propósito.",
-    "imageAlt": "Tessarion Labs — unidades pequenas e precisas, colocadas de propósito.",
-    "shareLine": "Unidades pequenas e precisas, colocadas de propósito.",
+    "social": "Não é empresa. É o nome que duas pessoas em Porto Alegre dão ao software que constroem. Peças pequenas e precisas, cada uma no lugar por um motivo.",
+    "imageAlt": "Tessarion Labs — peças pequenas e precisas, cada uma no lugar por um motivo.",
+    "shareLine": "Peças pequenas e precisas, cada uma no lugar por um motivo.",
     "shareSub": "Feito por duas pessoas · Porto Alegre, BR"
   },
   "nav": {
@@ -30,19 +30,19 @@
   },
   "hero": {
     "eyebrow": "Feito por duas pessoas · Porto Alegre, BR",
-    "title": "Construímos software como se constrói um mosaico — unidades pequenas e precisas, colocadas de propósito.",
+    "title": "Construímos software como se monta um mosaico — peças pequenas e precisas, cada uma no lugar por um motivo.",
     "lead": "Tessarion Labs não é uma empresa. É o nome que damos ao software que construímos juntos — Roger e Alice, um apartamento em Porto Alegre, um backlog compartilhado.",
     "primary": "Fale com a gente",
     "secondary": "Veja o que construímos"
   },
   "about": {
-    "title": "O que é isto",
+    "title": "O que é a Tessarion",
     "paragraphs": [
-      "Um nome, não uma empresa. Tessarion Labs é como duas pessoas chamam o próprio trabalho: o software que construímos primeiro para nós, e o padrão que exigimos dele.",
-      "Não há escritório, não há folha de pagamento e não há nada aqui para vender. Há dois engenheiros, um backlog compartilhado e as horas que sobram depois do expediente.",
-      "A marca, as specs escritas e o design system existem porque preferimos construir um produto direito a cinco com pressa. É esse o plano inteiro."
+      "Um nome, não uma empresa. Tessarion Labs é o nome que duas pessoas dão ao próprio trabalho: o software que construímos primeiro para nós, e o acabamento que cobramos dele.",
+      "Não tem escritório, não tem folha de pagamento e não tem nada aqui para te vender. Tem duas pessoas, um backlog compartilhado e as horas que sobram depois do expediente.",
+      "A marca, as specs escritas e o design system existem porque preferimos entregar um produto bem feito a cinco pela metade. O plano é esse."
     ],
-    "callout": "Duas pessoas e as horas que sobram são toda a capacidade. Um produto anda por vez e o outro espera. Essa é a troca, e é por isso que Taimu e Mascada seguem os dois em desenvolvimento.",
+    "callout": "Duas pessoas e as horas que sobram: é essa a capacidade, inteira. Um produto anda por vez e o outro espera. Esse é o preço, e é por isso que Taimu e Mascada ainda estão os dois em desenvolvimento.",
     "facts": [
       "2 pessoas",
       "Porto Alegre, BR — UTC−3",
@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engenharia · Sistemas de IA",
-        "bio": "Onze anos em produção. Quatro na ADP, onde liderou a modernização do módulo de RH que aumentou a adoção em 634% num produto que depois ficou em 1º entre 125.912 no G2 Best Software Awards de 2025, e então migrou para engenharia de IA — pipelines de extração com LLM, fluxos agênticos e ferramentas MCP para desenvolvedores, em produção. Entrega em TypeScript, Rust, Python e C#. Presta serviço do Brasil para uma empresa de software dos Estados Unidos.",
+        "bio": "Onze anos em produção. Quatro na ADP, onde liderou a modernização do módulo de RH que aumentou a adoção em 634% num produto que depois ficou em 1º entre 125.912 no G2 Best Software Awards de 2025, e depois foi para engenharia de IA — pipelines de extração com LLM, fluxos agênticos e ferramentas MCP para desenvolvedores, em produção. Escreve TypeScript, Rust, Python e C#. Presta serviço do Brasil para uma empresa de software dos Estados Unidos.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -92,8 +92,8 @@
       {
         "id": "alice",
         "name": "Alice Ribeiro",
-        "role": "Engenharia · Web",
-        "bio": "Desenvolvedora em toda a stack web — PHP, Go, JavaScript, Node.js e React. Trabalha na Lydia Sistemas e cursa Análise e Desenvolvimento de Sistemas. No Taimu ela cuida da interface e do estado que a alimenta. Os repositórios públicos dela vão de uma configuração de zsh a um app React que transforma notas de áudio em texto.",
+        "role": "Design · execução",
+        "bio": "Chegou na engenharia vindo de gestão, design e mídias sociais, e não largou nenhum dos três. Cursa Análise e Desenvolvimento de Sistemas e trabalha na stack web — JavaScript, Node.js, React, PHP e Go. No Taimu, cuida da interface e do estado que a sustenta. É por causa dela que um monte de ideia vira escopo, ordem e data.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -117,7 +117,8 @@
           }
         ]
       }
-    ]
+    ],
+    "lead": "Roger tem mais ideia do que cabe numa semana. A Alice decide qual delas sai, e em que ordem. A divisão de trabalho é essa."
   },
   "products": {
     "title": "O que entregamos",
@@ -128,7 +129,7 @@
         "name": "Taimu",
         "lede": "Controle de horas para prestadores de serviço.",
         "paragraphs": [
-          "Um app de barra de menus do macOS. Começar o dia, pausar, retomar, encerrar o dia — pela barra de menus. Um calendário mensal mostra os intervalos de cada dia, o saldo semanal por linha e o total do mês contra a sua meta.",
+          "Um app de barra de menus do macOS. Começar o dia, pausar, retomar, encerrar o dia — tudo pela barra de menus. Um calendário mensal mostra os intervalos de cada dia, o saldo semanal por linha e o total do mês em relação à sua meta.",
           "Sem servidor e sem conta de terceiros. Tudo é gravado como JSON no seu próprio disco."
         ],
         "stack": "Tauri 2 · Rust · React · TypeScript",
@@ -139,8 +140,8 @@
         "name": "Mascada",
         "lede": "Finanças pessoais.",
         "paragraphs": [
-          "Contas, cartões e faturas, transações, parcelamentos, assinaturas, despesas fixas e dívidas, num único razão que mostra o que aconteceu com o dinheiro.",
-          "Uma API em Rust, um cliente web em TypeScript e uma skill que deixa um agente ler e escrever no mesmo razão que você."
+          "Contas, cartões e faturas, transações, parcelamentos, assinaturas, despesas fixas e dívidas, tudo num lugar só, mostrando para onde o dinheiro foi.",
+          "Uma API em Rust, um cliente web em TypeScript e uma skill que deixa um agente ler e escrever nos mesmos dados que você."
         ],
         "stack": "Rust · TypeScript · skill do Claude Code",
         "state": "Em desenvolvimento · Privado"
@@ -173,7 +174,7 @@
   },
   "contact": {
     "title": "Fale com a gente",
-    "lead": "Se você está construindo alguma coisa e quer conversar sobre ela, escreva. Lemos tudo e respondemos quando o expediente deixa.",
+    "lead": "Se você está construindo alguma coisa e quer trocar ideia, escreva. Lemos tudo e respondemos quando o expediente deixa.",
     "email": "hello.tessarion@gmail.com"
   },
   "footer": {

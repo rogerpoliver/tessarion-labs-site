@@ -325,6 +325,7 @@ export function render(t, all) {
         <div class="shell">
           <div class="section__head">
             <h2 id="people-title">${e(t.people.title)}</h2>
+            <p class="lead">${e(t.people.lead)}</p>
           </div>
           <ul class="grid-2">
             ${t.people.members.map((p) => person(p, t)).join("\n            ")}

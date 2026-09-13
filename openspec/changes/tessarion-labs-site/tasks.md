@@ -172,3 +172,15 @@
 - [x] 19.1 Rewrite the crew roles as real engineering titles: Char — `Engineering manager. Runs the standup. Has an opinion on every ticket.` Joey — `Security engineer. Trusts one origin. Blocks every request from an unknown host.` Reginaldo — `Principal engineer. Longest tenure, owns the legacy system, does not pair.` Translate each into pt-BR and es-419.
 - [x] 19.2 Change the contact address to `hello.tessarion@gmail.com` in all three dictionaries.
 - [x] 19.3 Reorder the header below 48rem so row one is the mark, the language switcher and the theme toggle, and the section nav takes row two. The switcher was landing on a third row where a reader on a phone did not see it. Header height on a 390px viewport drops from 158px to 106px.
+
+## 20. Rewriting the translations, and who Alice is
+
+- [x] 20.1 Rewrite the Portuguese copy as Brazilian Portuguese rather than a conversion of the English. Out: `colocadas de propósito`, three stacked `não há` where Brazilians say `não tem`, `essa é a troca`, `entrega em TypeScript`, `razão` for a ledger, `contra a sua meta`, `É esse o plano`.
+- [x] 20.2 Rewrite the Spanish the same way. Out: `puestas a propósito`, `ese es el intercambio`, `entrega en TypeScript`, `contra tu meta`, and `nómina`, which is peninsular — the page is `es-419`.
+- [x] 20.3 Restate the mosaic line per locale instead of translating it word for word: pt `peças pequenas e precisas, cada uma no lugar por um motivo`, es `piezas pequeñas y precisas, cada una en su lugar por una razón`. Regenerate both share images to match.
+- [x] 20.4 Retitle the about section per locale — `O que é a Tessarion`, `Qué es Tessarion` — instead of translating "What this is", which reads as a sentence fragment in both languages.
+- [x] 20.5 Drop Lydia Sistemas from Alice's bio in all three locales. She does not work there.
+- [x] 20.6 Rewrite Alice's role and bio around what she actually does: management, design and social media brought into engineering, and ownership of turning a pile of ideas into a scope, an order and a date. Role becomes `Design · delivery` / `Design · execução` / `Diseño · ejecución`.
+- [x] 20.7 Add `people.lead` to the template and all three dictionaries, stating the division of labour: Roger has more ideas than a week holds, Alice decides which one ships and in what order.
+- [x] 20.8 Change `two engineers` to `two people` in the about section — the pair is not two of the same thing, and the facts strip already said `2 people`.
+- [x] 20.9 Extend the voice gate with the calque list, and re-run every gate across three locales and both themes.

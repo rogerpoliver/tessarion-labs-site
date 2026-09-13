@@ -7,9 +7,9 @@
   "meta": {
     "title": "Tessarion Labs — software hecho por dos personas",
     "description": "Tessarion Labs no es una empresa. Es el nombre que Roger Oliveira y Alice Ribeiro le ponen al software que construyen juntos, en Porto Alegre, Brasil.",
-    "social": "No es una empresa. Es el nombre que dos personas en Porto Alegre le ponen al software que construyen. Unidades pequeñas y precisas, puestas a propósito.",
-    "imageAlt": "Tessarion Labs — unidades pequeñas y precisas, puestas a propósito.",
-    "shareLine": "Unidades pequeñas y precisas, puestas a propósito.",
+    "social": "No es una empresa. Es el nombre que dos personas en Porto Alegre le dan al software que construyen. Piezas pequeñas y precisas, cada una en su lugar por una razón.",
+    "imageAlt": "Tessarion Labs — piezas pequeñas y precisas, cada una en su lugar por una razón.",
+    "shareLine": "Piezas pequeñas y precisas, cada una en su lugar por una razón.",
     "shareSub": "Hecho por dos personas · Porto Alegre, BR"
   },
   "nav": {
@@ -30,24 +30,24 @@
   },
   "hero": {
     "eyebrow": "Hecho por dos personas · Porto Alegre, BR",
-    "title": "Construimos software como se construye un mosaico — unidades pequeñas y precisas, puestas a propósito.",
+    "title": "Construimos software como se arma un mosaico — piezas pequeñas y precisas, cada una en su lugar por una razón.",
     "lead": "Tessarion Labs no es una empresa. Es el nombre que le damos al software que construimos juntos — Roger y Alice, un departamento en Porto Alegre, un backlog compartido.",
     "primary": "Escríbenos",
     "secondary": "Mira lo que construimos"
   },
   "about": {
-    "title": "Qué es esto",
+    "title": "Qué es Tessarion",
     "paragraphs": [
-      "Un nombre, no una empresa. Tessarion Labs es como dos personas llaman a su propio trabajo: el software que construimos primero para nosotros, y el estándar que le exigimos.",
-      "No hay oficina, no hay nómina y no hay nada aquí para venderte. Hay dos ingenieros, un backlog compartido y las horas que sobran después de la jornada.",
-      "La marca, las specs escritas y el design system existen porque preferimos construir un producto bien a cinco con prisa. Ese es todo el plan."
+      "Un nombre, no una empresa. Tessarion Labs es el nombre que dos personas le dan a su propio trabajo: el software que construimos primero para nosotros, y el acabado que le exigimos.",
+      "No hay oficina, no hay sueldos que pagar y no hay nada aquí para venderte. Hay dos personas, un backlog compartido y las horas que sobran después de la jornada.",
+      "La marca, las specs escritas y el design system existen porque preferimos entregar un producto bien hecho antes que cinco a medias. El plan es ese."
     ],
-    "callout": "Dos personas y las horas que sobran son toda la capacidad. Un producto avanza a la vez y el otro espera. Ese es el intercambio, y por eso Taimu y Mascada siguen los dos en desarrollo.",
+    "callout": "Dos personas y las horas que sobran: esa es toda la capacidad. Un producto avanza a la vez y el otro espera. Ese es el precio, y por eso Taimu y Mascada todavía están los dos en desarrollo.",
     "facts": [
       "2 personas",
       "Porto Alegre, BR — UTC−3",
       "2 productos en desarrollo",
-      "Sin oficina, sin nómina"
+      "Sin oficina, sin sueldos"
     ]
   },
   "people": {
@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Ingeniería · Sistemas de IA",
-        "bio": "Once años en producción. Cuatro en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025, y luego pasó a ingeniería de IA — pipelines de extracción con LLM, flujos agénticos y herramientas MCP para desarrolladores, en producción. Entrega en TypeScript, Rust, Python y C#. Trabaja desde Brasil para una empresa de software de Estados Unidos.",
+        "bio": "Once años en producción. Cuatro en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025, y luego pasó a ingeniería de IA — pipelines de extracción con LLM, flujos agénticos y herramientas MCP para desarrolladores, en producción. Escribe TypeScript, Rust, Python y C#. Trabaja desde Brasil para una empresa de software de Estados Unidos.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -92,8 +92,8 @@
       {
         "id": "alice",
         "name": "Alice Ribeiro",
-        "role": "Ingeniería · Web",
-        "bio": "Desarrolladora en todo el stack web — PHP, Go, JavaScript, Node.js y React. Trabaja en Lydia Sistemas y estudia Análisis y Desarrollo de Sistemas. En Taimu se encarga de la interfaz y del estado que la alimenta. Sus repositorios públicos van de una configuración de zsh a una app React que convierte notas de audio en texto.",
+        "role": "Diseño · ejecución",
+        "bio": "Llegó a la ingeniería desde la gestión, el diseño y las redes sociales, y no soltó ninguna de las tres. Estudia Análisis y Desarrollo de Sistemas y trabaja en el stack web — JavaScript, Node.js, React, PHP y Go. En Taimu se encarga de la interfaz y del estado que la sostiene. Gracias a ella un montón de ideas se convierte en alcance, orden y fecha.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -117,7 +117,8 @@
           }
         ]
       }
-    ]
+    ],
+    "lead": "Roger tiene más ideas de las que caben en una semana. Alice decide cuál sale, y en qué orden. La división del trabajo es esa."
   },
   "products": {
     "title": "Lo que entregamos",
@@ -128,7 +129,7 @@
         "name": "Taimu",
         "lede": "Registro de horas para contratistas independientes.",
         "paragraphs": [
-          "Una app de barra de menús de macOS. Empezar el día, pausar, retomar, cerrar el día — desde la barra de menús. Un calendario mensual muestra los intervalos de cada día, el saldo semanal por fila y el total del mes contra tu meta.",
+          "Una app de barra de menús de macOS. Empezar el día, pausar, retomar, cerrar el día — todo desde la barra de menús. Un calendario mensual muestra los intervalos de cada día, el saldo semanal por fila y el total del mes en relación con tu meta.",
           "Sin servidor y sin cuenta de terceros. Todo se guarda como JSON en tu propio disco."
         ],
         "stack": "Tauri 2 · Rust · React · TypeScript",
@@ -139,8 +140,8 @@
         "name": "Mascada",
         "lede": "Finanzas personales.",
         "paragraphs": [
-          "Cuentas, tarjetas y estados de cuenta, transacciones, planes en cuotas, suscripciones, gastos fijos y deudas, en un solo libro que muestra qué pasó con el dinero.",
-          "Una API en Rust, un cliente web en TypeScript y una skill que deja a un agente leer y escribir en el mismo libro que tú."
+          "Cuentas, tarjetas y estados de cuenta, transacciones, planes en cuotas, suscripciones, gastos fijos y deudas, todo en un solo lugar, mostrando a dónde se fue el dinero.",
+          "Una API en Rust, un cliente web en TypeScript y una skill que deja a un agente leer y escribir en los mismos datos que tú."
         ],
         "stack": "Rust · TypeScript · skill de Claude Code",
         "state": "En desarrollo · Privado"
@@ -173,7 +174,7 @@
   },
   "contact": {
     "title": "Escríbenos",
-    "lead": "Si estás construyendo algo y quieres hablarlo, escribe. Leemos todo y respondemos cuando la jornada lo permite.",
+    "lead": "Si estás construyendo algo y quieres conversarlo, escribe. Leemos todo y respondemos cuando el trabajo lo permite.",
     "email": "hello.tessarion@gmail.com"
   },
   "footer": {

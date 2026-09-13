@@ -39,7 +39,7 @@
     "title": "What this is",
     "paragraphs": [
       "A name, not a company. Tessarion Labs is what two people call their own work: the software we build for ourselves first, and the standard we hold it to.",
-      "There is no office, no payroll and nothing here to sell you. There are two engineers, a shared backlog, and the hours left over after the day job.",
+      "There is no office, no payroll and nothing here to sell you. There are two people, a shared backlog, and the hours left over after the day job.",
       "The brand, the written specs and the design system exist because we would rather build one product properly than five in a hurry. That is the whole plan."
     ],
     "callout": "Two people and the hours left over is the entire capacity. One product moves at a time and the other waits. That is the trade, and it is why Taimu and Mascada are both still in development.",
@@ -92,8 +92,8 @@
       {
         "id": "alice",
         "name": "Alice Ribeiro",
-        "role": "Engineering · Web",
-        "bio": "Developer across the web stack — PHP, Go, JavaScript, Node.js and React. Works at Lydia Sistemas and is studying Systems Analysis and Development. On Taimu she takes the interface and the state that feeds it. Her public repositories run from a zsh configuration to a React app that turns audio notes into text.",
+        "role": "Design · delivery",
+        "bio": "Came to engineering from management, design and social media, and kept all three. Studying Systems Analysis and Development, and working across the web stack — JavaScript, Node.js, React, PHP and Go. On Taimu she takes the interface and the state behind it. She is the reason a pile of ideas turns into a scope, an order and a date.",
         "photos": [
           {
             "src": "alice-01.jpg",
@@ -117,7 +117,8 @@
           }
         ]
       }
-    ]
+    ],
+    "lead": "Roger has more ideas than a week holds. Alice decides which one ships, and in what order. That is the whole division of labour."
   },
   "products": {
     "title": "What we ship",

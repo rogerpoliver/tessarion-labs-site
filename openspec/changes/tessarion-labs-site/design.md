@@ -53,6 +53,16 @@ Crucially this keeps the property the original decision was protecting: each loc
 
 *The cost.* `index.html` is no longer in the repository, which is surprising in a site repo, and copy changes now happen in JSON rather than in markup. The parity gate and a one-line `bun run pages` are the mitigation.
 
+### Translations are written, not converted
+
+The first pass rendered English sentences into Portuguese and Spanish word by word. Every word was correct and the result read like a machine: `colocadas de propósito` for "placed on purpose", three stacked `não há` where a Brazilian says `não tem`, `essa é a troca` for "that is the trade", `entrega em TypeScript` for "ships in TypeScript", `razão` for a ledger nobody outside accounting calls that, and `nómina` on a page whose locale is `es-419`.
+
+The rule now: **the dictionary is the unit of translation, not the sentence.** A locale may restate an idea in a different shape if that is how the idea is said there. The mosaic line is the clearest case — English keeps "small precise units, placed on purpose", Portuguese becomes "peças pequenas e precisas, cada uma no lugar por um motivo", and the share image for each locale is regenerated to match rather than being a picture of the English.
+
+This is why the share-card source is generated from the same dictionaries: a locale that rewrites its own headline would otherwise ship a social preview still carrying the old one.
+
+*The cost.* The three files can drift in meaning, not just in wording, and no automated check catches that. The parity gate proves every key exists; it cannot prove the Portuguese says what the English says. That is a review job, and it is why the strings live in three readable JSON files rather than inside markup.
+
 ### Language switching is three links, not a control
 
 The switcher is three `<a>` elements, one per document, with `hreflang` and `lang` on each and `aria-current` on the active one. No JavaScript, no menu, no stored preference.

@@ -59,9 +59,21 @@ The voice rules SHALL hold in all three locales: verdict first, numbers over adj
 - **WHEN** the Portuguese page is checked for `revolucionário`, `apaixonado`, `sinergia`, `mágico`, `sem esforço`, `simplesmente` and the Spanish page for their equivalents
 - **THEN** none is found
 
-#### Scenario: Translations are not literal where literal is wrong
-- **WHEN** a call to action is translated
-- **THEN** it reads as something a person would actually say in that language rather than a word-for-word rendering of the English
+#### Scenario: Translations are written, not converted
+- **WHEN** any string is translated
+- **THEN** it reads as something a person would actually say in that language, and a calque of the English structure is a defect even when the words are correct
+
+#### Scenario: Known calques stay out
+- **WHEN** the Portuguese page is checked
+- **THEN** it contains no `colocadas de propósito` for "placed on purpose", no stacked `não há` where Brazilians say `não tem`, no `essa é a troca` for "that is the trade", no `entrega em <language>` for "ships in", and no `razão` for a ledger
+
+#### Scenario: Regional register
+- **WHEN** the Spanish page is read
+- **THEN** it uses Latin American vocabulary rather than peninsular Spanish — for example it does not use `nómina` for payroll
+
+#### Scenario: A metaphor may change shape
+- **WHEN** an English figure of speech has no natural equivalent
+- **THEN** the translation is allowed to restate the idea differently, and the share image for that locale is regenerated to match
 
 ### Requirement: The endorsement string stays in English
 `A Tessarion Labs product` SHALL appear verbatim in every locale, untranslated.

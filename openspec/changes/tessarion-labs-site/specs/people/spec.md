@@ -55,7 +55,22 @@ Each bio SHALL be written from what that person has actually shipped or holds, a
 
 #### Scenario: Alice's bio
 - **WHEN** Alice's bio is rendered
-- **THEN** it describes her as a developer working in web technologies, names the stack she works in and the degree she is studying, and does not inflate her seniority
+- **THEN** it names the management, design and social-media work she came from, the stack she works in, the degree she is studying, and what she owns on Taimu, and it does not inflate her seniority
+
+#### Scenario: No stale employer
+- **WHEN** either bio is rendered
+- **THEN** it names no employer either person has left
+
+### Requirement: The division of labour is stated
+The people section SHALL open with a lead naming how the two of them split the work: Roger generates the ideas, Alice decides which one ships and in what order. It SHALL state this as a fact about how the work happens, not as a compliment to either person.
+
+#### Scenario: The split is legible before the bios
+- **WHEN** a reader reaches the people section
+- **THEN** the lead tells them who starts things and who finishes them, before either card is read
+
+#### Scenario: Neither half is the senior one
+- **WHEN** the lead is read
+- **THEN** it describes two halves of one job, and does not rank them
 
 ### Requirement: Outbound links
 Each person's links SHALL point at their real GitHub profile, and LinkedIn where one exists. Outbound links SHALL carry `rel="noopener noreferrer"` and SHALL be announced with the destination in their accessible name.
