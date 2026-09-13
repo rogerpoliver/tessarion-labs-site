@@ -236,9 +236,16 @@
 
 .crew__role {
   margin-block-start: var(--tl-space-2);
-  color: var(--tl-fg-muted);
+  color: var(--tl-fg);
   font-size: var(--tl-size-sm);
   line-height: 1.43;
+}
+
+.crew__bio {
+  margin-block-start: var(--tl-space-3);
+  color: var(--tl-fg-muted);
+  font-size: var(--tl-size-sm);
+  line-height: 1.55;
 }
 
 /* ---- contact ---- */

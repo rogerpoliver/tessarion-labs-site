@@ -39,7 +39,7 @@
     "title": "O que é a Tessarion",
     "paragraphs": [
       "Um nome, não uma empresa. Tessarion Labs é o nome que duas pessoas dão ao próprio trabalho: o software que construímos primeiro para nós, e o acabamento que cobramos dele.",
-      "Não tem escritório, não tem folha de pagamento e não tem nada aqui para te vender. Tem duas pessoas, um backlog compartilhado e as horas que sobram depois do expediente.",
+      "Não tem escritório e não tem folha de pagamento. Tem duas pessoas, um backlog compartilhado e as horas que sobram depois do expediente.",
       "A marca, as specs escritas e o design system existem porque preferimos entregar um produto bem feito a cinco pela metade. O plano é esse."
     ],
     "callout": "Duas pessoas e as horas que sobram: é essa a capacidade, inteira. Um produto anda por vez e o outro espera. Esse é o preço, e é por isso que Taimu e Mascada ainda estão os dois em desenvolvimento.",
@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engenharia · Sistemas de IA",
-        "bio": "Onze anos em produção. Quatro na ADP, onde liderou a modernização do módulo de RH que aumentou a adoção em 634% num produto que depois ficou em 1º entre 125.912 no G2 Best Software Awards de 2025, e depois foi para engenharia de IA — pipelines de extração com LLM, fluxos agênticos e ferramentas MCP para desenvolvedores, em produção. Escreve TypeScript, Rust, Python e C#. Presta serviço do Brasil para uma empresa de software dos Estados Unidos.",
+        "bio": "Onze anos em produção, quatro deles na ADP, onde liderou a modernização do módulo de RH que aumentou a adoção em 634% num produto que depois ficou em 1º entre 125.912 no G2 Best Software Awards de 2025. Hoje é engenheiro de IA e presta serviço do Brasil para uma empresa dos Estados Unidos: pipelines de extração com LLM, fluxos agênticos e ferramentas MCP, tudo em produção. Escreve TypeScript, Rust, Python e C#. Tudo aqui começou como uma coisa que ele quis que existisse.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -156,18 +156,21 @@
         "id": "char",
         "name": "Char",
         "role": "Gerente de engenharia. Conduz a daily. Tem opinião sobre cada ticket.",
+        "bio": "Decidiu que manda e ninguém abriu chamado contra. Recebe visita na porta, supervisiona da mesa e narra o dia de trabalho inteiro em voz alta.",
         "alt": "Char, um gato preto e branco, deitado num sofá cinza e olhando para a câmera."
       },
       {
         "id": "joey",
         "name": "Joey",
         "role": "Engenheiro de segurança. Confia em uma origem. Bloqueia todo host desconhecido.",
+        "bio": "O maior dos três e o primeiro a ir para debaixo da cama. Tem exatamente uma pessoa na allowlist, segue ela de cômodo em cômodo e trata a campainha como incidente.",
         "alt": "Joey, um gato preto e branco grande, sentado ereto na porta da cozinha."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
         "role": "Engenheiro principal. Mais tempo de casa, dono do legado, não faz pair.",
+        "bio": "Chegou primeiro e não se impressionou com nada desde então. Recusa todo brinquedo, cumpre o próprio horário e revisa os outros dois de longe, sem deixar comentário.",
         "alt": "Reginaldo, um gato preto e branco de pelo longo, acomodado num cobertor azul."
       }
     ]

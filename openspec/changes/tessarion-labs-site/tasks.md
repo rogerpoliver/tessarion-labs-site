@@ -184,3 +184,12 @@
 - [x] 20.7 Add `people.lead` to the template and all three dictionaries, stating the division of labour: Roger has more ideas than a week holds, Alice decides which one ships and in what order.
 - [x] 20.8 Change `two engineers` to `two people` in the about section — the pair is not two of the same thing, and the facts strip already said `2 people`.
 - [x] 20.9 Extend the voice gate with the calque list, and re-run every gate across three locales and both themes.
+
+## 21. Bios, and a claim that would have to be walked back
+
+- [x] 21.1 Rewrite Roger's bio in all three locales. It was a résumé paragraph; it now opens on the ADP result, states the AI engineering work he does now, names the languages he writes, and closes with `Everything here started as something he wanted to exist.` — the ideas half of the pair, said as a fact rather than an adjective.
+- [x] 21.2 Give each cat a bio below the role line, in all three locales, capped at 40 words and written as a performance review: Char decided he was in charge and nobody filed an objection; Joey allowlists exactly one person and treats the doorbell as an incident; Reginaldo was here first and has not been impressed since.
+- [x] 21.3 Add `crew.members[].bio` to the template and style `.crew__bio` muted below the role line, so the joke lands before the detail.
+- [x] 21.4 Remove `nothing here to sell you` from the about section in all three locales. It is a promise about the future that a site may have to walk back.
+- [x] 21.5 Set the bio budget in the English source at 80 words and allow translations up to 96, because counting words across languages measures the language rather than the length of the thought. Record the measured counts.
+- [x] 21.6 Re-run every gate across three locales and both themes.

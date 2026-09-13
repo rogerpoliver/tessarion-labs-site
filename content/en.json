@@ -39,7 +39,7 @@
     "title": "What this is",
     "paragraphs": [
       "A name, not a company. Tessarion Labs is what two people call their own work: the software we build for ourselves first, and the standard we hold it to.",
-      "There is no office, no payroll and nothing here to sell you. There are two people, a shared backlog, and the hours left over after the day job.",
+      "There is no office and no payroll. There are two people, a shared backlog, and the hours left over after the day job.",
       "The brand, the written specs and the design system exist because we would rather build one product properly than five in a hurry. That is the whole plan."
     ],
     "callout": "Two people and the hours left over is the entire capacity. One product moves at a time and the other waits. That is the trade, and it is why Taimu and Mascada are both still in development.",
@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Engineering · AI systems",
-        "bio": "Eleven years in production. Four at ADP, where he led the HR module modernization that grew adoption 634% in a product that went on to rank #1 of 125,912 in the 2025 G2 Best Software Awards, then moved into AI engineering — LLM extraction pipelines, agentic workflows and MCP developer tooling, in production. Ships in TypeScript, Rust, Python and C#. Contracts for a US software company from Brazil.",
+        "bio": "Eleven years in production, four of them at ADP, where he led the HR module modernization that grew adoption 634% in a product that went on to rank #1 of 125,912 in the 2025 G2 Best Software Awards. Now an AI engineer contracting from Brazil for a US company: LLM extraction pipelines, agentic workflows and MCP tooling, all in production. Writes TypeScript, Rust, Python and C#. Everything here started as something he wanted to exist.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -156,18 +156,21 @@
         "id": "char",
         "name": "Char",
         "role": "Engineering manager. Runs the standup. Has an opinion on every ticket.",
+        "bio": "Decided he was in charge and nobody filed an objection. Greets every visitor at the door, supervises from the desk, and narrates the whole working day out loud.",
         "alt": "Char, a black and white cat, lying on a grey couch and looking at the camera."
       },
       {
         "id": "joey",
         "name": "Joey",
         "role": "Security engineer. Trusts one origin. Blocks every request from an unknown host.",
+        "bio": "The largest of the three and the first one under the bed. Allowlists exactly one person, follows him room to room, and treats the doorbell as an incident.",
         "alt": "Joey, a large black and white cat, sitting upright in a kitchen doorway."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
         "role": "Principal engineer. Longest tenure, owns the legacy system, does not pair.",
+        "bio": "Was here first and has not been impressed since. Declines every toy, keeps his own hours, and reviews the other two from a distance without leaving a comment.",
         "alt": "Reginaldo, a long-haired black and white cat, settled into a blue blanket."
       }
     ]

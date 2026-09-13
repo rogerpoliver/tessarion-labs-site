@@ -168,6 +168,7 @@ function crewCard(member) {
             />
             <p class="crew__name">${e(member.name)}</p>
             <p class="crew__role">${e(member.role)}</p>
+            <p class="crew__bio">${e(member.bio)}</p>
           </li>`;
 }
 

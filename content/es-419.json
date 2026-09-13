@@ -39,7 +39,7 @@
     "title": "Qué es Tessarion",
     "paragraphs": [
       "Un nombre, no una empresa. Tessarion Labs es el nombre que dos personas le dan a su propio trabajo: el software que construimos primero para nosotros, y el acabado que le exigimos.",
-      "No hay oficina, no hay sueldos que pagar y no hay nada aquí para venderte. Hay dos personas, un backlog compartido y las horas que sobran después de la jornada.",
+      "No hay oficina y no hay sueldos que pagar. Hay dos personas, un backlog compartido y las horas que sobran después de la jornada.",
       "La marca, las specs escritas y el design system existen porque preferimos entregar un producto bien hecho antes que cinco a medias. El plan es ese."
     ],
     "callout": "Dos personas y las horas que sobran: esa es toda la capacidad. Un producto avanza a la vez y el otro espera. Ese es el precio, y por eso Taimu y Mascada todavía están los dos en desarrollo.",
@@ -61,7 +61,7 @@
         "id": "roger",
         "name": "Roger Oliveira",
         "role": "Ingeniería · Sistemas de IA",
-        "bio": "Once años en producción. Cuatro en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025, y luego pasó a ingeniería de IA — pipelines de extracción con LLM, flujos agénticos y herramientas MCP para desarrolladores, en producción. Escribe TypeScript, Rust, Python y C#. Trabaja desde Brasil para una empresa de software de Estados Unidos.",
+        "bio": "Once años en producción, cuatro de ellos en ADP, donde lideró la modernización del módulo de RR. HH. que aumentó la adopción un 634% en un producto que después quedó 1º entre 125.912 en los G2 Best Software Awards de 2025. Hoy es ingeniero de IA y trabaja desde Brasil para una empresa de Estados Unidos: pipelines de extracción con LLM, flujos agénticos y herramientas MCP, todo en producción. Escribe TypeScript, Rust, Python y C#. Todo lo que hay acá empezó como algo que él quiso que existiera.",
         "photos": [
           {
             "src": "roger-01.jpg",
@@ -156,18 +156,21 @@
         "id": "char",
         "name": "Char",
         "role": "Gerente de ingeniería. Dirige la daily. Opina sobre cada ticket.",
+        "bio": "Decidió que manda y nadie abrió un ticket en contra. Recibe a las visitas en la puerta, supervisa desde el escritorio y narra la jornada entera en voz alta.",
         "alt": "Char, un gato blanco y negro, echado en un sofá gris y mirando a la cámara."
       },
       {
         "id": "joey",
         "name": "Joey",
         "role": "Ingeniero de seguridad. Confía en un solo origen. Bloquea todo host desconocido.",
+        "bio": "El más grande de los tres y el primero en meterse bajo la cama. Tiene exactamente una persona en la allowlist, la sigue de cuarto en cuarto y trata el timbre como un incidente.",
         "alt": "Joey, un gato blanco y negro grande, sentado erguido en la puerta de la cocina."
       },
       {
         "id": "reginaldo",
         "name": "Reginaldo",
         "role": "Ingeniero principal. Más antigüedad, dueño del legado, no hace pair.",
+        "bio": "Llegó primero y no se ha impresionado desde entonces. Rechaza todo juguete, cumple su propio horario y revisa a los otros dos de lejos, sin dejar comentario.",
         "alt": "Reginaldo, un gato blanco y negro de pelo largo, acomodado en una manta azul."
       }
     ]

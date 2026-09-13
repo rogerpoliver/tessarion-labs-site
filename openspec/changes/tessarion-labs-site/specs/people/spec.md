@@ -5,7 +5,7 @@ The site SHALL present Roger Oliveira and Alice Ribeiro as the two people whose 
 
 #### Scenario: Both cards render
 - **WHEN** the people section is rendered
-- **THEN** two cards appear, each with a photo gallery, a name, a role line, a bio of at most 80 words, and at least one outbound link
+- **THEN** two cards appear, each with a photo gallery, a name, a role line, a bio, and at least one outbound link
 
 #### Scenario: Cards are equal
 - **WHEN** the two cards are compared
@@ -46,12 +46,19 @@ Each person SHALL have a gallery of their own photos rather than a single portra
 - **WHEN** the page loads
 - **THEN** no image request leaves the site's own origin
 
+### Requirement: Bio length
+A bio SHALL be at most 80 words in the English source. A translation MAY exceed that by up to 20% where the language is denser, and no further. The budget is set in English because counting words across languages measures the language, not the length of the thought.
+
+#### Scenario: Measured per locale
+- **WHEN** the three built documents are measured
+- **THEN** each English bio is at most 80 words and each translated bio is at most 96
+
 ### Requirement: Bios are drawn from the public record
-Each bio SHALL be written from what that person has actually shipped or holds, and SHALL NOT claim a title, an employer or an outcome the person does not have.
+Each bio SHALL be written from what that person has actually shipped or holds, and SHALL NOT claim a title, an employer or an outcome the person does not have. Each SHALL close by naming what that person is in this pair, so the two cards read as halves of one job rather than two résumés.
 
 #### Scenario: Roger's bio
 - **WHEN** Roger's bio is rendered
-- **THEN** it names his years of production experience, his current contract engineering work for a US company, his AI and LLM engineering work, and the HR module modernization result, and it names the languages and platforms he ships in
+- **THEN** it names his years of production experience, the HR module modernization result, his current AI engineering work contracted from Brazil for a US company, and the languages he writes — and it closes by saying that everything on this site started as something he wanted to exist
 
 #### Scenario: Alice's bio
 - **WHEN** Alice's bio is rendered

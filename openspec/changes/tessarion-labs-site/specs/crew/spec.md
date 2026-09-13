@@ -5,7 +5,7 @@ The site SHALL carry a section presenting Char, Joey and Reginaldo as the studio
 
 #### Scenario: Three entries render
 - **WHEN** the crew section is rendered
-- **THEN** three cards appear — Char, Joey and Reginaldo — each with a square photo, a name, and a role line of at most twelve words
+- **THEN** three cards appear — Char, Joey and Reginaldo — each with a square photo, a name, a role line of at most twelve words, and a short bio
 
 #### Scenario: The joke lands once
 - **WHEN** the section copy is read end to end
@@ -33,6 +33,21 @@ A crew role line SHALL open with a job title that exists on an actual software t
 #### Scenario: Reginaldo
 - **WHEN** Reginaldo's role is rendered
 - **THEN** it is a principal or staff title, and the description turns "oldest, does not play, keeps apart" into longest tenure, owning the legacy system, and not pairing
+
+### Requirement: Each crew member has a bio
+Each cat SHALL have a bio of at most 40 words below the role line. It SHALL read as a performance review of a colleague and SHALL stay a report of that animal's actual behaviour — no invented anecdotes, no dialogue, no anthropomorphism beyond the job framing.
+
+#### Scenario: The bio extends the role, it does not restate it
+- **WHEN** a crew bio is read after its role line
+- **THEN** it adds behaviour the role line did not already say, rather than paraphrasing it
+
+#### Scenario: Deadpan holds across three sentences
+- **WHEN** the bio is read
+- **THEN** the tone is the same as the rest of the page — no exclamation mark, no emoji, no cutesy register, and the humour still comes from stating a cat's behaviour in workplace terms
+
+#### Scenario: The bio is subordinate to the role
+- **WHEN** the card is rendered
+- **THEN** the role line carries the page's body colour and the bio is set in muted, so the joke lands before the detail
 
 ### Requirement: Crew photos
 Each crew photo SHALL be served locally from `public/crew/`, square, with explicit dimensions and a descriptive `alt` attribute naming the cat. Each file SHALL show the cat it is named after.
