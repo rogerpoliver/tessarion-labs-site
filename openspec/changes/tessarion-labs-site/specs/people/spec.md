@@ -53,6 +53,17 @@ A bio SHALL be at most 80 words in the English source. A translation MAY exceed 
 - **WHEN** the three built documents are measured
 - **THEN** each English bio is at most 80 words and each translated bio is at most 96
 
+### Requirement: A bio may not undercut the person it describes
+A closing line SHALL NOT trade the person's professional standing for a joke. Self-deprecation written by someone else is not self-deprecation. Where a line implies that a person does not take their work seriously, it SHALL be rewritten so the joke lands somewhere that costs them nothing.
+
+#### Scenario: Playfulness does not become a liability
+- **WHEN** a bio's closing line is read by someone deciding whether to work with that person
+- **THEN** nothing in it suggests the person is casual about the work itself
+
+#### Scenario: The fix keeps the joke
+- **WHEN** such a line is rewritten
+- **THEN** the humour is preserved and the target moves — `Takes nothing seriously, this bio included` became `Takes the work seriously and very little else, this bio included`, which keeps the shape and the self-reference and inverts what is exempt
+
 ### Requirement: A bio is a person, not a résumé
 Each bio SHALL name at most one professional result and SHALL spend the rest of its words on who that person is. Every professional claim SHALL be verifiable from the public record; every personal detail SHALL come from the person it describes. A bio SHALL NOT list technologies for their own sake.
 
@@ -96,7 +107,11 @@ Personal detail supplied by the people themselves is **source material, not copy
 
 #### Scenario: Alice's bio
 - **WHEN** Alice's bio is rendered
-- **THEN** it uses the management, design and social-media background as the explanation for the judgement she has — she can look at ten half-ideas and say which one is real — then states plainly that she decides what ships and when, names the degree in passing, and turns to crochet through a whole K-drama, the front row at a metal show, and the plans that get anyone out of the apartment. It closes on her taking nothing seriously, this bio included, and it does not inflate her seniority
+- **THEN** it uses the management, design and social-media background as the explanation for the judgement she has — she can look at ten half-ideas and say which one is real — then states plainly that she decides what ships and when, names the degree in passing, and turns to measuring K-dramas in bags, the front row at a metal show, and being the reason anyone leaves the apartment. It closes on her taking the work seriously and very little else, and it does not inflate her seniority
+
+#### Scenario: The crochet detail is a rate, not a hobby
+- **WHEN** the crochet and K-drama detail is rendered
+- **THEN** it is stated as a rate — every few episodes, another bag exists — rather than as a list of things she likes, because a number is more specific than an interest and the brand prefers numbers to adjectives
 
 #### Scenario: No stale employer
 - **WHEN** either bio is rendered

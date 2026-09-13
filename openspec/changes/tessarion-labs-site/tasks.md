@@ -241,3 +241,10 @@
 - [x] 26.4 Skip identifiers, URLs, filenames and locale codes when walking the dictionaries — those are not prose.
 - [x] 26.5 Prove the gate by planting `simplesmente`, `incrível`, an exclamation mark and a twenty-word line in the Portuguese dictionary, confirming four named failures and a non-zero exit, then reverting.
 - [x] 26.6 Record in the `brand-compliance` and `deployment` specs that the copy rules are a build gate rather than a review habit.
+
+## 27. Alice's closing line, and the bag rate
+
+- [x] 27.1 Replace `Takes nothing seriously, this bio included` in all three locales. Written by someone else, it reads as a claim that she is casual about the work. The replacement keeps the shape and the self-reference and inverts what is exempt: `Takes the work seriously and very little else, this bio included.`
+- [x] 27.2 Rewrite the crochet detail as a rate rather than a hobby: `Off the clock she measures K-dramas in bags: every few episodes, another one exists.` A number is more specific than an interest.
+- [x] 27.3 Add the requirement to the `people` spec: a closing line may not trade the person's professional standing for a joke, and self-deprecation written by someone else is not self-deprecation.
+- [x] 27.4 Offer the closing line as three options before writing it, per the rule added in group 24. The line the person rejected is exactly the kind that should not be chosen for them.

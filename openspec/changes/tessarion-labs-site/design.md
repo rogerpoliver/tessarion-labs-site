@@ -69,6 +69,10 @@ Both close on a line a job description could not write — `Grumpy, and the soft
 
 *And the bios are approved before they ship.* Drafts go to the person they describe, who picks one. That is now a scenario in the spec, not a courtesy.
 
+*The second thing that rule caught.* Alice's bio closed on `Takes nothing seriously, this bio included`. It reads as charming self-deprecation, except she did not write it — and a line written by someone else saying a person is casual about their work is not self-deprecation, it is a claim about them, on a page a prospective collaborator reads. The fix kept the shape, the self-reference and the joke, and moved what is exempt: `Takes the work seriously and very little else, this bio included.` The spec now states the rule so it does not have to be rediscovered.
+
+The same round replaced a hobby with a rate. `Crochets through whole K-dramas` is an interest; `she measures K-dramas in bags — every few episodes, another one exists` is a unit of measurement, and the brand prefers numbers to adjectives even when the number is a joke.
+
 ### The product cards sell the idea; the badges carry the facts
 
 The first version of both product cards was a specification: a category name, then a list of what the software does, then the stack. It read like a README, and a README is not a reason to care.
