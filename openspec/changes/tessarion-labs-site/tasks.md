@@ -134,3 +134,14 @@
 - [x] 15.12 Update the `studio-story`, `crew`, `people`, `contact` and `site-shell` specs, and record in `design.md` that `brand-guidelines.md` section 1 is now wrong and owes a correction upstream.
 - [x] 15.13 Re-run every gate: lint, format check, typecheck, build, contrast in both themes, focus ring on every stop, banned words, one Kiln element.
 - [x] 15.14 Rename the `#studio` section to `#about` and its nav label to `About` — the word "studio" implies the company this is not.
+
+## 16. Theme control: one icon button
+
+- [x] 16.1 Replace the three-radio segmented control in `index.html` with a single `<button id="theme-toggle">` carrying two inline SVGs — a sun and a moon — both `aria-hidden`, with square stroke caps and mitred joins.
+- [x] 16.2 Replace the `.segmented*` rules in `src/styles/components.css` with `.theme-toggle`: 48px square, 4px radius, 1px `--tl-border-strong`, transparent fill, neutral hover. CSS picks the visible glyph from the resolved theme, mirroring the `.mark` rules.
+- [x] 16.3 Add `.theme-toggle[hidden] { display: none }` — an author `display` beats the user agent's `[hidden]` rule, so without it the control is visible and inert with JavaScript off.
+- [x] 16.4 Rewrite the theme logic in `src/main.ts`: resolve from the stored override or the system query, toggle to the other theme on click, and **clear** the stored value when the chosen theme already matches the OS, so following the system survives the first press.
+- [x] 16.5 Set the button's accessible name and `title` to `Switch to <other> theme` on load, on click, and when the OS theme changes.
+- [x] 16.6 Point the `forced-colors` rule in `base.css` at `.theme-toggle` instead of `.segmented`.
+- [x] 16.7 Update the `site-shell` theme-control requirement and record the decision, the alternatives and the cost in `design.md`.
+- [x] 16.8 Re-verify: fresh visit on a light OS and on a dark OS, one press, a second press restoring system-follow, no-JS `display: none`, contrast in both themes, focus ring on every stop, one Kiln element.

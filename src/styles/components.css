@@ -128,58 +128,86 @@
   }
 }
 
-/* ---- theme control ---- */
+/* ---- theme control ----
+   One square button. The icon shows the theme that is on now — sun on light,
+   moon on dark — and the accessible name says where a press goes. Which glyph
+   is visible is a CSS decision, mirroring the .mark rules above, so it is right
+   before first paint and follows a live OS change without JavaScript.
 
-.segmented {
+   The hover fill is neutral rather than the Kiln tint. This button sits in a
+   sticky header, so anything accented here would be present in every viewport,
+   and the page spends its one Kiln element on the hero's primary button. */
+
+/* An author `display` beats the UA stylesheet's `[hidden] { display: none }`,
+   so the hidden state has to be restated here or the no-JavaScript case shows a
+   control that cannot do anything. */
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle {
   display: inline-flex;
-  margin: 0;
-  padding: var(--tl-space-1);
+  align-items: center;
+  justify-content: center;
+  width: var(--tl-space-8);
+  height: var(--tl-space-8);
+  padding: 0;
   border: 1px solid var(--tl-border-strong);
   border-radius: var(--tl-radius-md);
-  background-color: var(--tl-bg-surface);
-}
-
-.segmented__option {
-  position: relative;
-  display: inline-flex;
-}
-
-.segmented__option input {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  opacity: 0;
+  background-color: transparent;
+  color: var(--tl-fg);
   cursor: pointer;
-}
-
-.segmented__option span {
-  padding: var(--tl-space-2) var(--tl-space-4);
-  border-radius: var(--tl-radius-sm);
-  color: var(--tl-fg-muted);
-  font-family: var(--tl-font-mono);
-  font-size: var(--tl-size-caption);
-  line-height: 1.33;
-  transition-property: background-color, color;
+  transition-property: background-color, border-color;
   transition-duration: var(--tl-motion-instant);
   transition-timing-function: var(--tl-ease);
 }
 
-/* The checked chip is ink, not a Kiln tint. The header is sticky, so anything
-   accented in it would be present in every viewport — and the page already
-   spends its one Kiln element on the hero's primary button. */
-.segmented__option input:checked + span {
-  background-color: var(--tl-fg);
-  color: var(--tl-bg);
+.theme-toggle:hover {
+  border-color: var(--tl-fg);
+  background-color: var(--tl-bg-surface);
 }
 
-.segmented__option input:focus-visible + span {
-  outline: 2px solid var(--tl-focus);
-  outline-offset: 2px;
+.theme-toggle__icon {
+  /* Square ends and mitred joins. There are no rounded corners in this
+     identity, and an icon is not an exception to that. */
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.theme-toggle__icon--light {
+  display: block;
+}
+
+.theme-toggle__icon--dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle__icon--light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle__icon--dark {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--dark {
+  display: block;
 }
 
 /* ---- buttons ----
    A Kiln fill carries an ink label at rest, on hover and pressed. The label is
-   never the thing that moves; the fill is. 500 -> 300 -> 550. */
+   never the thing that moves; the fill is. 500 -> 300 -> 550.
+
+   Controls here are 48px, not the design system's 36px. 36px is an app-density
+   number and it is below the 44px target size WCAG 2.5.8 asks for at AAA. This
+   is a marketing page read on phones, so the target wins. --tl-space-8 is 48px,
+   so the number is still a token. */
 
 .button {
   display: inline-flex;

@@ -154,21 +154,44 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <fieldset class="segmented" id="theme-control" hidden>
-          <legend class="visually-hidden">Theme</legend>
-          <label class="segmented__option">
-            <input type="radio" name="theme" value="system" checked />
-            <span>System</span>
-          </label>
-          <label class="segmented__option">
-            <input type="radio" name="theme" value="light" />
-            <span>Light</span>
-          </label>
-          <label class="segmented__option">
-            <input type="radio" name="theme" value="dark" />
-            <span>Dark</span>
-          </label>
-        </fieldset>
+        <!-- Both icons are in the DOM and CSS shows the one matching the resolved
+             theme, so the right glyph is on the first painted frame and follows a
+             live OS change with no JavaScript. main.ts owns the accessible name. -->
+        <button class="theme-toggle" id="theme-toggle" type="button" hidden>
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--light"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <g stroke="currentColor" stroke-width="1.5">
+              <path d="M13 8H14.8" />
+              <path d="M1.2 8H3" />
+              <path d="M8 13V14.8" />
+              <path d="M8 1.2V3" />
+              <path d="M11.54 11.54L12.81 12.81" />
+              <path d="M3.19 3.19L4.46 4.46" />
+              <path d="M4.46 11.54L3.19 12.81" />
+              <path d="M12.81 3.19L11.54 4.46" />
+            </g>
+          </svg>
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--dark"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M6.5 2.2a5.8 5.8 0 1 0 7.3 7.3A6.2 6.2 0 0 1 6.5 2.2z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
       </div>
     </header>
 

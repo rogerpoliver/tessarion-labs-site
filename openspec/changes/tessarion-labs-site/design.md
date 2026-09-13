@@ -58,17 +58,19 @@ Files:
 
 *Alternatives considered.* Tailwind — rejected, it would duplicate the token layer and its default scale contradicts the brand's. Sass — rejected, nesting is native now and there are no variables to compute that tokens do not already express.
 
-### Theme: an inline blocking script, `data-theme`, and a three-state control
+### Theme: an inline blocking script, `data-theme`, and one icon button
 
-The token file already implements dark two ways: `@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`, and an explicit `:root[data-theme="dark"]`. That structure is exactly a three-state control — absent attribute means follow the system, `light` and `dark` are explicit overrides — so the site adopts it rather than inventing a parallel mechanism.
+The token file already implements dark two ways: `@media (prefers-color-scheme: dark)` guarded by `:root:not([data-theme="light"])`, and an explicit `:root[data-theme="dark"]`. Absent attribute means follow the system; `light` and `dark` are explicit overrides. The site adopts that structure rather than inventing a parallel mechanism.
 
-A small blocking script in `<head>` reads `localStorage` and sets the attribute before first paint. It is inline because an external module would load after first paint and produce a flash. It is the only inline script on the page, and it is the reason the page needs no `unsafe-inline` exception beyond that one hash.
+A small blocking script in `<head>` reads `localStorage` and sets the attribute before first paint. It is inline because an external module would load after first paint and produce a flash. It is the only inline script on the page.
 
-`matchMedia('(prefers-color-scheme: dark)')` is watched so that the "system" setting tracks OS changes live.
+The control is **one square button** carrying a sun on light and a moon on dark. Which glyph is visible is a CSS decision, mirroring the lockup rules, so the icon is right on the first painted frame and follows a live OS change with no JavaScript. `main.ts` owns only the button's accessible name, which reads `Switch to dark theme` or `Switch to light theme` — it names the destination, not the current state, because that is the thing a press changes.
 
-The control is a `fieldset` of three radio inputs, visually a segmented control. Radios are used rather than a button that cycles, because a cycling button cannot announce the other two states to a screen reader and cannot be operated with arrow keys.
+**Following the system survives the first press.** A two-state toggle normally makes "follow the system" unreachable the moment a visitor touches it. Here, pressing the toggle onto the theme the OS already reports **clears** the stored override instead of rewriting it. A visitor on a light OS who goes dark and then back to light is following the system again, and never had to find a third control to do it. The state machine is still three-valued; the UI is not.
 
-*Alternative considered.* A single toggle with two states — rejected, it makes "follow the system" unreachable once the visitor has touched it.
+*Alternatives considered.* A three-radio segmented control — this was the first implementation, and it is the more literal answer, but it puts three mono labels in a sticky header for a preference most visitors never touch. A button that cycles system → light → dark — rejected, a cycling control cannot tell you where the next press lands, and the clear-on-match rule already recovers the state it was there to expose.
+
+*The cost.* A visitor who wants to explicitly return to "follow the system" while the OS is on the *other* theme has no way to say so. They would have to switch their OS theme, toggle, and switch back. That is a real gap, and it is the price of one button instead of three.
 
 ### Logo builds are swapped by CSS, not by JavaScript
 
@@ -137,7 +139,11 @@ Deploy sequence: push `main` → CI gates run → Pages workflow publishes → G
 Two numbers did not survive being measured.
 
 - **Taimu's accent on a card surface.** `brand-architecture.md` names Cyan 500 `#00A6C4` as Taimu's accent and its focus ring. That is a **fill** step, measured under a label. On this page the accent is a 3px rule and a focus ring sitting on `--tl-bg-surface`, where the governing floor is 3:1 for non-text — and 500 measures **2.82:1** there. It fails. The Taimu card uses Cyan 600 `#008FAB` (**3.71:1**) in light mode and returns to 500 in dark, where it measures 6.20:1 on the dark surface. No Taimu fill on this page carries a label, so the label pairing is untouched.
-- **The theme control was a second Kiln element.** The checked chip in the segmented control started as a Kiln 50 tint. The header is sticky, so anything accented in it is present in *every* viewport, which makes the "one Kiln element per view" rule unsatisfiable the moment the hero button scrolls into view. The chip is now ink on paper. Neither of these was a taste question.
+- **The theme control was a second Kiln element.** The control started as a segmented set of radios whose checked chip was a Kiln 50 tint. The header is sticky, so anything accented in it is present in *every* viewport, which makes the "one Kiln element per view" rule unsatisfiable the moment the hero button scrolls into view. The control is now a single neutral icon button, and its hover fill is a neutral surface for the same reason. Neither of these was a taste question.
+
+- **`[hidden]` did not hide the control.** The theme control is `hidden` in the markup so a visitor without JavaScript never sees an affordance that does nothing, and `main.ts` unhides it. But an author `display` declaration beats the user agent's `[hidden] { display: none }`, so the control was visible and inert with scripting off. Restated explicitly as `.theme-toggle[hidden] { display: none }`. This was latent in the original segmented control too, and was only found when the control was rebuilt.
+
+- **Controls are 48px, not the design system's 36px.** 36px is an app-density number and it sits below the 44px target size WCAG 2.5.8 asks for at AAA. This is a marketing page read on phones. `--tl-space-8` is 48px, so the value is still a token, and the deviation is recorded here rather than left as an unexplained mismatch with `design-system.md` section 7.
 
 One thing was measured and accepted rather than fixed: the studio callout's 3px Kiln rule sits 517px below the hero button, so both are visible at once only on a viewport taller than about 1150px. The callout *is* the brand's Kiln component — design-system.md §7 defines it as a Kiln left rule — so removing the hue would be a different component. Named here rather than discovered in review.
 

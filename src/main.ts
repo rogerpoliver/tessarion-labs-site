@@ -8,64 +8,83 @@ import "./styles/sections.css";
 const THEME_KEY = "tl-theme";
 const SLIP_KEY = "tl-slip-played";
 
-type Theme = "system" | "light" | "dark";
+type Theme = "light" | "dark";
+
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 function isTheme(value: string | null): value is Theme {
-  return value === "system" || value === "light" || value === "dark";
+  return value === "light" || value === "dark";
 }
 
-function readStoredTheme(): Theme {
+function systemTheme(): Theme {
+  return darkQuery.matches ? "dark" : "light";
+}
+
+/** The stored override, or null when the page is still following the system. */
+function storedTheme(): Theme | null {
   try {
     const stored = localStorage.getItem(THEME_KEY);
-    return isTheme(stored) ? stored : "system";
+    return isTheme(stored) ? stored : null;
   } catch {
-    return "system";
+    return null;
   }
 }
 
+function resolvedTheme(): Theme {
+  return storedTheme() ?? systemTheme();
+}
+
+// Storing a theme that already matches the OS would pin the page to a value it
+// is about to agree with anyway. Clearing instead means toggling back to your
+// OS theme silently restores "follow the system" — no third control, and the
+// default survives the first press.
 function applyTheme(theme: Theme): void {
-  if (theme === "system") {
-    delete document.documentElement.dataset.theme;
-  } else {
-    document.documentElement.dataset.theme = theme;
-  }
+  const root = document.documentElement;
 
-  try {
-    if (theme === "system") {
+  if (theme === systemTheme()) {
+    delete root.dataset.theme;
+    try {
       localStorage.removeItem(THEME_KEY);
-    } else {
-      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      /* Storage is unavailable. The theme still applies for this page view. */
     }
-  } catch {
-    /* Storage is unavailable. The choice still applies for this page view. */
+  } else {
+    root.dataset.theme = theme;
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      /* Storage is unavailable. The choice lasts until the next load. */
+    }
   }
 }
 
-function setUpThemeControl(): void {
-  const control = document.querySelector<HTMLFieldSetElement>("#theme-control");
-  if (!control) return;
-
-  // The control is hidden in the markup so a visitor without JavaScript never
-  // sees a segmented control that cannot do anything.
-  control.hidden = false;
-
-  const current = readStoredTheme();
-  const inputs = control.querySelectorAll<HTMLInputElement>('input[name="theme"]');
-
-  for (const input of inputs) {
-    input.checked = input.value === current;
-    input.addEventListener("change", () => {
-      if (input.checked && isTheme(input.value)) applyTheme(input.value);
-    });
-  }
+// The icon is chosen by CSS from the resolved theme; this keeps the button's
+// accessible name pointing at the same theme the icon does.
+function labelToggle(button: HTMLButtonElement): void {
+  const next = resolvedTheme() === "dark" ? "light" : "dark";
+  const label = `Switch to ${next} theme`;
+  button.setAttribute("aria-label", label);
+  button.title = label;
 }
 
-function followSystemTheme(): void {
-  const query = window.matchMedia("(prefers-color-scheme: dark)");
-  // Re-applying "system" is a no-op for the attribute, but it keeps the stored
-  // value and the rendered theme in step when the OS flips mid-session.
-  query.addEventListener("change", () => {
-    if (readStoredTheme() === "system") applyTheme("system");
+function setUpThemeToggle(): void {
+  const button = document.querySelector<HTMLButtonElement>("#theme-toggle");
+  if (!button) return;
+
+  // Hidden in the markup so a visitor without JavaScript never sees a control
+  // that cannot do anything.
+  button.hidden = false;
+  labelToggle(button);
+
+  button.addEventListener("click", () => {
+    applyTheme(resolvedTheme() === "dark" ? "light" : "dark");
+    labelToggle(button);
+  });
+
+  darkQuery.addEventListener("change", () => {
+    // Following the system: CSS has already repainted, so only the label is
+    // stale. Pinned to an override: nothing changed for the reader.
+    labelToggle(button);
   });
 }
 
@@ -96,7 +115,6 @@ function stampYear(): void {
   if (slot) slot.textContent = String(new Date().getFullYear());
 }
 
-setUpThemeControl();
-followSystemTheme();
+setUpThemeToggle();
 playSlipOnce();
 stampYear();

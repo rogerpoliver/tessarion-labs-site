@@ -27,23 +27,43 @@ The header SHALL carry the Tessarion Labs horizontal lockup linking to the top o
 - **THEN** the first focusable element is a visible "Skip to content" link that moves focus to the main landmark
 
 ### Requirement: Theme control
-The site SHALL offer a three-state theme control — system, light, dark. The choice SHALL persist in `localStorage` and SHALL be applied before first paint so no flash of the wrong theme occurs.
+The site SHALL offer a single icon button that toggles between light and dark. The button SHALL be a `<button>`, SHALL show a sun on light and a moon on dark, and SHALL carry an accessible name naming the theme a press moves to. The chosen theme SHALL persist in `localStorage` and SHALL be applied before first paint so no flash of the wrong theme occurs.
 
-#### Scenario: Default is system
+#### Scenario: Default is the system preference
 - **WHEN** a visitor with no stored preference loads the page
-- **THEN** the theme follows `prefers-color-scheme` and the control reports "system"
+- **THEN** the theme follows `prefers-color-scheme` and nothing is written to storage
 
-#### Scenario: Explicit choice wins and persists
-- **WHEN** a visitor selects light or dark
-- **THEN** `data-theme` is set on the root element, the choice is written to `localStorage`, and it is restored on the next visit regardless of the OS setting
+#### Scenario: The icon shows the theme that is on
+- **WHEN** the resolved theme is dark
+- **THEN** the moon is visible and the sun is not, and the accessible name reads `Switch to light theme`
+
+#### Scenario: A press pins the other theme
+- **WHEN** a visitor on a light OS presses the toggle
+- **THEN** `data-theme="dark"` is set on the root element, `dark` is written to `localStorage`, and it is restored on the next visit regardless of the OS setting
+
+#### Scenario: Toggling back to the OS theme restores following the system
+- **WHEN** a visitor pins a theme and then presses the toggle again, landing on the theme the OS already reports
+- **THEN** the stored override is removed rather than rewritten, so the page follows the system again from that point on
 
 #### Scenario: No flash on load
 - **WHEN** a visitor with a stored dark preference loads the page on a light OS
 - **THEN** the first painted frame is already dark, because the stored value is applied by a blocking inline script in the document head
 
 #### Scenario: System changes while open
-- **WHEN** the OS theme changes and the control is set to "system"
-- **THEN** the page follows the change without a reload
+- **WHEN** the OS theme changes and no override is stored
+- **THEN** the page and the icon follow the change without a reload, and the button's accessible name is updated to match
+
+#### Scenario: The icons are not announced
+- **WHEN** a screen reader reaches the toggle
+- **THEN** it announces the button's accessible name once, and neither SVG is announced
+
+#### Scenario: Hidden without JavaScript
+- **WHEN** the page is loaded with JavaScript disabled
+- **THEN** the toggle computes to `display: none`, because the author `display` would otherwise beat the user agent's `[hidden]` rule
+
+#### Scenario: The toggle carries no accent
+- **WHEN** the header is rendered in any state, including hover
+- **THEN** the toggle uses neutral fills and borders only, because the header is sticky and the page spends its one Kiln element on the hero's primary button
 
 ### Requirement: Layout and type scale
 Layout SHALL use a single content column capped so body copy never exceeds 66 characters, with section rhythm built from the `--tl-space-*` scale. Type SHALL follow the brand type scale: Inter Tight for display and headings down to H3, Inter for body, JetBrains Mono for eyebrows, captions and data.
