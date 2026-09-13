@@ -116,4 +116,4 @@
 
 - [x] 14.1 Write `README.md`: what the repo is, the stack, the dev commands, the deploy flow, and the exact command to re-copy the vendored brand assets from the brand repo.
 - [x] 14.2 State in the README that `src/styles/tokens.css` and `public/brand/**` are vendored copies and are never edited here.
-- [ ] 14.3 Commit in Conventional Commits, create the public GitHub repository `rogerpoliver/tessarion-labs-site`, push `main`, and enable GitHub Pages with the source set to GitHub Actions.
+- [x] 14.3 Commit in Conventional Commits, create the public GitHub repository `rogerpoliver/tessarion-labs-site`, push `main`, and enable GitHub Pages with the source set to GitHub Actions.
