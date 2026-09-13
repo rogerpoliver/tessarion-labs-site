@@ -1,0 +1,247 @@
+/* Sections — the per-section rules that do not generalise. */
+
+/* ---- hero ---- */
+
+.hero {
+  padding-block: var(--tl-space-10) var(--tl-space-10);
+  border-block-start: 0;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    padding-block: var(--tl-space-11) var(--tl-space-10);
+  }
+}
+
+.hero__eyebrow {
+  margin-block-end: var(--tl-space-5);
+}
+
+.hero h1 {
+  max-width: 20ch;
+}
+
+.hero .lead {
+  max-width: 60ch;
+  margin-block-start: var(--tl-space-6);
+}
+
+.hero__actions {
+  margin-block-start: var(--tl-space-8);
+}
+
+/* ---- studio ---- */
+
+.studio__callout {
+  margin-block-start: var(--tl-space-7);
+  max-width: 66ch;
+}
+
+/* ---- people ---- */
+
+.person {
+  display: grid;
+  gap: var(--tl-space-5);
+  grid-template-columns: auto 1fr;
+  align-items: start;
+}
+
+.person__photo {
+  width: var(--tl-space-11);
+  height: var(--tl-space-11);
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-lg);
+  object-fit: cover;
+}
+
+.person__name {
+  margin-block-end: var(--tl-space-1);
+}
+
+.person__role {
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  letter-spacing: 0.01em;
+}
+
+.person__bio {
+  grid-column: 1 / -1;
+  font-size: var(--tl-size-sm);
+  line-height: 1.6;
+}
+
+.person__links {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tl-space-4);
+}
+
+.person__links a {
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+}
+
+/* ---- products ----
+   Each card overrides the accent tokens on its own element. That is exactly the
+   mechanism brand-architecture.md describes for a product's tokens.css, applied
+   at element scope so two products can share one page without either becoming
+   the page's accent. The page's single Kiln fill is the hero's primary button.
+
+   The 700 text steps below are the only product literals in this repo. Source:
+   brand-architecture.md, "The same measurement decides whether the accent may be
+   text" — Taimu Cyan 700 (6.63:1 on paper), Mascada Green 700 (6.99:1). */
+
+/* Taimu's accent here is Cyan 600, not the 500 the brand names as its fill.
+   500 is a fill step, measured under a label; on this page the accent is a 3px
+   rule and a focus ring on --tl-bg-surface, which is the 3:1 non-text floor.
+   500 measures 2.82:1 there and fails it. 600 measures 3.71:1. The label pairing
+   is untouched — no Taimu fill on this page carries a label. */
+.product--taimu {
+  --tl-accent: #008fab;
+  --tl-accent-hover: #2cc0dc;
+  --tl-accent-press: #0a5f75;
+  --tl-fg-accent: #0a5f75;
+  --tl-fg-on-accent: #101114;
+  --tl-bg-accent: #e2f5f9;
+  --tl-focus: #008fab;
+}
+
+.product--mascada {
+  --tl-accent: #0b7b53;
+  --tl-accent-hover: #08603f;
+  --tl-accent-press: #064a31;
+  --tl-fg-accent: #08603f;
+  --tl-fg-on-accent: #f6f5f2;
+  --tl-bg-accent: #e6f6ef;
+  --tl-focus: #0e9464;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .product--taimu {
+    /* On dark, Cyan 500 measures 6.20:1 on the dark surface, so the brand fill
+       step is back. */
+    --tl-accent: #00a6c4;
+    --tl-accent-hover: #3ad3e0;
+    --tl-fg-accent: #3ad3e0;
+    --tl-bg-accent: #06232b;
+    --tl-focus: #3ad3e0;
+  }
+
+  :root:not([data-theme="light"]) .product--mascada {
+    --tl-fg-accent: #34c48a;
+    --tl-bg-accent: #062318;
+    --tl-focus: #34c48a;
+  }
+}
+
+:root[data-theme="dark"] .product--taimu {
+  --tl-accent: #00a6c4;
+  --tl-accent-hover: #3ad3e0;
+  --tl-fg-accent: #3ad3e0;
+  --tl-bg-accent: #06232b;
+  --tl-focus: #3ad3e0;
+}
+
+:root[data-theme="dark"] .product--mascada {
+  --tl-fg-accent: #34c48a;
+  --tl-bg-accent: #062318;
+  --tl-focus: #34c48a;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tl-space-5);
+}
+
+.product__head {
+  display: flex;
+  align-items: center;
+  gap: var(--tl-space-4);
+}
+
+.product__mark {
+  width: var(--tl-space-7);
+  height: var(--tl-space-7);
+}
+
+.product__name {
+  margin: 0;
+}
+
+.product__rule {
+  height: 3px;
+  border: 0;
+  margin: 0;
+  background-color: var(--tl-accent);
+}
+
+.product__lede {
+  color: var(--tl-fg-accent);
+  font-size: var(--tl-size-body-lg);
+  line-height: 1.4;
+}
+
+.product__body {
+  font-size: var(--tl-size-sm);
+  line-height: 1.6;
+}
+
+.product__body > * + * {
+  margin-block-start: var(--tl-space-4);
+}
+
+.product__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tl-space-3);
+  margin-block-start: auto;
+  padding-block-start: var(--tl-space-3);
+}
+
+.product__endorsement {
+  padding-block-start: var(--tl-space-4);
+  border-block-start: 1px solid var(--tl-border);
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  letter-spacing: 0.01em;
+}
+
+/* ---- crew ----
+   Smaller card than a person, no accent, after products. */
+
+.crew__card {
+  text-align: start;
+}
+
+.crew__photo {
+  width: var(--tl-space-10);
+  height: var(--tl-space-10);
+  margin-block-end: var(--tl-space-4);
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-lg);
+  object-fit: cover;
+}
+
+.crew__name {
+  font-family: var(--tl-font-display);
+  font-size: var(--tl-size-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.crew__role {
+  margin-block-start: var(--tl-space-2);
+  color: var(--tl-fg-muted);
+  font-size: var(--tl-size-sm);
+  line-height: 1.43;
+}
+
+/* ---- contact ---- */
+
+.contact__action {
+  margin-block-start: var(--tl-space-7);
+}

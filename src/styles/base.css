@@ -1,0 +1,185 @@
+/* Base — reset, document defaults, the brand type scale, focus, motion.
+   Every value here is a --tl-* token. Literals are legal in tokens.css and
+   fonts.css and nowhere else; stylelint enforces that. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-block-start: var(--tl-space-10);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--tl-bg);
+  color: var(--tl-fg);
+  font-family: var(--tl-font-body);
+  font-size: var(--tl-size-body);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--tl-fg-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---- type scale — design-system.md section 5 ---- */
+
+.display,
+h1 {
+  margin: 0;
+  font-family: var(--tl-font-display);
+  font-size: var(--tl-size-h1);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 48rem) {
+  .display,
+  h1 {
+    font-size: var(--tl-size-display);
+  }
+}
+
+h2 {
+  font-family: var(--tl-font-display);
+  font-size: var(--tl-size-h2);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-family: var(--tl-font-display);
+  font-size: var(--tl-size-h3);
+  font-weight: 600;
+  line-height: 1.27;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font-size: var(--tl-size-body-lg);
+  line-height: 1.56;
+  color: var(--tl-fg-muted);
+}
+
+.small {
+  font-size: var(--tl-size-sm);
+  line-height: 1.43;
+}
+
+.eyebrow {
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tl-fg-muted);
+}
+
+.caption {
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  color: var(--tl-fg-muted);
+}
+
+.mono {
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- focus — declared once, globally ----
+   design-system.md section 7: 2px ring, 2px offset, on every focusable element,
+   in every state. `outline: none` without a replacement ring does not appear in
+   this repository. */
+
+:focus-visible {
+  outline: 2px solid var(--tl-focus);
+  outline-offset: 2px;
+}
+
+/* ---- utilities ---- */
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+/* ---- forced colors ----
+   Under forced-colors the ramp is removed, so the marks fall back to the system
+   text colour and the ramp's meaning is carried by geometry alone. Borders and
+   the focus ring are re-stated in system keywords so neither disappears. */
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+
+  .mark rect {
+    fill: CanvasText;
+  }
+
+  .card,
+  .segmented {
+    border-color: CanvasText;
+  }
+}

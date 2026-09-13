@@ -1,0 +1,37 @@
+# mise configuration — https://mise.jdx.dev
+# Tool versions + task runner for the Tessarion Labs site (Vite + TypeScript).
+
+[tools]
+node = "24"
+bun = "latest"
+
+[settings]
+experimental = true
+
+[tasks.install]
+description = "Install JS deps (clean, from lockfile)"
+run = "bun install --frozen-lockfile"
+
+[tasks.dev]
+description = "Run the Vite dev server"
+run = "bun run dev"
+
+[tasks.build]
+description = "Typecheck and build the static site into dist/"
+run = "bun run build"
+
+[tasks.preview]
+description = "Serve the built site from dist/"
+run = "bun run preview"
+
+[tasks.typecheck]
+description = "Type-check without emitting"
+run = "bunx tsc --noEmit"
+
+[tasks.lint]
+description = "Lint TypeScript and CSS"
+run = "bun run lint"
+
+[tasks.brand-sync]
+description = "Re-copy the vendored brand assets from ../../branding"
+run = "./scripts/sync-brand.sh"

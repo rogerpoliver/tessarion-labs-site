@@ -1,0 +1,44 @@
+schema: spec-driven
+
+context: |
+  Tessarion Labs — the studio's public marketing site and landing page.
+  A single-page static site: who the studio is, the two people who run it,
+  the products it ships (Taimu, Mascada), and how to reach them.
+
+  Stack: Vite 7 + TypeScript (vanilla DOM, no UI framework), bun as the package
+  manager, plain CSS driven entirely by the brand's design tokens.
+  Lint/format: oxlint + oxfmt + stylelint. Commits: Conventional Commits.
+  Deployed as static files to GitHub Pages via GitHub Actions.
+
+  Brand: the site is a downstream consumer of the Tessarion Labs brand system
+  (tessarion-labs-brand, checked out locally at ../../branding).
+  `src/styles/tokens.css` is a vendored copy of that repo's hand-authored
+  `tokens.css`; logo SVGs under `public/brand/` are vendored copies of its
+  `docs/logo/` and `products/*/logo/` masters. Neither is edited here — they are
+  re-copied when the brand repo changes.
+
+  Hard constraints inherited from the brand, not negotiable in this repo:
+  - Every colour, size, space, radius and duration comes from a `--tl-*` token.
+    No literal hex, px size or ms duration in a component stylesheet.
+  - Kiln #E0562D is a fill, never text. Accent text is Kiln 700 on light,
+    Kiln 400 on dark. A Kiln fill always carries an ink label.
+  - One Kiln element per view. A second one is decoration.
+  - Square corners. Radius ceiling 8px for cards, 4px for controls, never a pill.
+  - Voice: exact, calm, confident, plain. Verdict first, numbers over adjectives,
+    sentence case, one claim per sentence. The banned-word list in the brand's
+    design-system.md section 2 applies to every string on this site.
+  - Motion: 120/220/320ms, one easing curve, transform and opacity only,
+    no bounce, honours prefers-reduced-motion.
+  - The endorsement string is exactly "A Tessarion Labs product".
+
+  Accessibility is a ship gate, not a nice-to-have: AA contrast everywhere,
+  a visible 2px focus ring on every focusable element, full keyboard operation,
+  and correct behaviour under forced-colors and prefers-reduced-motion.
+
+rules:
+  proposal:
+    - State the reader and what they should be able to do after the change.
+    - Name the trade-off. Silence about a cost is a defect.
+  tasks:
+    - Each task names the file it touches.
+    - Content tasks quote the exact copy being added, so voice is reviewable.

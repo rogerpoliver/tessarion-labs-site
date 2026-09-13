@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 76" width="132" height="76" role="img" aria-label="Tessarion Labs">
+  <title>Tessarion Labs</title>
+  <g transform="translate(50 0)"><rect x="2" y="5" width="6" height="24" fill="#A83214"/><rect x="8" y="5" width="6" height="24" fill="#E0562D"/><rect x="14" y="5" width="6" height="24" fill="#F0873C"/><rect x="22" y="1" width="6" height="24" fill="#F7C08A"/></g>
+  <text x="66" y="60" text-anchor="middle" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing="-0.44" fill="#101114">Tessarion</text>
+  <text x="66" y="72" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" font-weight="500" letter-spacing="2" fill="#101114" opacity="0.6">LABS</text>
+</svg>

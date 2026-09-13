@@ -1,0 +1,140 @@
+/* Tessarion Labs — design tokens v1.0
+   Hand-authored. Mirrors docs/brand-guidelines.md §2 and docs/design-system.md;
+   change the guidelines first, then this file. The brand sync script writes
+   assets/, not this file. */
+
+:root {
+  /* ---- primitive: colour ---- */
+  --tl-ink: #101114;
+  --tl-paper: #F6F5F2;
+  --tl-surface: #FDFCFA;
+  --tl-raised: #FFFFFF;
+  --tl-border-c: #E3E1DB;
+  --tl-border-strong-c: #8F8D84;
+  --tl-muted: #6B6960;
+  --tl-subtle: #8F8D84;
+
+  --tl-kiln-50: #FBEADF;
+  --tl-kiln-100: #F7C08A;
+  --tl-kiln-300: #F0873C;
+  --tl-kiln-400: #FF7A4D;
+  --tl-kiln-500: #E0562D;
+  --tl-kiln-550: #D6502A;
+  --tl-kiln-600: #C0431F;
+  --tl-kiln-700: #A83214;
+
+  --tl-success: #177544;
+  --tl-warning: #8F6200;
+  --tl-error: #C42A3E;
+  --tl-info: #2D5BFF;
+
+  /* ---- primitive: type ---- */
+  --tl-font-display: 'Inter Tight', Inter, system-ui, sans-serif;
+  --tl-font-body: Inter, system-ui, -apple-system, sans-serif;
+  --tl-font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  --tl-size-display: 56px;
+  --tl-size-h1: 40px;
+  --tl-size-h2: 30px;
+  --tl-size-h3: 22px;
+  --tl-size-body-lg: 18px;
+  --tl-size-body: 16px;
+  --tl-size-sm: 14px;
+  --tl-size-caption: 12px;
+  --tl-size-code: 13px;
+
+  /* ---- primitive: space, radius, motion ---- */
+  --tl-space-1: 2px;  --tl-space-2: 4px;  --tl-space-3: 8px;  --tl-space-4: 12px;
+  --tl-space-5: 16px; --tl-space-6: 24px; --tl-space-7: 32px; --tl-space-8: 48px;
+  --tl-space-9: 64px; --tl-space-10: 96px; --tl-space-11: 128px;
+
+  --tl-radius-none: 0;
+  --tl-radius-sm: 2px;
+  --tl-radius-md: 4px;
+  --tl-radius-lg: 8px;
+
+  --tl-motion-instant: 120ms;
+  --tl-motion-base: 220ms;
+  --tl-motion-slow: 320ms;
+  --tl-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- logo geometry ---- */
+  --tl-logo-grid: 32;
+  --tl-logo-band-w: 6;
+  --tl-logo-band-h: 24;
+  --tl-logo-kerf: 2;
+  --tl-logo-slip: 4;
+  --tl-logo-clear-space: 6;
+
+  /* ---- semantic: light (default) ---- */
+  --tl-bg: var(--tl-paper);
+  --tl-bg-surface: var(--tl-surface);
+  --tl-bg-raised: var(--tl-raised);
+  --tl-bg-accent: var(--tl-kiln-50);
+  --tl-fg: var(--tl-ink);
+  --tl-fg-muted: var(--tl-muted);
+  --tl-fg-subtle: var(--tl-subtle);
+  --tl-fg-accent: var(--tl-kiln-700);
+  --tl-fg-on-accent: var(--tl-ink);
+  --tl-border: var(--tl-border-c);
+  --tl-border-strong: var(--tl-border-strong-c);
+  --tl-accent: var(--tl-kiln-500);
+  --tl-accent-hover: var(--tl-kiln-300);
+  --tl-accent-press: var(--tl-kiln-550);
+  --tl-focus: var(--tl-kiln-500);
+  --tl-shadow-1: 0 1px 2px rgba(16,17,20,.06);
+  --tl-shadow-2: 0 4px 16px rgba(16,17,20,.10);
+}
+
+/* ---- semantic: dark ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --tl-bg: #0C0D0F;
+    --tl-bg-surface: #15171A;
+    --tl-bg-raised: #1C1F23;
+    --tl-bg-accent: #2A150C;
+    --tl-fg: #F6F5F2;
+    --tl-fg-muted: #9C9A92;
+    --tl-fg-subtle: #9C9A92;
+    --tl-fg-accent: var(--tl-kiln-400);
+    --tl-fg-on-accent: var(--tl-ink);
+    --tl-border: #262A2E;
+    --tl-border-strong: #727068;
+    --tl-accent: var(--tl-kiln-500);
+    --tl-accent-hover: var(--tl-kiln-400);
+    --tl-accent-press: var(--tl-kiln-550);
+    --tl-focus: var(--tl-kiln-400);
+    --tl-success: #4ED18A;
+    --tl-warning: #E0AE3A;
+    --tl-error: #FF6B7D;
+    --tl-info: #7A96FF;
+    --tl-shadow-1: 0 1px 2px rgba(0,0,0,.5);
+    --tl-shadow-2: 0 4px 16px rgba(0,0,0,.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  --tl-bg: #0C0D0F;
+  --tl-bg-surface: #15171A;
+  --tl-bg-raised: #1C1F23;
+  --tl-bg-accent: #2A150C;
+  --tl-fg: #F6F5F2;
+  --tl-fg-muted: #9C9A92;
+  --tl-fg-subtle: #9C9A92;
+  --tl-fg-accent: var(--tl-kiln-400);
+  --tl-fg-on-accent: var(--tl-ink);
+  --tl-border: #262A2E;
+  --tl-border-strong: #727068;
+  --tl-accent-hover: var(--tl-kiln-400);
+  --tl-focus: var(--tl-kiln-400);
+  --tl-success: #4ED18A;
+  --tl-warning: #E0AE3A;
+  --tl-error: #FF6B7D;
+  --tl-info: #7A96FF;
+  --tl-shadow-1: 0 1px 2px rgba(0,0,0,.5);
+  --tl-shadow-2: 0 4px 16px rgba(0,0,0,.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --tl-motion-instant: 0ms; --tl-motion-base: 0ms; --tl-motion-slow: 0ms; }
+}

@@ -1,0 +1,323 @@
+/* Components — header, theme control, buttons, cards, callout, badges, footer.
+   design-system.md section 7. Square corners: 8px is the ceiling and belongs to
+   cards, controls use 4px, nothing is a pill. */
+
+/* ---- skip link ---- */
+
+.skip-link {
+  position: absolute;
+  inset-block-start: var(--tl-space-3);
+  inset-inline-start: var(--tl-space-3);
+  z-index: 2;
+  padding: var(--tl-space-3) var(--tl-space-5);
+  border: 1px solid var(--tl-border-strong);
+  border-radius: var(--tl-radius-md);
+  background-color: var(--tl-bg-raised);
+  color: var(--tl-fg);
+  font-size: var(--tl-size-sm);
+  text-decoration: none;
+}
+
+/* ---- header ---- */
+
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  border-block-end: 1px solid var(--tl-border);
+  background-color: var(--tl-bg);
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tl-space-5);
+  padding-block: var(--tl-space-4);
+}
+
+.header__brand {
+  display: inline-flex;
+  /* The mark has no optical centre — the slip pushes weight high and right.
+     Align to the three-band row, not to the bounding box. */
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tl-space-5);
+  margin-inline-start: auto;
+}
+
+.header__nav a {
+  color: var(--tl-fg-muted);
+  font-size: var(--tl-size-sm);
+  text-decoration: none;
+}
+
+.header__nav a:hover,
+.header__nav a:focus-visible {
+  color: var(--tl-fg);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+/* ---- the mark ----
+   Both builds are inlined; CSS hides the one that does not match the resolved
+   theme, so the correct mark is right on the first painted frame and follows a
+   live OS theme change with no JavaScript. */
+
+.mark {
+  display: block;
+  height: var(--tl-space-7);
+  width: auto;
+}
+
+.mark--light {
+  display: block;
+}
+
+.mark--dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mark--light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .mark--dark {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .mark--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .mark--dark {
+  display: block;
+}
+
+/* The slip: the fourth band rises out of line. Transform only, one curve, once
+   per session — design-system.md section 9. The class is added by main.ts and
+   only on first visit; it is not a loader and nothing waits on it. */
+
+.mark[data-slip="play"] .mark__band--slipped {
+  animation-name: tl-slip;
+  animation-duration: var(--tl-motion-slow);
+  animation-timing-function: var(--tl-ease);
+  animation-fill-mode: both;
+}
+
+@keyframes tl-slip {
+  from {
+    transform: translateY(4px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark[data-slip="play"] .mark__band--slipped {
+    animation-name: none;
+  }
+}
+
+/* ---- theme control ---- */
+
+.segmented {
+  display: inline-flex;
+  margin: 0;
+  padding: var(--tl-space-1);
+  border: 1px solid var(--tl-border-strong);
+  border-radius: var(--tl-radius-md);
+  background-color: var(--tl-bg-surface);
+}
+
+.segmented__option {
+  position: relative;
+  display: inline-flex;
+}
+
+.segmented__option input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.segmented__option span {
+  padding: var(--tl-space-2) var(--tl-space-4);
+  border-radius: var(--tl-radius-sm);
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  line-height: 1.33;
+  transition-property: background-color, color;
+  transition-duration: var(--tl-motion-instant);
+  transition-timing-function: var(--tl-ease);
+}
+
+/* The checked chip is ink, not a Kiln tint. The header is sticky, so anything
+   accented in it would be present in every viewport — and the page already
+   spends its one Kiln element on the hero's primary button. */
+.segmented__option input:checked + span {
+  background-color: var(--tl-fg);
+  color: var(--tl-bg);
+}
+
+.segmented__option input:focus-visible + span {
+  outline: 2px solid var(--tl-focus);
+  outline-offset: 2px;
+}
+
+/* ---- buttons ----
+   A Kiln fill carries an ink label at rest, on hover and pressed. The label is
+   never the thing that moves; the fill is. 500 -> 300 -> 550. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tl-space-8);
+  padding-inline: var(--tl-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--tl-radius-md);
+  font-family: var(--tl-font-body);
+  font-size: var(--tl-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition-property: background-color, border-color, color;
+  transition-duration: var(--tl-motion-instant);
+  transition-timing-function: var(--tl-ease);
+}
+
+.button--primary {
+  background-color: var(--tl-accent);
+  color: var(--tl-fg-on-accent);
+}
+
+.button--primary:hover {
+  background-color: var(--tl-accent-hover);
+}
+
+.button--primary:active {
+  background-color: var(--tl-accent-press);
+}
+
+.button--secondary {
+  border-color: var(--tl-border-strong);
+  color: var(--tl-fg);
+}
+
+.button--secondary:hover {
+  background-color: var(--tl-bg-accent);
+}
+
+.button--secondary:active {
+  border-color: var(--tl-accent);
+  background-color: var(--tl-bg-accent);
+}
+
+/* ---- card ---- */
+
+.card {
+  padding: var(--tl-space-6);
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-lg);
+  background-color: var(--tl-bg-surface);
+  box-shadow: var(--tl-shadow-1);
+}
+
+.card--quiet {
+  padding: var(--tl-space-5);
+  box-shadow: none;
+}
+
+/* ---- callout ----
+   The Kiln left rule is what makes this the brand's callout. It sits 517px below
+   the hero's primary button, so the two Kiln elements are co-visible only above
+   roughly 1150px of viewport height. Measured and accepted — see design.md. */
+
+.callout {
+  padding: var(--tl-space-5) var(--tl-space-6);
+  border-inline-start: 3px solid var(--tl-accent);
+  background-color: var(--tl-bg-accent);
+  color: var(--tl-fg);
+}
+
+/* ---- badge ----
+   Distinguished by a glyph before the label, never by a fill colour: a colour
+   that means something in a chart cannot also mean identity in a row. */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tl-space-2);
+  min-height: var(--tl-space-6);
+  padding-inline: var(--tl-space-3);
+  border: 1px solid var(--tl-border-strong);
+  border-radius: var(--tl-radius-md);
+  color: var(--tl-fg);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  line-height: 1.33;
+}
+
+.badge__glyph {
+  color: var(--tl-fg-muted);
+}
+
+/* ---- facts strip ---- */
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tl-space-3) var(--tl-space-6);
+  margin-block-start: var(--tl-space-6);
+  padding-block-start: var(--tl-space-5);
+  border-block-start: 1px solid var(--tl-border);
+}
+
+.facts li {
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* ---- footer ---- */
+
+.footer {
+  padding-block: var(--tl-space-8);
+  border-block-start: 1px solid var(--tl-border);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tl-space-5);
+}
+
+.footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tl-space-2) var(--tl-space-5);
+  color: var(--tl-fg-muted);
+  font-family: var(--tl-font-mono);
+  font-size: var(--tl-size-caption);
+}
+
+.footer__meta a {
+  color: var(--tl-fg-muted);
+}

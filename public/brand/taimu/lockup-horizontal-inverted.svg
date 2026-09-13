@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32" role="img" aria-label="Taimu">
+  <title>Taimu</title>
+  <!-- Live text: outline it before sending to print. -->
+  <rect x="5" y="2" width="22" height="6" fill="#008FAB"/><rect x="5" y="8" width="22" height="6" fill="#00A6C4"/><rect x="5" y="14" width="22" height="6" fill="#2CC0DC"/><rect x="5" y="22" width="13" height="6" fill="#3AD3E0"/>
+  <text x="42" y="23" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="24" font-weight="500" letter-spacing="-0.48" fill="#F6F5F2">Taimu</text>
+</svg>

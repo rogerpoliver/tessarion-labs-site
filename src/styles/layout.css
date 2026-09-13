@@ -1,0 +1,67 @@
+/* Layout — one content column, section rhythm, and two card grids. */
+
+.shell {
+  width: 100%;
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: var(--tl-space-6);
+}
+
+@media (min-width: 48rem) {
+  .shell {
+    padding-inline: var(--tl-space-7);
+  }
+}
+
+/* Body copy caps at 66ch. A full-width paragraph is a paragraph nobody
+   finished — design-system.md section 5. */
+.prose {
+  max-width: 66ch;
+}
+
+.prose > * + * {
+  margin-block-start: var(--tl-space-5);
+}
+
+.section {
+  padding-block: var(--tl-space-10);
+  border-block-start: 1px solid var(--tl-border);
+}
+
+@media (min-width: 48rem) {
+  .section {
+    padding-block: var(--tl-space-11);
+  }
+}
+
+.section__head {
+  max-width: 66ch;
+  margin-block-end: var(--tl-space-8);
+}
+
+.section__head > * + * {
+  margin-block-start: var(--tl-space-4);
+}
+
+.grid-2 {
+  display: grid;
+  gap: var(--tl-space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--tl-space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.stack > * + * {
+  margin-block-start: var(--tl-space-4);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tl-space-4);
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- Source for public/brand/share.png. Rendered at 1200x630 by
+     scripts/make-share-image.sh so the wordmark is set in the real Inter Tight,
+     not in whatever a rasteriser substitutes. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/src/styles/tokens.css" />
+    <link rel="stylesheet" href="/src/styles/fonts.css" />
+    <style>
+      html, body { margin: 0; }
+      body {
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        padding: 96px;
+        box-sizing: border-box;
+        background: var(--tl-paper);
+        color: var(--tl-ink);
+        font-family: var(--tl-font-body);
+      }
+      h1 {
+        margin: 0;
+        max-width: 22ch;
+        font-family: var(--tl-font-display);
+        font-size: 56px;
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+        color: var(--tl-muted);
+        font-family: var(--tl-font-mono);
+        font-size: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/brand/logo/lockup-horizontal.svg" width="380" height="64" alt="" />
+    <h1>Small precise units, placed on purpose.</h1>
+    <p>Software product studio · Porto Alegre, BR</p>
+  </body>
+</html>

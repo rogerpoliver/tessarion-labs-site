@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32" role="img" aria-label="Mascada">
+  <title>Mascada</title>
+  <!-- Live text: outline it before sending to print. -->
+  <rect x="2" y="20" width="6" height="9" fill="#08603F"/><rect x="8" y="14" width="6" height="15" fill="#0B7B53"/><rect x="14" y="8" width="6" height="21" fill="#0E9464"/><rect x="22" y="1" width="6" height="24" fill="#34C48A"/>
+  <text x="42" y="23" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="24" font-weight="500" letter-spacing="-0.48" fill="#101114">Mascada</text>
+</svg>

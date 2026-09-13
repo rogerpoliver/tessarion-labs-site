@@ -1,0 +1,41 @@
+{
+  "name": "tessarion-labs-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint --config .oxlintrc.json src && stylelint \"src/**/*.css\"",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "format": "oxfmt src",
+    "format:check": "oxfmt --check src",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "oxfmt",
+      "oxlint --config .oxlintrc.json --no-error-on-unmatched-pattern"
+    ],
+    "src/**/*.css": [
+      "stylelint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/inter-tight": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
+    "stylelint": "^17.14.1",
+    "stylelint-declaration-strict-value": "^1.12.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}
